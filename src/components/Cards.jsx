@@ -1,4 +1,4 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
 import { Router } from 'workbox-routing'
 import Card from './Card'
 
@@ -8,27 +8,31 @@ const Cards = () => {
 
     const [input, setInput] = useState("")
 
-    const peticion = async () => {
+    const peticion = useCallback (async () => {
         const key = "client_id=87MXqbFUg7AXuHL4M1jkiDHbiikMsMEAvHYU1X56ENE"
 
         let route = `https://api.unsplash.com/photos/?${key}`
 
         if (input !== ""){
-            route = `https://api.unsplash.com/search/photos/?query=${input}&${key}`
+            route = `https://api.unsplash.com/search/photos/?query=${encodeURI(input)}&${key}`
         }
         
         const res = await fetch (route)
 
-        const data = await res.json();        
+        const data = await res.json();
         
-        setImages(data);        
-    }
+        if (data.results) {
+            setImages(data.results);
+        }else{
+            setImages(data);
+        }                      
+    }, [input])
+
+     
 
     useEffect(() => {
-      
         peticion();
-
-    }, [input])
+    }, [peticion])
 
     
     
@@ -42,15 +46,21 @@ const Cards = () => {
   return (
     <>
 
-        <form onSubmit={handleSubmit}>
-            <label> Buscar : <input type="text" name='inputText'/> {""} </label>
+        <form className='mt-4' onSubmit={handleSubmit}>
+            <label> {" "} Buscar : <input type="text"  name='inputText'/> {" "} </label>
+            <button type='submit' className='btn btn-warning mx-2'><i class="bi bi-search"></i></button>
         </form>
         <hr/><br/>
-        {
-            images.map((img) => {
-                return <Card key={img.id} img={ img.urls.regular } />          
-            })
-        }
+        <div className='row'>
+            {
+                images.map((img) => {
+                    return <div key={img.id} className='col'>
+                        <Card  img={ img.urls.regular } />
+                    </div>                                
+                })
+            }
+        </div>
+        
        
     </>
   )
