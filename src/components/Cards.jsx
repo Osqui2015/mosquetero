@@ -8,12 +8,12 @@ const Cards = () => {
 
     const [input, setInput] = useState("")
 
-    const peticion = async (endpoint = "") => {
+    const peticion = async () => {
         const key = "client_id=87MXqbFUg7AXuHL4M1jkiDHbiikMsMEAvHYU1X56ENE"
 
         let route = `https://api.unsplash.com/photos/?${key}`
 
-        if (endpoint !== ""){
+        if (input !== ""){
             route = `https://api.unsplash.com/search/photos/?query=${input}&${key}`
         }
         
