@@ -5,9 +5,9 @@ import Navbar from './Navbar'
 
 const Container = () => {
   return (
-    <div className='container border'>
-      <h1>aqui va el navbar</h1>
-      <Navbar/>
+
+
+    <div className='container border my-3'>
        <Cards />
     </div>
   )
