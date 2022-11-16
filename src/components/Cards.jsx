@@ -1,25 +1,46 @@
-import React, {useState, useEffect} from 'react'
+import React, {useState, useEffect, useCallback} from 'react'
+//import { Router } from 'workbox-routing'
 import Card from './Card'
+import Login from './Login'
 
 const Cards = () => {
 
     const [images, setImages] = useState([])
 
-    const peticion = async () => {
-        const res = await fetch ("https://api.unsplash.com/photos/?client_id=87MXqbFUg7AXuHL4M1jkiDHbiikMsMEAvHYU1X56ENE")
+    const [input, setInput] = useState("")
 
-        const data = await res.json();        
+    const [loading, setLoading] = useState(true)
+
+    const peticion = useCallback (async () => {
+        const key = "client_id=87MXqbFUg7AXuHL4M1jkiDHbiikMsMEAvHYU1X56ENE"
+
+        let route = `https://api.unsplash.com/photos/?${key}`
+
+        if (input !== ""){
+            route = `https://api.unsplash.com/search/photos/?query=${encodeURI(input)}&${key}`
+        }
         
-        setImages(data);        
-    }
+        setLoading (true)
+
+        const res = await fetch (route)
+
+        const data = await res.json();
+        
+        if (data.results) {
+            setImages(data.results);
+        }else{
+            setImages(data);
+        }
+        setLoading (false)
+    }, [input])
+
+     
 
     useEffect(() => {
-      
         peticion();
+    }, [peticion])
 
-    }, [])
-
-    const [input, setInput] = useState("")
+    
     
     const handleSubmit = (e) =>{
         e.preventDefault();
@@ -31,15 +52,24 @@ const Cards = () => {
   return (
     <>
 
-        <form onSubmit={handleSubmit}>
-            <label> Buscar : <input type="text" name='inputText'/> {""} </label>
+        <form className='mt-4' onSubmit={handleSubmit}>
+            <label> {" "} Buscar : <input type="text"  name='inputText'/> {" "} </label>
+            <button type='submit' className='btn btn-warning mx-2'><i class="bi bi-search"></i></button>
         </form>
         <hr/><br/>
-        {
-            images.map((img) => {
-                return <Card key={img.id} img={ img.urls.regular } />          
-            })
-        }
+
+        {loading && <Login/>} 
+
+        <div className='row'>
+            {
+                images.map((img) => {
+                    return <div key={img.id} className='col'>
+                        <Card  img={ img.urls.regular } />
+                    </div>                                
+                })
+            }
+        </div>
+        
        
     </>
   )
