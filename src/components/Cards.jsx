@@ -1,12 +1,15 @@
 import React, {useState, useEffect, useCallback} from 'react'
-import { Router } from 'workbox-routing'
+//import { Router } from 'workbox-routing'
 import Card from './Card'
+import Login from './Login'
 
 const Cards = () => {
 
     const [images, setImages] = useState([])
 
     const [input, setInput] = useState("")
+
+    const [loading, setLoading] = useState(true)
 
     const peticion = useCallback (async () => {
         const key = "client_id=87MXqbFUg7AXuHL4M1jkiDHbiikMsMEAvHYU1X56ENE"
@@ -17,6 +20,8 @@ const Cards = () => {
             route = `https://api.unsplash.com/search/photos/?query=${encodeURI(input)}&${key}`
         }
         
+        setLoading (true)
+
         const res = await fetch (route)
 
         const data = await res.json();
@@ -25,7 +30,8 @@ const Cards = () => {
             setImages(data.results);
         }else{
             setImages(data);
-        }                      
+        }
+        setLoading (false)
     }, [input])
 
      
@@ -51,6 +57,9 @@ const Cards = () => {
             <button type='submit' className='btn btn-warning mx-2'><i class="bi bi-search"></i></button>
         </form>
         <hr/><br/>
+
+        {loading && <Login/>} 
+
         <div className='row'>
             {
                 images.map((img) => {

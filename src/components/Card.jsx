@@ -6,7 +6,7 @@ const Card = ({img}) => {
     <div>        
         <div className="card m-2" style={{ width: "18rem" }}>
             <img src={ img } className="card-img-top" alt="imagen.png" />
-            
+                        
         </div>
     </div>
   )
