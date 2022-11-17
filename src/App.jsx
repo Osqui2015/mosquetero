@@ -1,14 +1,14 @@
 import React from 'react'
 import Container from './components/Container'
 import Footer from './components/Footer'
-import Header from './components/Header'
+import HeaderNavb from './components/HeaderNavb'
 
 
 const App = () => {
   return (
     <div>
       
-      <Header />
+      <HeaderNavb/>
         <Container />
       <Footer/>
     </div>
