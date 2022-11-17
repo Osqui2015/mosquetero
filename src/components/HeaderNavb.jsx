@@ -1,12 +1,21 @@
 import React from 'react'
+import {Navbar,Container,Nav,} from 'react-bootstrap';
+ import {NavLink} from 'react-router-dom';
 
 function Header() {
   return (
-    <nav className="navbar navbar-dark bg-dark">
-      <div className="container-fluid">
-        <span className="navbar-brand mb-0 h1">Navbar</span>
-      </div>
-    </nav>
+    <Navbar bg="dark" variant="dark">
+        <Container>
+          <Navbar.Brand href="#home">RSHOW</Navbar.Brand>
+          <Nav className="me-auto">
+            <NavLink  className="nav-link" to="/">Home</NavLink>
+            <NavLink className="nav-link" to="/Login">Login</NavLink>
+            <NavLink className="nav-link" to="/Contacto">Contacto</NavLink>
+            <NavLink className="nav-link" to="/Destacado">Destacado</NavLink>
+            <NavLink href="#pricing">Pricing</NavLink>
+          </Nav>
+        </Container>
+      </Navbar>
   )
 }
 
