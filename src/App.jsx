@@ -1,16 +1,8 @@
-<<<<<<< HEAD
 import React from 'react';
-import Container from './components/Container';
-import Footer from './components/Footer';
-import HeaderNavb from './components/HeaderNavb';
-import {BrowserRouter,Routes,Route} from 'react-router-dom';
-import Login from './components/Login';
+import { Route, Routes } from 'react-router-dom';
 import Destacado from './components/Destacado';
 import Contacto from './components/Contacto';
 
-=======
-import { Route, Routes } from 'react-router-dom';
->>>>>>> c542a50 (session)
 
 import './App.scss';
 import Layout from './components/Layout';

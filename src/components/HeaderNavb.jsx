@@ -1,7 +1,10 @@
-import React from 'react'
-import {Navbar,Container,Nav} from 'react-bootstrap';
+import React, { useState } from 'react'
+import {Navbar,Container,Nav, Stack, Button} from 'react-bootstrap';
 import {NavLink, Link} from 'react-router-dom';
 import"../css/Archivo.css";
+
+import LoginModal from "./LoginModal";
+import SignUpModal from "./SignUpModal";
 
 function Header() {
   const [showLogin, setShowLogin] = useState(false)
@@ -49,10 +52,10 @@ function Header() {
         <NavLink className="nav-link" to="/Destacado">Destacado</NavLink>
       </Nav>
             
-      <div class="container-fluid searchBar d-flex align-content-center">
+      <div className="container-fluid searchBar d-flex align-content-center">
         <form>
           <label> {" "} Buscar : <input type="text"  name='inputText'/> {" "} </label>
-          <button type='submit' className='btn btn-warning'><i class="bi bi-search"></i></button>
+          <button type='submit' className='btn btn-warning'><i className="bi bi-search"></i></button>
         </form>
       </div>
 
