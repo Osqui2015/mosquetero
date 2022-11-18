@@ -21,7 +21,6 @@ function Header() {
         
       <Nav className="me-auto">
         <NavLink  className="nav-link" to="/">Home</NavLink>
-        
         <NavLink className="nav-link" to="/Contacto">Contacto</NavLink>
         <NavLink className="nav-link" to="/Destacado">Destacado</NavLink>
       </Nav>
@@ -34,8 +33,8 @@ function Header() {
       </div>
 
       <div class="d-flex ">
-        <Link to="/">
-        <img
+       <Link to="/">
+          <img
           alt=""
           src="/facebook.png"
           // width="30"
@@ -43,12 +42,13 @@ function Header() {
    
         />{' '}
         </Link>
-        <Link to="https://www.facebook.com">
-        <img
+        <Link to="/">
+          <img
           alt=""
           src="/instagram.png"
           // width="30"
           height="30"
+        
    
         />{' '}
         </Link>
