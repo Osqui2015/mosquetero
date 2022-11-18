@@ -4,8 +4,32 @@ import {NavLink, Link} from 'react-router-dom';
 import"../css/Archivo.css";
 
 function Header() {
-    
+  const [showLogin, setShowLogin] = useState(false)
+  const [showSignUp, setShowSignUp] = useState(false)
+
+  const handleOpenLogin = () => {
+    setShowLogin(true)
+  }
+
+  const handleCloseLogin = () => {
+    setShowLogin(false)
+  }
+
+  const handleOpenSignUp = () => {
+    setShowSignUp(true)
+  }
+
+  const handleCloseSignUp = () => {
+    setShowSignUp(false)
+  }
+
+  const handleCloseLoginAndOpenSignUp = () => {
+    setShowLogin(false)
+    setShowSignUp(true)
+  }
+
   return (
+    <React.Fragment>
    
 <Navbar bg="dark" variant="dark">
     <Container>
@@ -55,12 +79,18 @@ function Header() {
         </div>
       
       <Nav className="me-auto">
-      <NavLink className="nav-link" to="/Login">Login</NavLink>
+        <Stack direction="horizontal" className="gap-1">
+          <Button onClick={handleOpenLogin}>Ingresar</Button>
+          <Button onClick={handleOpenSignUp}>Registrarse</Button>
+        </Stack>
       </Nav>
 
 
       </Container>
     </Navbar>
+    <LoginModal show={showLogin} handleClose={handleCloseLogin} handleCloseLoginAndOpenSignUp={handleCloseLoginAndOpenSignUp} />
+    <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} />
+    </React.Fragment>
   )
 }
 

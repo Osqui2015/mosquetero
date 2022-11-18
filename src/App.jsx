@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import Container from './components/Container';
 import Footer from './components/Footer';
@@ -7,26 +8,25 @@ import Login from './components/Login';
 import Destacado from './components/Destacado';
 import Contacto from './components/Contacto';
 
+=======
+import { Route, Routes } from 'react-router-dom';
+>>>>>>> c542a50 (session)
 
+import './App.scss';
+import Layout from './components/Layout';
+import HomePage from './pages/home/HomePage';
+import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
 
 const App = () => {
   return (
-    <div>
-      
-     
-     
-      
-      <BrowserRouter>
-      <HeaderNavb/>
-      <Routes>
-        <Route path='Login' element={<Login/>}/>
-        <Route path='Destacado' element={<Destacado/>}/>
-        <Route path='Contacto' element={<Contacto/>}/>
-      </Routes>
-      </BrowserRouter>
-      <Container />
-      <Footer/>
-    </div>
+    <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/destacado' element={<Destacado/>}/>
+        <Route path='/contacto' element={<Contacto/>}/>
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      </Route>
+    </Routes>
   )
 }
 
