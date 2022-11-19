@@ -17,10 +17,10 @@ const Footer = () => {
           </Link>
         </Col>
         <Col md> <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
+        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Terminos">Terminos y Condiciones</NavLink>
         </Col>
-        <Col md><NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
+        <Col md><NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Blog">Blog</NavLink>
+        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Nosotros">Nosotros</NavLink>
         </Col>
         <Col md><div class="d-flex divredes me-2">
             <div class="divface mx-1">
