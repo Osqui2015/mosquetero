@@ -34,3 +34,14 @@ body{
     color: #2BB5AA !important;
     font-weight: 700;
 }
+.footercont{
+    background-color: black !important;
+    justify-content: center;
+    justify-items: center;
+    
+}
+.divcopy{
+    
+    text-align: center;
+    color: white;
+}

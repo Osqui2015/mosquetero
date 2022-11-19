@@ -23,9 +23,9 @@ const App = () => {
         <Route path='Destacado' element={<Destacado/>}/>
         <Route path='Contacto' element={<Contacto/>}/>
       </Routes>
-      </BrowserRouter>
       <Container />
       <Footer/>
+      </BrowserRouter>
     </div>
   )
 }
