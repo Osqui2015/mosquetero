@@ -6,6 +6,9 @@ import {BrowserRouter,Routes,Route} from 'react-router-dom';
 import Login from './components/Login';
 import Destacado from './components/Destacado';
 import Contacto from './components/Contacto';
+import Nosotros from './components/Nosotros';
+import Terminos from './components/Terminos';
+import Blog from './components/Blog';
 
 
 
@@ -22,10 +25,14 @@ const App = () => {
         <Route path='Login' element={<Login/>}/>
         <Route path='Destacado' element={<Destacado/>}/>
         <Route path='Contacto' element={<Contacto/>}/>
+        <Route path='Nosotros' element={<Nosotros/>}/>
+        <Route path='Terminos' element={<Terminos/>}/>
+        <Route path='Blog' element={<Blog/>}/>
+        
       </Routes>
-      </BrowserRouter>
       <Container />
       <Footer/>
+      </BrowserRouter>
     </div>
   )
 }
