@@ -2,7 +2,7 @@ import React from 'react'
 import {Navbar,Container,Nav} from 'react-bootstrap';
 import {NavLink, Link} from 'react-router-dom';
 import"../css/Archivo.css";
-
+import {SiFacebook, SiInstagram} from "react-icons/si";
 
 
 function Header() {
@@ -37,17 +37,17 @@ function Header() {
             </div>
           </div>
 
-
+          
           <div class="d-flex divredes me-2">
             <div class="divface mx-1">
               <Link to="https://www.facebook.com" target="_blank">
-                <img alt="" src="/facebook.png" height="30"/>{' '}
-              </Link>
+             <i> <SiFacebook className='iconface'/></i>
+            </Link>
             </div>
         
             <div class="divface mx-1"> 
               <Link to="https://www.instagram.com" target="_blank">
-                <img alt="" src="/instagram.png" height="30"/>{' '}
+              <i ><SiInstagram className='iconinst'/></i>
               </Link>
             </div>
           </div>

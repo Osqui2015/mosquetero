@@ -21,9 +21,13 @@ p{
 .searchBar{
     width: auto;
 }
-
-.divface{
-    padding: 10px;
+.iconface{
+    color: #F6F6F6;
+    font-size:2em;
+}
+.iconinst{
+    font-size:2em;
+    color: #F6F6F6;
 }
 .btn-login{
     color: white !important;

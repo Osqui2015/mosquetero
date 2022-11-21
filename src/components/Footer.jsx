@@ -3,6 +3,7 @@ import Container from 'react-bootstrap/Container';
 import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {NavLink,Link} from 'react-router-dom';
+import {SiFacebook, SiInstagram} from "react-icons/si";
 
 
 
@@ -25,13 +26,13 @@ const Footer = () => {
         <Col md><div class="d-flex divredes me-2">
             <div class="divface mx-1">
               <Link to="https://www.facebook.com" target="_blank">
-                <img alt="" src="/facebook.png" height="30"/>{' '}
+                <i><SiFacebook className='iconface'/></i>
               </Link>
             </div>
         
             <div class="divface mx-1"> 
               <Link to="https://www.instagram.com" target="_blank">
-                <img alt="" src="/instagram.png" height="30"/>{' '}
+                <i><SiInstagram className='iconinst'/></i>
               </Link>
             </div>
           </div>
