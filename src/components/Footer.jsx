@@ -25,9 +25,9 @@ const Footer = () => {
         </Col>
         <Col md><div class="d-flex divredes me-2">
             <div class="divface mx-1">
-              <Link to="https://www.facebook.com" target="_blank">
+              <a href="https://www.facebook.com" target="_blank"> 
                 <i><SiFacebook className='iconface'/></i>
-              </Link>
+                </a>
             </div>
         
             <div class="divface mx-1"> 
