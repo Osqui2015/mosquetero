@@ -51,7 +51,7 @@ const Cards = () => {
             <hr/>
             
             <hr/>
-                {loading && <Login/>} 
+                {loading && <Loading/>} 
                 
                 <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
             { /*} <form className='mt-4' onSubmit={handleSubmit}>
@@ -59,7 +59,7 @@ const Cards = () => {
                     <button type='submit' className='btn btn-warning mx-2'><i class="bi bi-search"></i></button>
                 </form> { */}                
                 <p className="fs-3 fw-bold">MAS EVENTO </p>                
-            </div>
+                </div>
             <br/>
                     <div className='row row-cols-2 row-cols-lg-5'>
                         {
@@ -92,7 +92,7 @@ const Cards = () => {
             }
 
         </div>
-       
+       </div>
     </>
   )
 }
