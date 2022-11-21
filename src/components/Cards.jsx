@@ -79,7 +79,7 @@ const Cards = () => {
             <button type='submit' className='btn btn-warning mx-2'><i className="bi bi-search"></i></button>
         </form>
         <hr/><br/>
-
+{ /*} 
         {loading && <Loading/>} 
 
         <div className='row'>
@@ -91,7 +91,7 @@ const Cards = () => {
                 })
             }
 
-        </div>
+        </div> { */} 
        </div>
     </>
   )

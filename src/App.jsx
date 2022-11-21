@@ -3,12 +3,14 @@ import { Route, Routes} from 'react-router-dom';
 import Destacado from './components/Destacado';
 import Contacto from './components/Contacto';
 
-
+import Nosotros from './components/Nosotros';
+import Terminos from './components/Terminos';
 
 import './App.scss';
 import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
+
 
 const App = () => {
   return ( 
@@ -19,9 +21,10 @@ const App = () => {
         <Route path='/destacado' element={<Destacado/>}/>
         <Route path='/contacto' element={<Contacto/>}/>
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+        <Route path='Nosotros' element={ <Nosotros/> }/>
+        <Route path='Terminos' element={<Terminos/>}/>
       </Route>
     </Routes>  
-
     
        {/*}  <BrowserRouter>
           <HeaderNavb />
