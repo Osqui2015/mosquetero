@@ -1,17 +1,50 @@
-import React from 'react'
-import Container from './components/Container'
-import Footer from './components/Footer'
-import Header from './components/Header'
+import React from 'react';
+import { Route, Routes } from 'react-router-dom';
+import Destacado from './components/Destacado';
+import Contacto from './components/Contacto';
+import Nosotros from './components/Nosotros';
+import Terminos from './components/Terminos';
+import Blog from './components/Blog';
 
+
+import './App.scss';
+import Layout from './components/Layout';
+import HomePage from './pages/home/HomePage';
+import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
 
 const App = () => {
   return (
+
+    {/*}  <Routes>
+      <Route path="/" element={<Layout />}>
+        <Route index element={<HomePage />} />
+        <Route path='/destacado' element={<Destacado/>}/>
+        <Route path='/contacto' element={<Contacto/>}/>
+        <Route path="/forgot-password" element={<ForgotPasswordPage />} />
+      </Route>
+    </Routes>  {*/}
+
     <div>
       
-      <Header />
-        <Container />
+     
+     
+      
+      <BrowserRouter>
+      <HeaderNavb/>
+      <Routes>
+        <Route path='Login' element={<Login/>}/>
+        <Route path='Destacado' element={<Destacado/>}/>
+        <Route path='Contacto' element={<Contacto/>}/>
+        <Route path='Nosotros' element={<Nosotros/>}/>
+        <Route path='Terminos' element={<Terminos/>}/>
+        <Route path='Blog' element={<Blog/>}/>
+        
+      </Routes>
+      <Container />
       <Footer/>
+      </BrowserRouter>
     </div>
+
   )
 }
 

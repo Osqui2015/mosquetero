@@ -1,7 +1,7 @@
 import React, {useState, useEffect, useCallback} from 'react'
 //import { Router } from 'workbox-routing'
 import Card from './Card'
-import Login from './Login'
+import Loading from './Loading'
 
 const Cards = () => {
 
@@ -46,6 +46,7 @@ const Cards = () => {
 
   return (
     <>
+
         <div className="card">
             <hr/>
             
@@ -71,6 +72,25 @@ const Cards = () => {
                     </div>
                
             
+
+
+        <form className='mt-4' onSubmit={handleSubmit}>
+            <label> {" "} Buscar : <input type="text"  name='inputText'/> {" "} </label>
+            <button type='submit' className='btn btn-warning mx-2'><i className="bi bi-search"></i></button>
+        </form>
+        <hr/><br/>
+
+        {loading && <Loading/>} 
+
+        <div className='row'>
+            {
+                images.map((img) => {
+                    return <div key={img.id} className='col'>
+                        <Card  img={ img.urls.regular } />
+                    </div>                                
+                })
+            }
+
         </div>
        
     </>

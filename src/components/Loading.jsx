@@ -1,6 +1,6 @@
 import React from 'react'
 
-const Login = () => {
+const Loading = () => {
   return (
     <div className="container mb-3">
         <div className="row justify-content-md-center">
@@ -18,4 +18,4 @@ const Login = () => {
   )
 }
 
-export default Login
+export default Loading
