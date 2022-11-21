@@ -3,12 +3,20 @@ import PropTypes from 'prop-types'
 
 const Card = ({img}) => {
   return (
-    <div>        
-        <div className="card m-2" style={{ width: "18rem" }}>
-            <img src={ img } className="card-img-top" alt="imagen.png" />
-                        
-        </div>
-    </div>
+         
+        <div className="card mb-3" >
+          <img src={ img } className="card-img-top" alt="imagen.png" />
+            <div className="card-body">
+              <h5 class="card-title">TITULO DEL SHOW</h5>    
+                <div className="container">
+                  <p className="card-text"> mini descripción </p>
+                </div>                                      
+            </div>
+              <div className="card-body">
+                <button type="button" className="btn mx-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>
+                <button type="button" className="btn btn-outline-danger"> <i className="bi bi-heart"></i> </button>
+              </div>
+          </div>
   )
 }
 
