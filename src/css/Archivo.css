@@ -10,50 +10,63 @@ p{
 }
 
 
-.Navbar{
+.navbar{
     display: flex;
-    justify-items: center;
-    justify-content: space-evenly;
-   
+    justify-content: space-between;
+    
 }
+
 
 
 .searchBar{
     width: auto;
 }
-.iconface{
+.iconface, .iconinst{
     color: #F6F6F6;
-    font-size:2em;
-}
-.iconinst{
-    font-size:2em;
-    color: #F6F6F6;
-}
-.btn-login{
-    color: white !important;
-    padding: 5px 16px !important;
-    font-weight: 700;
+    font-size:1.7em;
 }
 
-.btn-botones, .btn-login{
-    background-color: #FE6848;
-    border: 0;
+.divredes{
+    margin-top: 0.2em;
 }
+
+.buttIngresar, .buttRegistrarse{
+    background-color: #FE6848 !important;
+    border: none !important;
+    padding: 4px 8px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
+}
+
 
 .nav-link-menu{
     color: #2BB5AA !important;
-    font-weight: 700;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+
 }
 .footercont{
     background-color: #333333 !important;
-    justify-content: center;
-    justify-items: center;
+    justify-content: space-evenly !important;
+    justify-items: center !important;
+    text-align: center;
+
     
 }
+.img-logo-footer{
+    margin-top: 1em;
+}
+.divredesFooter{
+    justify-content: center;
+    margin-top: 1em;
+}
+
+
 .divcopy{
     
     text-align: center;
     color: white;
+    margin-top: 1em;
 }
 .tituterminos{
     text-align: center;
@@ -83,4 +96,33 @@ p{
     border-radius: 20px;
     border-color: black;
     padding: 5px;
+}
+.colblog1{
+    width: auto;
+    height: 621.1%;
+}
+.divtituloblog{
+    background-color: #FE6848;
+    text-align:center;
+
+}
+
+
+
+
+@media (min-width:396px) and (max-width:991px){
+    .divredes{
+        margin-top: .7em;
+    }
+
+    .div-btn-Ing-Reg{
+        margin: 0.7em 0;
+    }
+
+    .basic{
+        display: flex;
+        justify-content: start;
+    }
+
+
 }
