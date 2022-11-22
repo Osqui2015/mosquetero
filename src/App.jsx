@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Routes} from 'react-router-dom';
-import Destacado from './components/Destacado';
-import Contacto from './components/Contacto';
+import Destacado from './pages/home/Destacado';
+import Contacto from './pages/home/Contacto';
 
-import Nosotros from './components/Nosotros';
-import Terminos from './components/Terminos';
+import Nosotros from './pages/home/Nosotros';
+import Terminos from './pages/home/Terminos';
 
 import './App.scss';
 import Layout from './components/Layout';
