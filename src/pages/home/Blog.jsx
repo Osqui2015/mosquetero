@@ -1,7 +1,8 @@
 import React from 'react';
 import {Card,CardGroup} from 'react-bootstrap';
-import Carousel from './Carousel';
-import"../css/Archivo.css";
+import Carousel from '../../components/Carousel';
+
+import "../../css/Archivo.css"
 
 const Blog = () => {
   return (

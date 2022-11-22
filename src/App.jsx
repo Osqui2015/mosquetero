@@ -6,7 +6,7 @@ import Contacto from './pages/home/Contacto';
 
 import Nosotros from './pages/home/Nosotros';
 import Terminos from './pages/home/Terminos';
-
+import Blog from './pages/home/Blog';
 
 import './App.scss';
 import Layout from './components/Layout';
