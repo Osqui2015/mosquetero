@@ -84,8 +84,8 @@ function Header() {
 
           <div class="divlogin">
             <Stack direction="horizontal" className="gap-1">
-              <Button onClick={handleOpenLogin}>Ingresar</Button>
-              <Button onClick={handleOpenSignUp}>Registrarse</Button>
+              <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
+              <Button onClick={handleOpenSignUp} className="buttRegistrarse">Registrarse</Button>
             </Stack>
           </div>
 

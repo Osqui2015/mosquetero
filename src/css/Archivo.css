@@ -13,7 +13,7 @@ p{
 .Navbar{
     display: flex;
     justify-items: center;
-    justify-content: space-evenly;
+    justify-content: space-between;
    
 }
 
@@ -33,6 +33,14 @@ p{
     color: white !important;
     padding: 5px 16px !important;
     font-weight: 700;
+}
+.buttIngresar{
+    background-color: #FE6848 !important;
+    border: none !important;
+}
+.buttRegistrarse{
+background-color: #FE6848!important;
+border: none !important;
 }
 
 .btn-botones, .btn-login{
@@ -87,6 +95,11 @@ p{
 .colblog1{
     width: auto;
     height: 621.1%;
+}
+.divtituloblog{
+    background-color: #FE6848;
+    text-align:center;
+
 }
 /* .colblog11{
     width:auto;

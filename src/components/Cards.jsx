@@ -58,7 +58,7 @@ const Cards = () => {
                     <label> {" "} Buscar : <input type="text"  name='inputText'/> {" "} </label>
                     <button type='submit' className='btn btn-warning mx-2'><i class="bi bi-search"></i></button>
                 </form> { */}                
-                <p className="fs-3 fw-bold">MAS EVENTO </p>                
+                <p className="fs-3 fw-bold">MAS EVENTOS </p>                
                 </div>
             <br/>
                     <div className='row row-cols-2 row-cols-lg-5'>
