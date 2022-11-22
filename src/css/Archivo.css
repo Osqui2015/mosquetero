@@ -10,52 +10,40 @@ p{
 }
 
 
-.Navbar{
+.navbar{
     display: flex;
-    justify-items: center;
     justify-content: space-between;
-   
+    
 }
+
 
 
 .searchBar{
     width: auto;
 }
-.iconface{
+.iconface, .iconinst{
     color: #F6F6F6;
-    font-size:2em;
+    font-size:1.7em;
 }
-.iconinst{
-    font-size:2em;
-    color: #F6F6F6;
-}
+
 .divredes{
     margin-top: 0.2em;
 }
-/* .btn-login{
-    color: white !important;
-    padding: 5px 16px !important;
-    font-weight: 700;
-} */
-.buttIngresar{
+
+.buttIngresar, .buttRegistrarse{
     background-color: #FE6848 !important;
     border: none !important;
-    margin: top 0.7em;
-}
-.buttRegistrarse{
-background-color: #FE6848!important;
-border: none !important;
-margin-top: 0.1em;
+    padding: 4px 8px !important;
+    font-size: 16px !important;
+    font-weight: 500 !important;
 }
 
-/* .btn-botones, .btn-login{
-    background-color: #FE6848;
-    border: 0;
-} */
 
 .nav-link-menu{
     color: #2BB5AA !important;
-    font-weight: 700;
+    font-weight: 600 !important;
+    font-size: 16px !important;
+
 }
 .footercont{
     background-color: #333333 !important;
@@ -72,9 +60,8 @@ margin-top: 0.1em;
     justify-content: center;
     margin-top: 1em;
 }
-/* .nav-link-menu-footer{
-    margin-top: 1em;
-} */
+
+
 .divcopy{
     
     text-align: center;
@@ -119,7 +106,23 @@ margin-top: 0.1em;
     text-align:center;
 
 }
-/* .colblog11{
-    width:auto;
-    height: 50%;
-} */
+
+
+
+
+@media (min-width:396px) and (max-width:991px){
+    .divredes{
+        margin-top: .7em;
+    }
+
+    .div-btn-Ing-Reg{
+        margin: 0.7em 0;
+    }
+
+    .basic{
+        display: flex;
+        justify-content: start;
+    }
+
+
+}

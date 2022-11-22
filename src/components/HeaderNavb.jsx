@@ -37,7 +37,7 @@ function Header() {
 
   return (
   <React.Fragment>
-    <Navbar bg="dark" variant="dark" expand="lg">
+    <Navbar bg="dark" variant="dark" expand="lg" >
       <Container>
         <Navbar.Brand href="#home">
             <div class="divlogo navbar-brand">
@@ -46,50 +46,42 @@ function Header() {
               </Link>
             </div>
         </Navbar.Brand>
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Navbar.Toggle aria-controls="basic-navbar-nav" />
+      <Navbar.Collapse id="basic-navbar-nav" className='basic d-flex justify-content-end'>
 
-      <Navbar.Collapse id="basic-navbar-nav">
-
-          <Nav className="me-auto">
-
+         <Nav>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/">Home</NavLink>
-    
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>
-
           <div class="container-fluid searchBar d-flex align-content-center">
-
-            <div class="input-group" size="sm">
-                <input type="text" class="form-control" placeholder="Buscá tu evento"  aria-describedby="button-addon2"></input>
+            <div class="input-group">
+                <input type="text" class="form-control form-control-sm" placeholder="Buscá tu evento"  aria-describedby="button-addon2" size="14"></input>
                 <button class="btn btn-warning btn-botones" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
             </div>
           </div>
 
-          
           <div class="d-flex divredes me-2">
-            <div class="divface mx-1">
+            <div class="divface mx-2">
               <Link to="https://www.facebook.com" target="_blank">
              <i> <SiFacebook className='iconface'/></i>
             </Link>
             </div>
         
-            <div class="divface mx-1"> 
+            <div class="divface mx-2"> 
               <Link to="https://www.instagram.com" target="_blank">
               <i ><SiInstagram className='iconinst'/></i>
               </Link>
             </div>
-          </div>
+           </div>
 
-          <div class="divlogin">
-            <Stack direction="horizontal" className="gap-1">
+          <div class="div-btn-Ing-Reg">
+            <Stack direction="horizontal" className="gap-2">
               <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
               <Button onClick={handleOpenSignUp} className="buttRegistrarse">Registrarse</Button>
             </Stack>
           </div>
-
-
         </Nav>
       </Navbar.Collapse>
       </Container>
