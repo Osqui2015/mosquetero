@@ -12,18 +12,18 @@ const Footer = () => {
     <div bg="dark" variant="dark" expand="lg" className='footercont'>
       <Container bg="dark" variant="dark" expand="lg" className='footercont'>
       <Row>
-        <Col md>
+        <Col xs={12} md={3}>
         <Link to="/">
-                <img alt="" src="/logo.png" height="30" class="img-logo" />{' '}
+                <img alt="" src="/logo.png" height="30" class="img-logo-footer " />{' '}
           </Link>
         </Col>
-        <Col md> <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Terminos">Terminos y Condiciones</NavLink>
+        <Col xs={12} md={3}> <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
+        <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Terminos">Terminos y Condiciones</NavLink>
         </Col>
-        <Col md><NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Blog">Blog</NavLink>
-        <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Nosotros">Nosotros</NavLink>
+        <Col xs={12} md={3}><NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Blog">Blog</NavLink>
+        <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Nosotros">Nosotros</NavLink>
         </Col>
-        <Col md><div class="d-flex divredes me-2">
+        <Col xs={12} md={3}><div class="d-flex divredesFooter ">
             <div class="divface mx-1">
               <Link to="https://www.facebook.com" target="_blank">
                 <i><SiFacebook className='iconface'/></i>
@@ -38,7 +38,7 @@ const Footer = () => {
           </div>
       </Col>
       </Row>
-          <div className='divcopy'>
+          <div className='divcopy mx-1'>
             &copy; RSHOW {new Date().getFullYear()} TODOS LOS DERECHOS RESERVADOS
           </div>
       </Container>
