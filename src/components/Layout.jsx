@@ -7,9 +7,7 @@ const Layout = () => {
   return (
     <React.Fragment>
       <HeaderNavb/>
-      <div className='main-container'>
       <Outlet />
-      </div>
       <Footer/>
     </React.Fragment>
   )

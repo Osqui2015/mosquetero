@@ -49,7 +49,7 @@ function Header() {
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Navbar.Collapse id="basic-navbar-nav" className='basic d-flex justify-content-start'>
+      <Navbar.Collapse id="basic-navbar-nav" className='basic d-flex justify-content-end'>
 
          <Nav>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/">Home</NavLink>
@@ -64,15 +64,15 @@ function Header() {
 
           <div class="d-flex divredes me-2">
             <div class="divface mx-2">
-              <a href="https://www.facebook.com" target="_blank" rel='noreferrer'>
+              <Link to="https://www.facebook.com" target="_blank">
              <i> <SiFacebook className='iconface'/></i>
-            </a>
+            </Link>
             </div>
         
             <div class="divface mx-2"> 
-              <a href="https://www.instagram.com" target="_blank" rel='noreferrer'>
+              <Link to="https://www.instagram.com" target="_blank">
               <i ><SiInstagram className='iconinst'/></i>
-              </a>
+              </Link>
             </div>
            </div>
 
