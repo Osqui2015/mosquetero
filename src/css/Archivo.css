@@ -4,6 +4,9 @@
 body{
     font-family: 'Poppins', sans-serif !important;
     background-color: #F6F6F6 !important;
+    /* display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important; */
 }
 p{
     font-family:'Inter', sans-serif !important; 
@@ -47,6 +50,7 @@ p{
 }
 .footercont{
     background-color: #333333 !important;
+    /* margin-top: auto !important; */
     justify-content: space-evenly !important;
     justify-items: center !important;
     text-align: center;
