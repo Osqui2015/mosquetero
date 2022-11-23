@@ -4,6 +4,8 @@
 body{
     font-family: 'Poppins', sans-serif !important;
     background-color: #F6F6F6 !important;
+    
+    
 }
 p{
     font-family:'Inter', sans-serif !important; 
@@ -45,19 +47,8 @@ p{
     font-size: 16px !important;
 
 }
-.footercont{
-    background-color: #333333 !important;
-    justify-content: space-evenly !important;
-    justify-items: center !important;
-    text-align: center;
 
-    
-}
 .img-logo-footer{
-    margin-top: 1em;
-}
-.divredesFooter{
-    justify-content: center;
     margin-top: 1em;
 }
 
