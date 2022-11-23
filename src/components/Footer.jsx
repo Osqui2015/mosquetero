@@ -20,8 +20,11 @@ const Footer = () => {
         <Col xs={12} md={3}> <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
         <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Terminos">Terminos y Condiciones</NavLink>
         </Col>
-        <Col xs={12} md={3}><NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Blog">Blog</NavLink>
+        <Col xs={12} md={3}>
         <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Nosotros">Nosotros</NavLink>
+
+        <NavLink className="nav-link nav-item mt-1 nav-link-menu" to="/Blog">Blog</NavLink>
+
         </Col>
         <Col xs={12} md={3}><div class="d-flex divredesFooter ">
             <div class="divface mx-1">
