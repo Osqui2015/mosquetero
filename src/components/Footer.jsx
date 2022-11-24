@@ -5,8 +5,6 @@ import Col from 'react-bootstrap/Col';
 import {NavLink,Link} from 'react-router-dom';
 import {SiFacebook, SiInstagram} from "react-icons/si";
 
-
-
 const Footer = () => {
   return (
     <div bg="dark" variant="dark" expand="lg" className='footercont'>
@@ -15,7 +13,7 @@ const Footer = () => {
 
       <Row>
         <Col xs={12} md={3}>
-        <Link to="/">
+          <Link to="/">
                 <img alt="" src="/logo.png" height="30" class="img-logo-footer " />{' '}
           </Link>
         </Col>
