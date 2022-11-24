@@ -1,9 +1,9 @@
 import React from 'react';
 import { Route, Routes} from 'react-router-dom';
-import Destacado from './components/Destacado';
+
 
 import Destacado from './pages/home/Destacado';
-import Contacto from './pages/home/Contacto';
+
 
 import Nosotros from './pages/home/Nosotros';
 import Terminos from './pages/home/Terminos';
