@@ -12,6 +12,10 @@ import './App.scss';
 import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
+<<<<<<< HEAD
+=======
+import BlogTwo from './pages/home/BlogTwo';
+>>>>>>> parent of 13668fe (cambios blog,  footer cambios)
 
 
 const App = () => {
@@ -26,6 +30,7 @@ const App = () => {
         <Route path='/Nosotros' element={ <Nosotros/> }/>
         <Route path='/Terminos' element={<Terminos/>}/>
         <Route path='/Blog' element={<Blog/>}/>
+        <Route path='/BlogTwo' element={<BlogTwo/>}/>
       </Route>
     </Routes>  
     
