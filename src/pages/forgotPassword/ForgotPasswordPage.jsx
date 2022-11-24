@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 
-const HomePage = () => {
+const ForgotPasswordPage = () => {
   const [email, setEmail] = useState('')
 
   const handleEmailInput = (evt) => {
@@ -48,4 +48,4 @@ const HomePage = () => {
   )
 }
 
-export default HomePage
+export default ForgotPasswordPage

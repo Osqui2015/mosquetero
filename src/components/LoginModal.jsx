@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Button, Col, Form, Modal, Row } from "react-bootstrap"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
   const navigate = useNavigate()
