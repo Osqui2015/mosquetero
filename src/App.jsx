@@ -12,8 +12,6 @@ import './App.scss';
 import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
-
-
 import BlogTwo from './pages/home/BlogTwo';
 
 
