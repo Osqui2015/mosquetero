@@ -28,13 +28,13 @@ const Footer = () => {
         </Col>
         <Col xs={12} md={3}><div class="d-flex divredesFooter ">
             <div class="divface mx-1">
-              <a href="https://www.facebook.com" target="_blank">
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
                 <i><SiFacebook className='iconface'/></i>
               </a>
             </div>
         
             <div class="divface mx-1"> 
-              <a href="https://www.instagram.com" target="_blank" >
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
                 <i><SiInstagram className='iconinst'/></i>
               </a>
             </div>

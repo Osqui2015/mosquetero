@@ -64,13 +64,13 @@ function Header() {
 
           <div class="d-flex divredes me-2 my-2">
             <div class="divface mx-2">
-              <a href="https://www.facebook.com" target="_blank">
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
              <i> <SiFacebook className='iconface'/></i>
             </a>
             </div>
         
             <div class="divface mx-1"> 
-              <a href="https://www.instagram.com" target="_blank">
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
               <i ><SiInstagram className='iconinst'/></i>
               </a>
             </div>
