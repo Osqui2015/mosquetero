@@ -1,6 +1,5 @@
 import React from 'react';
 import { Route, Routes} from 'react-router-dom';
-import Destacado from './components/Destacado';
 
 import Destacado from './pages/home/Destacado';
 import Contacto from './pages/home/Contacto';
@@ -14,7 +13,8 @@ import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
 import BlogTwo from './pages/home/BlogTwo';
-import ContactPage from './pages/contact/ContactPage';
+
+
 
 const App = () => {
   return ( 
@@ -23,7 +23,7 @@ const App = () => {
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
         <Route path='/destacado' element={<Destacado/>}/>
-        <Route path='/contacto' element={<ContactPage/>}/>
+        <Route path='/contacto' element={<Contacto/>}/>
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path='/Nosotros' element={ <Nosotros/> }/>
         <Route path='/Terminos' element={<Terminos/>}/>
