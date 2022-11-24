@@ -42,7 +42,7 @@ const App = () => {
               <Route path='Terminos' element={<Terminos/>}/>
               <Route path='Blog' element={<Blog/>}/>            
             </Routes>
-          <Container /> prueba
+          <Container /> prueba Dos
           <Footer />
         </BrowserRouter>{*/}
     </div>
