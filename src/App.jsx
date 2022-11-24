@@ -6,16 +6,16 @@ import Contacto from './pages/home/Contacto';
 
 import Nosotros from './pages/home/Nosotros';
 import Terminos from './pages/home/Terminos';
-import Blog from './pages/home/Blog';
+
 
 import './App.scss';
 import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
-<<<<<<< HEAD
-=======
+
+
 import BlogTwo from './pages/home/BlogTwo';
->>>>>>> parent of 13668fe (cambios blog,  footer cambios)
+
 
 
 const App = () => {
@@ -29,7 +29,7 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path='/Nosotros' element={ <Nosotros/> }/>
         <Route path='/Terminos' element={<Terminos/>}/>
-        <Route path='/Blog' element={<Blog/>}/>
+        
         <Route path='/BlogTwo' element={<BlogTwo/>}/>
       </Route>
     </Routes>  
