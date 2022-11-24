@@ -4,6 +4,12 @@
 body{
     font-family: 'Poppins', sans-serif !important;
     background-color: #F6F6F6 !important;
+<<<<<<< HEAD
+=======
+    /* display: flex !important;
+    flex-direction: column !important;
+    min-height: 100vh !important; */
+>>>>>>> parent of 13668fe (cambios blog,  footer cambios)
 }
 p{
     font-family:'Inter', sans-serif !important; 
@@ -47,6 +53,10 @@ p{
 }
 .footercont{
     background-color: #333333 !important;
+<<<<<<< HEAD
+=======
+    /* margin-top: auto !important; */
+>>>>>>> parent of 13668fe (cambios blog,  footer cambios)
     justify-content: space-evenly !important;
     justify-items: center !important;
     text-align: center;
