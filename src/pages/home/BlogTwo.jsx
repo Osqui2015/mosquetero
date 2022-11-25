@@ -17,7 +17,7 @@ const BlogTwo = () => {
     <div class="card mb-3">
     <div class="row g-0">
     <div class="col-md-4">
-      <img src="/nahuelpennisi.png" class="img-fluid rounded-start" alt="..."/>
+      <img src="/nahuelpennisi.png" class="img-fluid rounded" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
@@ -32,12 +32,12 @@ const BlogTwo = () => {
     <div class="card mb-3">
     <div class="row g-0">
     <div class="col-md-4">
-      <img src="/ciro.jpg" class="img-fluid rounded-start" alt="..."/>
+      <img src="/ciro.jpg" class="img-fluid rounded" alt="..."/>
     </div>
     <div class="col-md-8">
       <div class="card-body">
         <h5 class="card-title">Ciro y Los Persas</h5>
-        <p class="card-text">¡Ciro y Los Persas comienzan el año en Mar del Plata! Como es costumbre cada verano, Ciro vuelve a Mar del Plata. La cita será el sábado 28 de enero nuevamente en el Polideportivo Islas Malvinas.</p>
+        <p class="card-text">Ciro y los Persas es un grupo musical de Argentina, formado en 2009 y liderado por el cantante y compositor Andrés Ciro Martínez, quien fue el líder del grupo musical Los Piojos. Es considerado como uno de los mejores grupos de rock de Argentina de la actualidad. El grupo ha ganado varios premios durante su carrera, entre ellos dos Premios Carlos Gardel.</p>
         <p class="card-text"><small class="text-muted"></small></p>
       </div>
     </div>
@@ -46,20 +46,13 @@ const BlogTwo = () => {
     </div>
     
     <div class="col sm-12 md-6">
-    <div class="clearfix">
-  <img src="/ciro.jpg" class="col-md-6 float-md-end mb-3 ms-md-3" alt="..."/>
-
-  <p>
-    A paragraph of placeholder text. We're using it here to show the use of the clearfix class. We're adding quite a few meaningless phrases here to demonstrate how the columns interact here with the floated image.
-  </p>
-
-  <p>
-    As you can see the paragraphs gracefully wrap around the floated image. Now imagine how this would look with some actual content in here, rather than just this boring placeholder text that goes on and on, but actually conveys no tangible information at. It simply takes up space and should not really be read.
-  </p>
-
-  <p>
-    And yet, here you are, still persevering in reading this placeholder text, hoping for some more insights, or some hidden easter egg of content. A joke, perhaps. Unfortunately, there's none of that here.
-  </p>
+    <div class="card">
+  <img src="/divididos.jpeg" class="col-md-12 rounded" alt="..."/>
+  <div class="card-body">
+        <h5 class="card-title titu-divididos">Divididos</h5>
+        <p class="card-text">Divididos es un grupo musical de Argentina, fundado en el año 1988 por Ricardo Mollo y Diego Arnedo, exintegrantes de MAM junto a Omar Mollo2​ y de Sumo, cuando esta se disolvió por la muerte de su líder, Luca Prodan. En sus trabajos, han incursionado en estilos musicales locales como el folklore.3​ Ha sido galardonada en múltiples ocasiones tanto de forma grupal como individual. En el 2011 fue ganadora del Premio Gardel de Oro (la distinción más destacada de la música nacional) en reconocimiento a su exitosa trayectoria, premio que ha sido entregado solo diecinueve veces a distintos artistas tales como Luis Alberto Spinetta, Charly García, León Gieco, Mercedes Sosa y Gustavo Cerati, entre otros.</p>
+        <p class="card-text"><small class="text-muted"></small></p>
+      </div>
 </div>
     </div>
     </div>

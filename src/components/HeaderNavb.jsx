@@ -47,7 +47,7 @@ function Header() {
             </div>
         </Navbar.Brand>
         
-        <Navbar.Toggle aria-controls="basic-navbar-nav" />
+        <Navbar.Toggle aria-controls="basic-navbar-nav me-3" />
 
       <Navbar.Collapse id="basic-navbar-nav" >
 

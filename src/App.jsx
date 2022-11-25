@@ -28,7 +28,6 @@ const App = () => {
         <Route path="/forgot-password" element={<ForgotPasswordPage />} />
         <Route path='/Nosotros' element={ <Nosotros/> }/>
         <Route path='/Terminos' element={<Terminos/>}/>
-        
         <Route path='/BlogTwo' element={<BlogTwo/>}/>
       </Route>
     </Routes>  

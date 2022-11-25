@@ -47,7 +47,7 @@ const Cards = () => {
   return (
     <>
 
-        <div className="card">
+        <div className="card p-3">
             <hr/>
             
             <hr/>

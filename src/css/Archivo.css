@@ -13,10 +13,7 @@ p {
   /* display: flex; */
   justify-content: space-evenly;
 }
-.container-navbar{
-  padding-right: 0%;
-  margin-right: 0%;
-}
+
 .searchBar {
   width: auto;
   margin-left: 0%;
@@ -100,6 +97,9 @@ p {
 }
 .divtituloblog {
   background-color: #fe6848;
+  text-align: center;
+}
+.titu-divididos{
   text-align: center;
 }
 
