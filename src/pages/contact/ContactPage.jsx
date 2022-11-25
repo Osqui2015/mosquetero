@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import { Col, Container, Row, Form, Button, Stack, Ratio } from 'react-bootstrap'
+import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 
 const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
 
@@ -130,6 +130,7 @@ const ContactPage = () => {
               allowFullscreen
               aria-hidden="false"
               tabindex="0"
+              title='ubicacion'
             />
           </div>
         </Col>
