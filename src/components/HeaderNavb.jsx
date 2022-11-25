@@ -37,8 +37,8 @@ function Header() {
 
   return (
   <React.Fragment>
-    <Navbar bg="dark" variant="dark" expand="lg" >
-      <Container>
+    <Navbar bg="dark" variant="dark" expand="lg" className='div-Navbar' >
+      <Container className='container-navbar'>
         <Navbar.Brand href="#home">
             <div class="divlogo navbar-brand">
               <Link to="/">
@@ -49,34 +49,34 @@ function Header() {
         
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
 
-      <Navbar.Collapse id="basic-navbar-nav" className='basic d-flex justify-content-end'>
+      <Navbar.Collapse id="basic-navbar-nav" >
 
-         <Nav>
+         <Nav className='me-auto'>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/">Home</NavLink>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>
-          <div class="container-fluid searchBar d-flex align-content-center">
+          <div class="container-fluid searchBar d-flex py-2 align-content-start">
             <div class="input-group">
                 <input type="text" class="form-control form-control-sm" placeholder="Buscá tu evento"  aria-describedby="button-addon2" size="14"></input>
                 <button class="btn btn-warning btn-botones" type="button" id="button-addon2"><i class="bi bi-search"></i></button>
             </div>
           </div>
 
-          <div class="d-flex divredes me-2">
+          <div class="d-flex divredes me-2 my-2">
             <div class="divface mx-2">
-              <Link to="https://www.facebook.com" target="_blank">
+              <a href="https://www.facebook.com" target="_blank" rel="noreferrer">
              <i> <SiFacebook className='iconface'/></i>
-            </Link>
+            </a>
             </div>
         
-            <div class="divface mx-2"> 
-              <Link to="https://www.instagram.com" target="_blank">
+            <div class="divface mx-1"> 
+              <a href="https://www.instagram.com" target="_blank" rel="noreferrer">
               <i ><SiInstagram className='iconinst'/></i>
-              </Link>
+              </a>
             </div>
            </div>
 
-          <div class="div-btn-Ing-Reg">
+          <div class="div-btn-Ing-Reg my-2">
             <Stack direction="horizontal" className="gap-2">
               <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
               <Button onClick={handleOpenSignUp} className="buttRegistrarse">Registrarse</Button>

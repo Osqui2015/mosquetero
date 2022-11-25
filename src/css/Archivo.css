@@ -9,23 +9,26 @@ p {
   font-family: "Inter", sans-serif !important;
 }
 
-.navbar {
-  display: flex;
-  justify-content: space-between;
+.div-Navbar {
+  /* display: flex; */
+  justify-content: space-evenly;
 }
-
+.container-navbar{
+  padding-right: 0%;
+  margin-right: 0%;
+}
 .searchBar {
   width: auto;
+  margin-left: 0%;
+  padding-left: 0%;
 }
+
 .iconface,
 .iconinst {
   color: #f6f6f6;
   font-size: 1.7em;
 }
 
-.divredes {
-  margin-top: 0.2em;
-}
 
 .buttIngresar,
 .buttRegistrarse {
@@ -34,6 +37,8 @@ p {
   padding: 4px 8px !important;
   font-size: 16px !important;
   font-weight: 500 !important;
+
+
 }
 
 .nav-link-menu {
@@ -43,7 +48,7 @@ p {
 }
 .footercont {
   background-color: #333333 !important;
-
+  /* margin-top: auto; */
   justify-content: space-evenly !important;
   justify-items: center !important;
   text-align: center;
@@ -99,16 +104,8 @@ p {
 }
 
 @media (min-width: 396px) and (max-width: 991px) {
-  .divredes {
-    margin-top: 0.7em;
-  }
 
-  .div-btn-Ing-Reg {
-    margin: 0.7em 0;
-  }
 
-  .basic {
-    display: flex;
-    justify-content: start;
-  }
+
+  
 }
