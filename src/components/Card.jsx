@@ -13,8 +13,11 @@ const Card = ({img}) => {
                 </div>                                      
             </div>
               <div className="card-body">
-                <button type="button" className="btn mx-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>
-                <button type="button" className="btn btn-outline-danger"> <i className="bi bi-heart"></i> </button>
+                
+              </div>
+              <div className="card-footer text-muted">
+                  <button type="button" className="btn mx-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>
+                  <button type="button" className="btn btn-outline-danger"> <i className="bi bi-heart"></i> </button>
               </div>
           </div>
   )
