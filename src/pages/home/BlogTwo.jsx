@@ -1,65 +1,111 @@
-import React from 'react'
-import Carousel from '../../components/Carousel'
+    import React from 'react'
+    import Carousel from '../../components/Carousel'
 
 
-const BlogTwo = () => {
-  return (
+    const BlogTwo = () => {
+      return (
     <>
-    <div>
-    <Carousel/>
-    </div>
-    <div className="card-body text-white divtituloblog"   >
-        <p className="fs-3 fw-bold">El WikiBlog de tus Artistas </p>                
-    </div>
-<div class="container">
-<div class="row">
-    <div class="col sm-12 md-6">
-    <div class="card mb-3">
-    <div class="row g-0">
-    <div class="col-md-4">
-      <img src="/nahuelpennisi.png" class="img-fluid rounded" alt="..."/>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Nahuel Pennisi</h5>
-        <p class="card-text">Nahuel Pennisi, talentoso guitarrista, cantante y compositor que se ha transformado en uno de los intérpretes más importantes de Argentina, secundado por su sólida banda, nos llevará en un recorrido por todas aquellas melodías que todos queremos volver a escuchar. El Sábado 17 de Diciembre en el horario de las 20:00 hs., sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.</p>
-        <p class="card-text"><small class="text-muted"></small></p>
+      <div>
+        <Carousel/>
       </div>
-    </div>
-    </div>
-    </div>
-    
-    <div class="card mb-3">
-    <div class="row g-0">
-    <div class="col-md-4">
-      <img src="/ciro.jpg" class="img-fluid rounded" alt="..."/>
-    </div>
-    <div class="col-md-8">
-      <div class="card-body">
-        <h5 class="card-title">Ciro y Los Persas</h5>
-        <p class="card-text">Ciro y los Persas es un grupo musical de Argentina, formado en 2009 y liderado por el cantante y compositor Andrés Ciro Martínez, quien fue el líder del grupo musical Los Piojos. Es considerado como uno de los mejores grupos de rock de Argentina de la actualidad. El grupo ha ganado varios premios durante su carrera, entre ellos dos Premios Carlos Gardel.</p>
-        <p class="card-text"><small class="text-muted"></small></p>
+      <div className="card-body text-white divtituloblog"   >
+          <p className="fs-3 fw-bold">El WikiBlog de tus Artistas </p>                
       </div>
-    </div>
-    </div>
-    </div>
-    </div>
-    
-    <div class="col sm-12 md-6">
-    <div class="card">
-  <img src="/divididos.jpeg" class="col-md-12 rounded" alt="..."/>
-  <div class="card-body">
-        <h5 class="card-title titu-divididos">Divididos</h5>
-        <p class="card-text">Divididos es un grupo musical de Argentina, fundado en el año 1988 por Ricardo Mollo y Diego Arnedo, exintegrantes de MAM junto a Omar Mollo2​ y de Sumo, cuando esta se disolvió por la muerte de su líder, Luca Prodan. En sus trabajos, han incursionado en estilos musicales locales como el folklore.3​ Ha sido galardonada en múltiples ocasiones tanto de forma grupal como individual. En el 2011 fue ganadora del Premio Gardel de Oro (la distinción más destacada de la música nacional) en reconocimiento a su exitosa trayectoria, premio que ha sido entregado solo diecinueve veces a distintos artistas tales como Luis Alberto Spinetta, Charly García, León Gieco, Mercedes Sosa y Gustavo Cerati, entre otros.</p>
-        <p class="card-text"><small class="text-muted"></small></p>
+    <div class="container">
+    <div class="row">
+      <div class="col col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://noticiasargentinas.com/images/NA/Contenidos/1080x1080_px.jpg" class="img-fluid rounded" alt="..."/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">David Guetta</h5>
+                <p class="card-text">Pierre David Guetta(París, 7 de noviembre de 1967) es un DJ, compositor y productor francés. Actualmente, ocupa el puesto #2 según la encuesta realizada por DJ Magazine.Se inició como tal en varias discotecas durante las décadas de 1980 y de 1990, antes de fundar Gum Productions y lanzar su primer álbum: Just a Little More Love (2002)</p>
+                
+                <details>
+                  <summary>Ver fecha de concierto...</summary>
+                  <p>El Sábado 17 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.</p>
+                </details>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
+
+      <div class="col col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://www.losandes.com.ar/resizer/ojsgsa851jV4s5dq7dVoB9zF-JM=/1023x1023/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/XSYGGVBJOZFR7ITF6QJWAXSQXM.jpg" class="img-fluid rounded" alt="..."/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Duki</h5>
+                <p class="card-text">Mauro Ezequiel Lombardo Quiroga (Almagro, Buenos Aires, 24 de junio de 1996)conocido artísticamente como Duki, es un rapero y compositor argentino. Distinguido por su flow melódico y su utilización del autotune, es considerado la voz líder de la música trap en Argentina,​al ser además uno de los primeros artistas argentinos representando.</p>
+                <details>
+                  <summary>Ver fecha de concierto...</summary>
+                  <p>El Sábado 25 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.</p>
+                </details>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://fmlike.com.ar/wp-content/uploads/2020/11/123852513_171621364604153_3230785696513528073_n-1024x1024.jpg" class="img-fluid rounded" alt="..."/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Dua Lipa</h5>
+                <p class="card-text">Dua Lipa (Londres, 22 de agosto de 1995) es una cantante, compositora, modelo y actriz británica de origen albanokosovar. Después de trabajar como modelo, firmó con Warner Bros. Records en 2014 y lanzó su álbum debut homónimo en 2017. El álbum alcanzó el número 3 en la UK Albums Chart y lanzó ocho sencillos, incluidos «Be the One».</p>
+                <details>
+                <summary>Ver fecha de concierto...</summary>
+                  <p>El Sábado 3 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.</p>
+                </details>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="col col-12 col-md-6">
+        <div class="card mb-3">
+          <div class="row g-0">
+            <div class="col-md-4">
+              <img src="https://pbs.twimg.com/media/FZrUsqJXwAAQRsl?format=jpg&name=large" class="img-fluid rounded" alt="..."/>
+            </div>
+            <div class="col-md-8">
+              <div class="card-body">
+                <h5 class="card-title">Tini</h5>
+                <p class="card-text">Martina Stoessel1​ (Buenos Aires; 21 de marzo de 1997) conocida como Tini Stoessel o simplemente Tini, es una actriz, cantante y compositora argentina.Inició su carrera como actriz a los 10 años con un papel menor en la serie infantil Patito feo. Adquirió mayor reconocimiento tras ser protagonista en la telenovela Violetta, de Disney Channel Latinoamérica.</p>
+                <details>
+                <summary>Ver fecha de concierto...</summary>
+                  <p>El Sábado 24 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.</p>
+                </details>
+                <p class="card-text"><small class="text-muted"></small></p>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
 </div>
-    </div>
-    </div>
-  </div>
+</div>
+      
+       
+      
+      
+    </>             
+      )
+    }
 
-</>             
-  )
-}
-
-export default BlogTwo
+    export default BlogTwo
