@@ -5,6 +5,7 @@ const arrayConcierto=[
         artista:"David Guetta",
         img:"https://noticiasargentinas.com/images/NA/Contenidos/1080x1080_px.jpg",
         imgslider:"https://noticiasargentinas.com/media/k2/items/cache/d870ef8774989efe8de527ee7562cc43_L.jpg?t=20221125_163559",
+        estadoslider:"",
         estado:"",
         show:"El Sábado 17 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular show.",
         blog:"Pierre David Guetta(París, 7 de noviembre de 1967) es un DJ, compositor y productor francés. Actualmente, ocupa el puesto #2 según la encuesta realizada por DJ Magazine.Se inició como tal en varias discotecas durante las décadas de 1980 y de 1990, antes de fundar Gum Productions y lanzar su primer álbum: Just a Little More Love (2002).",
@@ -17,6 +18,7 @@ const arrayConcierto=[
         artista:"Duki",
         img:"https://www.losandes.com.ar/resizer/ojsgsa851jV4s5dq7dVoB9zF-JM=/1023x1023/smart/cloudfront-us-east-1.images.arcpublishing.com/grupoclarin/XSYGGVBJOZFR7ITF6QJWAXSQXM.jpg",
         imgslider:"https://static6.ticketek.com.ar/cms_static/sites/default/files/images/show-header/duki_ticketek_960_x_400.png",
+        estadoslider: "",
         estado:"",
         show:"El Sábado 25 de Diciembre en el horario de las 20:00 hs. sobre el prestigioso escenario del Teatro Ópera tenemos entonces una cita imperdible con su particular voz.",
         blog:"Mauro Ezequiel Lombardo Quiroga (Almagro, Buenos Aires, 24 de junio de 1996)conocido artísticamente como Duki, es un rapero y compositor argentino. Distinguido por su flow melódico y su utilización del autotune, es considerado la voz líder de la música trap en Argentina,​al ser además uno de los primeros artistas argentinos representando.",
@@ -62,7 +64,7 @@ const arrayConcierto=[
     },
     {
         id:6 ,
-        artista:"",
+        artista:"Ricky Martin",
         img:"",
         imgslider:"",
         estado:"",
@@ -74,7 +76,7 @@ const arrayConcierto=[
     },
     {
         id:7,
-        artista:"",
+        artista:"Lali Esposito",
         img:"",
         imgslider:"",
         estado:"",
@@ -86,7 +88,7 @@ const arrayConcierto=[
     },
     {
         id:8 ,
-        artista:"",
+        artista:"Naty Peluso",
         img:"",
         imgslider:"",
         estado:"",
@@ -96,7 +98,7 @@ const arrayConcierto=[
     },
     {
         id:9,
-        artista:"",
+        artista:"Rusherking",
         img:"",
         imgslider:"",
         estado:"",
@@ -106,7 +108,7 @@ const arrayConcierto=[
     },
     {
         id:10,
-        artista:"",
+        artista:"Maria Becerra",
         img:"",
         imgslider:"",
         estado:"",
@@ -126,7 +128,7 @@ const arrayConcierto=[
     },
     {
         id: 12,
-        artista:"Tini Stoessel",
+        artista:"Miranda",
         img:"",
         imgslider:"",
         estado:"",
