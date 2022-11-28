@@ -45,6 +45,19 @@ const Nosotros = () => {
          
         </Card.Footer> */}
       </Card>
+      <Card className='cardnosotros'>
+        <Card.Img variant="top" src="/oscar.jpg" />
+        <Card.Body>
+          <Card.Title>Franco Herrera</Card.Title>
+          <Card.Text>
+            Mi nombre es Franco y soy el administrador y uno de los creadores del sitio. 
+            Amo la musica desde muy chiquito y me apasiona poder hacerles llegar los mejores shows a nuestros usuarios.
+          </Card.Text>
+        </Card.Body>
+        {/* <Card.Footer>
+          <small className="text-muted">Last updated 3 mins ago</small>
+        </Card.Footer> */}
+      </Card>
     </CardGroup>
    </div>
   )
