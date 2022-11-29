@@ -1,6 +1,6 @@
 import { useState } from "react"
 import { Button, Col, Form, Modal, Row } from "react-bootstrap"
-import { Link, Navigate, useNavigate } from "react-router-dom"
+import { useNavigate } from "react-router-dom"
 
 const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
   const navigate = useNavigate()
@@ -23,17 +23,24 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
   return (
     <Modal show={show} size="lg" fullscreen="sm-down" onHide={handleClose}>
       <Modal.Header closeButton>
-        <Modal.Title>Inicio de Sesión</Modal.Title>
+        <Modal.Title  className="text-primary">Inicio de Sesión</Modal.Title>
       </Modal.Header>
-      <Modal.Body>
-        <Row className="align-items-stretch">
-          <Col className="d-none d-sm-block bg-light">
+      <Row className="align-items-stretch">
+        <Col className="d-none d-sm-flex">
+          <Modal.Body
+            className="bg-login-modal text-light"
+            style={{
+              backgroundImage: 'url("/images/login-bg.png")'
+            }}
+          >
             <div className="p-5">
-              <h1>Rshow</h1>
+              <h1 className="font-poppins text-primary">Rshow</h1>
               <p>Inicia sesion y compra tu anticipada con descuento y accede a contenido exclusivo de tus artistas favoritos.</p>
             </div>
-          </Col>
-          <Col>
+          </Modal.Body>
+        </Col>
+        <Col>
+          <Modal.Body>
             <Form>
               <Form.Group className="mb-3" controlId="formLoginEmail">
                 <Form.Label>Email</Form.Label>
@@ -46,7 +53,7 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formLoginPassword">
-                <Form.Label>Constraseña</Form.Label>
+                <Form.Label>Contraseña</Form.Label>
                 <Form.Control
                   onInput={handlePasswordInput}
                   value={password}
@@ -68,9 +75,10 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
                 </Button>
               </div>
             </Form>
-          </Col>
-        </Row>
-      </Modal.Body>
+          </Modal.Body>
+        </Col>
+      </Row>
+      
     </Modal>
   )
 }

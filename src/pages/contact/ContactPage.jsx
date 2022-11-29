@@ -1,7 +1,7 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 
-const emailRegExp = /^(([^<>()\[\]\\.,;:\s@"]+(\.[^<>()\[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 const ContactPage = () => {
   const [name, setName] = useState('')
@@ -25,44 +25,44 @@ const ContactPage = () => {
   }
 
   const validate = () => {
+    let ok = true;
     // validate name field
     if (name === "") {
       setNameError("Por favor escriba su nombre y apellido");
+      ok = false;
     } else {
       setNameError("");
     }
 
     if (email === "") {
       setEmailError("Por favor escriba su correo electronico");
+      ok = false;
     } else {
       setEmailError("");
 
-      if (!emailRegExp.test(email.toLowerCase())) {
+      if (!emailRegExp.test(email)) {
         setEmailError("Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com");
+        ok = false;
       } else {
         setEmailError("");
       }
     }
 
-
     // validate content field
     if (content === "") {
       setContentError("Por favor escriba su consulta");
+      ok = false;
     } else {
       setContentError("");
     }
-  }
 
-  const isValid = () => {
-    return nameError === "" && emailError === "" && contentError === "";
+    return ok;
   }
 
   const handleSubmit = (evt) => {
     evt.preventDefault()
 
-    validate()
-
-    if (isValid()) {
+    if (validate()) {
       // Enviar Datos...
       setName("")
       setEmail("")
