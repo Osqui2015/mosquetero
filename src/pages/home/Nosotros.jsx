@@ -7,7 +7,7 @@ const Nosotros = () => {
 <div><br /><h1 className='titunosotros'>NOSOTROS SOMOS RSHOW</h1>
   <CardGroup className='divnosotros'>
       <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/oscar.jpg" />
+        <Card.Img variant="top" src="/Oscar.jpeg" />
         <Card.Body>
           <Card.Title>Oscar Guerrero</Card.Title>
           <Card.Text>
@@ -20,7 +20,7 @@ const Nosotros = () => {
         </Card.Footer> */}
       </Card>
       <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/ber.webp" />
+        <Card.Img variant="top" src="/bernardita.jpeg" />
         <Card.Body>
           <Card.Title>Bernardita Zarate</Card.Title>
           <Card.Text>

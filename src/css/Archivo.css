@@ -101,7 +101,9 @@ p {
 }
 .titu-divididos{
   text-align: center;
+  min-height: 100v;
 }
+
 
 @media (min-width: 396px) and (max-width: 991px) {
 
