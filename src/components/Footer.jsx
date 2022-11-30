@@ -4,12 +4,12 @@ import Row from 'react-bootstrap/Row';
 import Col from 'react-bootstrap/Col';
 import {NavLink,Link} from 'react-router-dom';
 import {SiFacebook, SiInstagram} from "react-icons/si";
-
+ 
 const Footer = () => {
   return (
-    <div bg="dark" variant="dark" expand="lg" className='footercont'>
+    <div bg="dark" variant="dark" className='footercont mt-auto'>
 
-      <Container bg="dark" variant="dark" expand="lg" className='footercont'>
+      <div className="container">
 
       <Row>
         <Col xs={12} md={3}>
@@ -44,7 +44,7 @@ const Footer = () => {
           <div className='divcopy mx-1'>
             &copy; RSHOW {new Date().getFullYear()} TODOS LOS DERECHOS RESERVADOS
           </div>
-      </Container>
+      </div>
     </div>
     );
     }

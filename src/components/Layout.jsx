@@ -7,7 +7,7 @@ const Layout = () => {
   return (
     <React.Fragment>
       <HeaderNavb/>
-      <div style={{ minHeight: "600px" }}>
+      <div style={{ minHeight: "82vh" }}>
         <Outlet />
       </div>
       <Footer/>
