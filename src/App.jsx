@@ -14,7 +14,9 @@ import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
 import BlogTwo from './pages/home/BlogTwo';
-
+import ShoppingCartPage from './pages/shoppingCart/ShoppingCartPage';
+import Publicity from './pages/home/Publicity';
+import BuyTicketPage from './pages/buyTicket/BuyTicketPage';
 
 
 const App = () => {
@@ -29,6 +31,9 @@ const App = () => {
         <Route path='/Nosotros' element={ <Nosotros/> }/>
         <Route path='/Terminos' element={<Terminos/>}/>
         <Route path='/BlogTwo' element={<BlogTwo/>}/>
+        <Route path='/ShoppingCart' element={<ShoppingCartPage/>}/>
+        <Route path='/BuyTicket' element={<BuyTicketPage/>}/>
+        <Route path='/Publicity' element={<Publicity/>}/>
       </Route>
     </Routes>  
     
