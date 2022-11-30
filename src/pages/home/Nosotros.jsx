@@ -46,7 +46,7 @@ const Nosotros = () => {
         </Card.Footer> */}
       </Card>
       <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/oscar.jpg" />
+        <Card.Img variant="top" src="/franco.jpeg" />
         <Card.Body>
           <Card.Title>Franco Herrera</Card.Title>
           <Card.Text>
