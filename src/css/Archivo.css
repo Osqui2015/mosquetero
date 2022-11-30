@@ -18,6 +18,8 @@ p {
 
 
 
+
+
 .div-Navbar {
   /* display: flex; */
   justify-content: space-evenly;
@@ -116,7 +118,19 @@ p {
 
 @media (min-width: 396px) and (max-width: 991px) {
 
+  /* .divmenu{
+    display: flex;
+    flex-direction: column;
+  }
 
+  .nav-link-menu{
+    display: flex;
+    justify-items: center;
+  }
 
-  
+  .container-navbar-2{
+    display: flex;
+    justify-items: center;
+  }
+   */
 }
