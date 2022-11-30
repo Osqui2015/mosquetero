@@ -1,5 +1,5 @@
 import React, { useState } from 'react'
-import {Navbar,Container,Nav, Stack, Button} from 'react-bootstrap';
+import {Navbar,Container,Nav, Stack, Button, NavDropdown} from 'react-bootstrap';
 import {NavLink, Link} from 'react-router-dom';
 import"../css/Archivo.css";
 import {SiFacebook, SiInstagram} from "react-icons/si";
@@ -53,8 +53,21 @@ function Header() {
 
          <Nav className='me-auto'>
           <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/">Home</NavLink>
-          <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-          <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>
+          <NavDropdown title="Mas" id="basic-nav-dropdown">
+              <NavDropdown.Item>
+              <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item >
+              <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>
+              </NavDropdown.Item>
+              <NavDropdown.Item href="#action/3.3">Something</NavDropdown.Item>
+              <NavDropdown.Divider />
+              <NavDropdown.Item href="#action/3.4">
+                Separated link
+              </NavDropdown.Item>
+            </NavDropdown>
+          {/* <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
+          <NavLink className="nav-link nav-item mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink> */}
           <div class="container-fluid searchBar d-flex py-2 align-content-start">
             <div class="input-group">
                 <input type="text" class="form-control form-control-sm" placeholder="Buscá tu evento"  aria-describedby="button-addon2" size="14"></input>
