@@ -7,7 +7,7 @@ const Nosotros = () => {
 <div><br /><h1 className='titunosotros'>NOSOTROS SOMOS RSHOW</h1>
   <CardGroup className='divnosotros'>
       <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/Oscar.jpeg" />
+        <Card.Img variant="top" src="/oscar.jpeg" />
         <Card.Body>
           <Card.Title>Oscar Guerrero</Card.Title>
           <Card.Text>
@@ -33,12 +33,12 @@ const Nosotros = () => {
         </Card.Footer> */}
       </Card>
       <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/estefi.webp" />
+        <Card.Img variant="top" src="/estefi.jpg" />
         <Card.Body>
           <Card.Title>Estefania Avila</Card.Title>
           <Card.Text>
             Soy Estefania y ademas de creadora soy la responsable del diseño y color de nuestra pagina.
-            Ademas de ser fan de todos los artistas que les ofrecemos a nuestros usuarios.
+            Tambien amo viajar tanto como la musica.
           </Card.Text>
         </Card.Body>
         {/* <Card.Footer>
