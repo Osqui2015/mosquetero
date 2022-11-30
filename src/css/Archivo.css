@@ -9,6 +9,15 @@ p {
   font-family: "Inter", sans-serif !important;
 }
 
+.space{
+  display: flex;
+  justify-content: center;
+}
+
+
+
+
+
 .div-Navbar {
   /* display: flex; */
   justify-content: space-evenly;
