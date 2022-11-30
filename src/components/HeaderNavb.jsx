@@ -44,16 +44,17 @@ function Header() {
               </Link>
             </div>
         </Navbar.Brand>
-        <div class="divmenu">
+        
+        <Navbar.Toggle aria-controls="basic-navbar-nav me-3" />
+
+      <Navbar.Collapse id="basic-navbar-nav" className='space' >
+      <div class="divmenu">
     <Nav className="ms-3">
       <NavLink className="nav-link mx-1 nav-link-menu" to="/">Home</NavLink>
       <NavLink className="nav-link mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
       <NavLink className="nav-link mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>
     </Nav>
   </div>     
-        <Navbar.Toggle aria-controls="basic-navbar-nav me-3" />
-
-      <Navbar.Collapse id="basic-navbar-nav" className='space' >
 
           {/* <Nav className='me-auto'> */}
          <Nav className=''>
@@ -77,6 +78,7 @@ function Header() {
               <i ><SiInstagram className='iconinst'/></i>
               </a>
             </div>
+            <button type="button" className="btn btn-outline-danger"> <i className="bi bi-heart"></i> </button>
            </div>
 
           <div class="div-btn-Ing-Reg my-2">
