@@ -16,23 +16,16 @@ p {
   display: flex;
   flex-direction: row;
 }
-.container-navbar2{
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
+
+
+.Burger{
+  background-color: #fe6848;
+  color: #fe6848;
 }
 
 
 
 
-
-
-
-.searchBar {
-  width: auto;
-  margin-left: 0%;
-  padding-left: 0%;
-}
 
 .iconface,
 .iconinst {
@@ -42,20 +35,36 @@ p {
 
 
 .buttIngresar,
-.buttRegistrarse {
+.buttRegistrarse, .btn-like, .btn-search {
   background-color: #fe6848 !important;
   border: none !important;
-  padding: 4px 8px !important;
+  /* padding: 4px 8px !important; */
   font-size: 16px !important;
   font-weight: 500 !important;
-
-
 }
 
+.buttIngresar:hover, .btn-search:hover,
+.buttRegistrarse, .btn-like:hover {
+  background-color: #2bb5aa !important;
+}
+
+
 .nav-link-menu {
-  color: #2bb5aa !important;
+  color: white !important;
   font-weight: 600 !important;
   font-size: 16px !important;
+}
+
+.nav-link-menu:hover{
+  color: #fe6848 !important;
+}
+
+.btn-like, .btn-search{
+  color: white;
+}
+.bg-burger{
+  background-color: #fe6848 !important;
+  border-radius: 5px;
 }
 .footercont {
   background-color: #333333 !important;
@@ -76,9 +85,18 @@ p {
   text-align: center;
   color: white;
   margin-top: 1em;
+  font-size: small;
+}
+.div-Terminos{
+height: 600px;
+overflow-y: scroll;
+}
+.text-terminos{
+  font-size: small;
 }
 .tituterminos {
   text-align: center;
+  font-size: large;
 }
 .divterminos {
   padding: 5px;
@@ -119,23 +137,8 @@ p {
 }
 
 
-@media (min-width: 396px) and (max-width: 991px) {
+@media (min-width: 300px) and (max-width: 991px) {
 
-  /* .divmenu{
-    display: flex;
-    flex-direction: column;
-  } */
-
-  .nav-link-menu{
-    display: flex;
-    flex-direction: column;
-    justify-items: center;
-  }
-
-  .container-navbar2{
-    display: flex;
-    flex-direction: column;
-    text-align: center;
-  }
+ 
   
 }
