@@ -1,12 +1,19 @@
 //import React, { useEffect} from 'react'
 import { Link } from 'react-router-dom'
-import Card from './Card'
+import {Card} from './Card'
+import {usePosts} from '../context/postContext.js'
 //import { Router } from 'workbox-routing'
 // import Loading from './Loading'
 // import { propTypes } from 'react-bootstrap/esm/Image'
 const Cards = () => {
 
-    
+  const {posts} = usePosts()
+
+  if (posts.length === 0 ) return (
+    <div>
+      <h1>there are not SHOWS</h1>
+    </div>
+  )
 
   return (
     <>
@@ -25,7 +32,9 @@ const Cards = () => {
             <br/>
                     <div className='row row-cols-2 row-cols-lg-5'>
                         {
-                          <Card/>                        
+                          posts.map(post => (
+                            <Card post={post} key={post._id}  />
+                          )) 
                         }
                     </div>
         <hr/><br/>

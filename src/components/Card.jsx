@@ -1,25 +1,11 @@
-import React from 'react'
-import PropTypes from 'prop-types'
-import { Link } from 'react-router-dom'
-import {usePosts} from '../context/postContext.js'
 import toast from 'react-hot-toast'
+import { Link } from 'react-router-dom'
 
-
-const Card = () => {
-
-  const {posts} = usePosts()
-
-  if (posts.length === 0 ) return (
-    <div>
-      <h1>there are not SHOWS</h1>
-    </div>
-  )
-
+export function Card ({post}) {
   return (
-        posts.map(post => (
-          <div key={post._id} >
+        
             <div className="card mb-3" >
-            <img src={post.image} className="card-img-top" alt="imagen.png" />
+              <img src={post.image} className="card-img-top" alt="imagen.png" />
               <div className="card-body">
                 <h5 class="card-title">{post.artist}</h5>
               </div>
@@ -38,13 +24,7 @@ const Card = () => {
                     <button onClick={() => toast.success('Hello')} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i class="bi bi-x-circle-fill"></i> </button>
                 </div>
             </div>
-          </div>
-        ))    
+
+ 
   )
 }
-
-Card.propTypes = {
-  img: PropTypes.string,
-};
-
-export default Card;
