@@ -17,11 +17,13 @@ import BlogTwo from './pages/home/BlogTwo';
 import ShoppingCartPage from './pages/shoppingCart/ShoppingCartPage';
 import Publicity from './pages/home/Publicity';
 import BuyTicketPage from './pages/buyTicket/BuyTicketPage';
+import { PostProvider } from './context/postContext';
 
 
 const App = () => {
   return ( 
   <div>
+  <PostProvider>
      <Routes>
       <Route path="/" element={<Layout />}>
         <Route index element={<HomePage />} />
@@ -36,7 +38,7 @@ const App = () => {
         <Route path='/Publicity' element={<Publicity/>}/>
       </Route>
     </Routes>  
-    
+  </PostProvider>
        {/*}  <BrowserRouter>
           <HeaderNavb />
             <Routes>
