@@ -1,5 +1,5 @@
-import React from 'react';
-import { Route, Routes} from 'react-router-dom';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
 import Destacado from './pages/home/Destacado';
 
@@ -18,8 +18,17 @@ import ShoppingCartPage from './pages/shoppingCart/ShoppingCartPage';
 import Publicity from './pages/home/Publicity';
 import BuyTicketPage from './pages/buyTicket/BuyTicketPage';
 
+import "./App.scss";
+import Layout from "./components/Layout";
+import HomePage from "./pages/home/HomePage";
+import ForgotPasswordPage from "./pages/forgotPassword/ForgotPasswordPage";
+import BlogTwo from "./pages/home/BlogTwo";
 
 const App = () => {
+
+  // aramar estructura de login(la logica y el estado que indica si esta logueado o no)
+  // 2. pasar por props a todas las partes que necesiten saber si esta logueado), home page, container,cards, card
+  //armar toda la estructura de los like, es lo mismo que el carrito.
   return ( 
   <div>
      <Routes>
@@ -38,6 +47,7 @@ const App = () => {
     </Routes>  
     
        {/*}  <BrowserRouter>
+
           <HeaderNavb />
             <Routes>
               <Route path='Login' element={<Login/>}/>
@@ -51,8 +61,7 @@ const App = () => {
           <Footer />
         </BrowserRouter>{*/}
     </div>
+  );
+};
 
-)}
-
-
-export default App
+export default App;
