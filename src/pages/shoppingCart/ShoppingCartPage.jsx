@@ -1,13 +1,6 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Form, Button } from 'react-bootstrap'
-import {
-  Table,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  ModalFooter
-} from "reactstrap"
+
 import Carousel from '../../components/Carousel';
 import Card from 'react-bootstrap/Card';
 
