@@ -8,9 +8,11 @@
     "@testing-library/user-event": "^13.5.0",
     "axios": "^1.2.0",
     "bootstrap": "^5.2.2",
+    "formik": "^2.2.9",
     "react": "^18.2.0",
     "react-bootstrap": "^2.6.0",
     "react-dom": "^18.2.0",
+    "react-hot-toast": "^2.4.0",
     "react-icons": "^4.6.0",
     "react-router-dom": "^6.4.3",
     "react-scripts": "5.0.1",
@@ -28,7 +30,8 @@
     "workbox-range-requests": "^6.5.4",
     "workbox-routing": "^6.5.4",
     "workbox-strategies": "^6.5.4",
-    "workbox-streams": "^6.5.4"
+    "workbox-streams": "^6.5.4",
+    "yup": "^0.32.11"
   },
   "scripts": {
     "start": "react-scripts start",

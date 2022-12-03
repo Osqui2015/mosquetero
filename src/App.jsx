@@ -12,13 +12,16 @@ import Contacto from './pages/contact/ContactPage';
 import './App.scss';
 import Layout from './components/Layout';
 import HomePage from './pages/home/HomePage';
+
 import ForgotPasswordPage from './pages/forgotPassword/ForgotPasswordPage';
 import BlogTwo from './pages/home/BlogTwo';
 import ShoppingCartPage from './pages/shoppingCart/ShoppingCartPage';
 import Publicity from './pages/home/Publicity';
 import BuyTicketPage from './pages/buyTicket/BuyTicketPage';
 import { PostProvider } from './context/postContext';
+import AddShows from './pages/home/AddShows';
 
+import {Toaster} from 'react-hot-toast'
 
 const App = () => {
   return ( 
@@ -36,8 +39,10 @@ const App = () => {
         <Route path='/ShoppingCart' element={<ShoppingCartPage/>}/>
         <Route path='/BuyTicket' element={<BuyTicketPage/>}/>
         <Route path='/Publicity' element={<Publicity/>}/>
+        <Route path='/AddShows' element={<AddShows/> }/>        
       </Route>
-    </Routes>  
+    </Routes>
+    <Toaster/>  
   </PostProvider>
        {/*}  <BrowserRouter>
           <HeaderNavb />

@@ -76,7 +76,7 @@ function Header() {
             </div>
            </div>
 
-          <div class="div-btn-Ing-Reg my-2">
+          <div class="div-btn-Ing-Reg my-2">          
             <Stack direction="horizontal" className="gap-2">
               <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
               <Button onClick={handleOpenSignUp} className="buttRegistrarse">Registrarse</Button>
