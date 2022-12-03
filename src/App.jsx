@@ -1,8 +1,11 @@
-import React from 'react';
-import { Route, Routes} from 'react-router-dom';
+import React from "react";
+import { Route, Routes } from "react-router-dom";
 
-import Destacado from './pages/home/Destacado';
+import Destacado from "./pages/home/Destacado";
 
+import Nosotros from "./pages/home/Nosotros";
+import Terminos from "./pages/home/Terminos";
+import Contacto from "./pages/contact/ContactPage";
 
 import Nosotros from './pages/home/Nosotros';
 import Terminos from './pages/home/Terminos';
@@ -58,8 +61,8 @@ const App = () => {
           <Footer />
         </BrowserRouter>{*/}
     </div>
-
-)}
+  );
+};
 
 
 export default App

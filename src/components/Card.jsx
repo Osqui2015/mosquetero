@@ -44,7 +44,7 @@ const Card = () => {
 }
 
 Card.propTypes = {
-    img: PropTypes.string,
-}
+  img: PropTypes.string,
+};
 
-export default Card
+export default Card;
