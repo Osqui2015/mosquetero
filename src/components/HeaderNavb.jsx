@@ -70,8 +70,7 @@ return (
               <i ><SiInstagram className='iconinst'/></i>
               </a>
             </div>
-            
-              
+                          
             <div class="mx-2">
                <Stack direction="horizontal" className="gap-2">
                 <Button onClick={handleOpenLogin} className="buttIngresar">Login</Button>
