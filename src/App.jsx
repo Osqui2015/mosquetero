@@ -7,10 +7,6 @@ import Nosotros from "./pages/home/Nosotros";
 import Terminos from "./pages/home/Terminos";
 import Contacto from "./pages/contact/ContactPage";
 
-import Nosotros from './pages/home/Nosotros';
-import Terminos from './pages/home/Terminos';
-import Contacto from './pages/contact/ContactPage';
-
 
 import './App.scss';
 import Layout from './components/Layout';
