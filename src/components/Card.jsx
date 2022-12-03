@@ -1,10 +1,14 @@
-import React from "react";
-import PropTypes from "prop-types";
+
 
 const Card = ({ img }) => {
   //la funcion handle tiene que revisar si esta logueado o no, si esta logueado va hacer un fetch a la api para agregar
   //a favorito y sino tiene que hacer navigate a la pagina login paar qeu se loguee
   const handleLike = () => {};
+
+import React from 'react'
+import PropTypes from 'prop-types'
+import {Link} from 'react-router-dom';
+
 
   return (
     <div className="card mb-3">
