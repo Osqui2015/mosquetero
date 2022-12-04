@@ -1,15 +1,18 @@
-import React from "react";
-import Cards from "./Cards";
-import Carousel from "./Carousel";
-import Bookmark from "./Bookmark";
+import React from 'react'
+import Cards from './Cards'
+
+import {Bookmark} from './Bookmark'
+import { Carousels } from './Carousels'
+
+
 
 const Container = () => {
   return (
     <>
-      <div>
-        <Carousel />
+      <div className='divCarousel'>
+        <Carousels/>
       </div>
-      <div className=" my-3">
+      <div className=' my-3'>
         <Bookmark />
       </div>
 

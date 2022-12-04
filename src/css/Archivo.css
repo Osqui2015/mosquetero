@@ -125,6 +125,10 @@ body {
   min-height: 100v;
 }
 
+.divCarousel {
+  height: 40em !important;
+}
+
 .div-publi {
   height: 20.5em;
 }
@@ -259,7 +263,6 @@ article{
   position: relative;
   top: -15px;
 }
-
 
 @media (min-width: 300px) and (max-width: 991px) {
 }
