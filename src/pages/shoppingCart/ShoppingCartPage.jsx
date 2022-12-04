@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
 import { Col, Container, Row, Form, Button } from 'react-bootstrap'
 
-import Carousel from '../../components/Carousel';
 import Card from 'react-bootstrap/Card';
 
 import Tickets from "./Tickets";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
+import { Carousels } from '../../components/Carousels';
 
 const ShoppingCartPage = () => {
     const [cart, setCart] = useState([]);
@@ -41,7 +41,7 @@ const ShoppingCartPage = () => {
     
     <Container className="py-5">
       <div>
-        <Carousel />
+        <Carousels/>
       </div>
       <Row>
         <p className="display-6 text-danger">Compra tus entradas</p>
