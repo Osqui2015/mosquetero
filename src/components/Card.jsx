@@ -47,4 +47,8 @@ Card.propTypes = {
   img: PropTypes.string,
 };
 
+<<<<<<< HEAD
 export default Card;
+=======
+export default Card;
+>>>>>>> master
