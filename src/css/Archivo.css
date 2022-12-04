@@ -1,25 +1,17 @@
-
 body {
   background-color: #f6f6f6 !important;
 }
 
-
-
 /* modificaciones */
-.busq-redes{
+.busq-redes {
   display: flex;
   flex-direction: row;
 }
 
-
-.Burger{
+.Burger {
   background-color: #fe6848;
   color: #fe6848;
 }
-
-
-
-
 
 .iconface,
 .iconinst {
@@ -27,9 +19,10 @@ body {
   font-size: 1.7em;
 }
 
-
 .buttIngresar,
-.buttRegistrarse, .btn-like, .btn-search {
+.buttRegistrarse,
+.btn-like,
+.btn-search {
   background-color: #fe6848 !important;
   border: none !important;
   /* padding: 4px 8px !important; */
@@ -37,11 +30,12 @@ body {
   font-weight: 500 !important;
 }
 
-.buttIngresar:hover, .btn-search:hover,
-.buttRegistrarse, .btn-like:hover {
+.buttIngresar:hover,
+.btn-search:hover,
+.buttRegistrarse,
+.btn-like:hover {
   background-color: #2bb5aa !important;
 }
-
 
 .nav-link-menu {
   color: white !important;
@@ -49,14 +43,15 @@ body {
   font-size: 16px !important;
 }
 
-.nav-link-menu:hover{
+.nav-link-menu:hover {
   color: #fe6848 !important;
 }
 
-.btn-like, .btn-search{
+.btn-like,
+.btn-search {
   color: white;
 }
-.bg-burger{
+.bg-burger {
   background-color: #fe6848 !important;
   border-radius: 5px;
 }
@@ -81,11 +76,11 @@ body {
   margin-top: 1em;
   font-size: small;
 }
-.div-Terminos{
-height: 600px;
-overflow-y: scroll;
+.div-Terminos {
+  height: 600px;
+  overflow-y: scroll;
 }
-.text-terminos{
+.text-terminos {
   font-size: small;
 }
 .tituterminos {
@@ -125,14 +120,13 @@ overflow-y: scroll;
   background-color: #fe6848;
   text-align: center;
 }
-.titu-divididos{
+.titu-divididos {
   text-align: center;
   min-height: 100v;
 }
-
+.div-publi {
+  height: 20.5em;
+}
 
 @media (min-width: 300px) and (max-width: 991px) {
-
- 
-  
 }
