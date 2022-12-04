@@ -1,4 +1,5 @@
 import React from "react";
+
 import { Row, Container, Col, Card } from "react-bootstrap";
 import Carousel from "../../components/Carousel";
 
@@ -33,6 +34,7 @@ const BlogTwo = () => {
                       puesto #2 según la encuesta realizada por DJ Magazine.Se
                       inició como tal en varias discotecas durante las décadas
                       de 1980 y de 1990, antes de fundar Gum Productions y
+
                       lanzar su primer álbum: Just a Little More Love (2002) Se
                       inició como tal en varias discotecas durante las décadas
                       de 1980 y de 1990, antes de fundar Gum Productions y
@@ -111,8 +113,10 @@ const BlogTwo = () => {
         </Row>
       </Container>
       ;
+
     </>
   );
 };
+
 
 export default BlogTwo;

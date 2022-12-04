@@ -1,29 +1,29 @@
-import { useState } from "react"
-import { Button, Col, Form, Modal, Row } from "react-bootstrap"
+import { useState } from "react";
+import { Button, Col, Form, Modal, Row } from "react-bootstrap";
 
 const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-const SignUpModal = ({show, handleClose}) => {
-  const [email, setEmail] = useState('')
-  const [password, setPassword] = useState('')
-  const [passwordConfirmation, setPasswordConfirmation] = useState('')
+const SignUpModal = ({ show, handleClose }) => {
+  const [email, setEmail] = useState("");
+  const [password, setPassword] = useState("");
+  const [passwordConfirmation, setPasswordConfirmation] = useState("");
 
-  const [emailError, setEmailError] = useState('')
-  const [passwordError, setPasswordError] = useState('')
-  const [passwordConfirmationError, setPasswordConfirmationError] = useState('')
+  const [emailError, setEmailError] = useState("");
+  const [passwordError, setPasswordError] = useState("");
+  const [passwordConfirmationError, setPasswordConfirmationError] =
+    useState("");
 
- 
   const handleEmailInput = (evt) => {
-    setEmail(evt.target.value)
-  }
+    setEmail(evt.target.value);
+  };
 
   const handlePasswordInput = (evt) => {
-    setPassword(evt.target.value)
-  }
+    setPassword(evt.target.value);
+  };
 
   const handlePasswordConfirmationInput = (evt) => {
-    setPasswordConfirmation(evt.target.value)
-  }
+    setPasswordConfirmation(evt.target.value);
+  };
 
   const validate = () => {
     let ok = true;
@@ -34,7 +34,9 @@ const SignUpModal = ({show, handleClose}) => {
       setEmailError("");
 
       if (!emailRegExp.test(email)) {
-        setEmailError("Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com");
+        setEmailError(
+          "Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com"
+        );
         ok = false;
       } else {
         setEmailError("");
@@ -42,52 +44,56 @@ const SignUpModal = ({show, handleClose}) => {
     }
 
     if (password.length < 6) {
-      setPasswordError("Porfavor ingresa una contraseña que tenga al menos 6 caracteres");
+      setPasswordError(
+        "Porfavor ingresa una contraseña que tenga al menos 6 caracteres"
+      );
       ok = false;
     } else {
-      setPasswordError("")
+      setPasswordError("");
       if (password !== passwordConfirmation) {
         setPasswordConfirmationError("La confirmacion no coincide");
         ok = false;
       } else {
-        setPasswordConfirmationError("")
+        setPasswordConfirmationError("");
       }
     }
 
-
     return ok;
-  }
+  };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
 
     if (validate()) {
       // Enviar Datos...
-      setEmail("")
-      setPassword("")
-      setPasswordConfirmation("")
+      setEmail("");
+      setPassword("");
+      setPasswordConfirmation("");
 
-      alert("Su solicitud de registro fue enviada con éxito!")
+      alert("Su solicitud de registro fue enviada con éxito!");
     }
-  }
+  };
 
   return (
     <Modal show={show} size="lg" fullscreen="sm-down" onHide={handleClose}>
       <Modal.Header closeButton>
         <Modal.Title className="text-primary">Registro de usuario </Modal.Title>
       </Modal.Header>
-      
+
       <Row className="align-items-stretch">
         <Col className="d-none d-sm-flex">
           <Modal.Body
             className="bg-login-modal text-light"
             style={{
-              backgroundImage: 'url("/images/login-bg.png")'
+              backgroundImage: 'url("/images/login-bg.png")',
             }}
           >
             <div className="p-5">
               <h1 className="text-primary">Rshow</h1>
-              <p>Registrate ,accede a los mejores shows y novedades de tus artistas favoritos.</p>
+              <p>
+                Registrate ,accede a los mejores shows y novedades de tus
+                artistas favoritos.
+              </p>
             </div>
           </Modal.Body>
         </Col>
@@ -103,7 +109,11 @@ const SignUpModal = ({show, handleClose}) => {
                   placeholder="Ingresar Email"
                   isInvalid={emailError !== ""}
                 />
-                {emailError !== "" && (<Form.Control.Feedback type="invalid">{emailError}</Form.Control.Feedback>)}
+                {emailError !== "" && (
+                  <Form.Control.Feedback type="invalid">
+                    {emailError}
+                  </Form.Control.Feedback>
+                )}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formSignUpPassword">
@@ -115,11 +125,17 @@ const SignUpModal = ({show, handleClose}) => {
                   placeholder="Ingresar contraseña"
                   isInvalid={passwordError !== ""}
                 />
-                  {passwordError !== "" && (<Form.Control.Feedback type="invalid">{passwordError}</Form.Control.Feedback>)}
-                
+                {passwordError !== "" && (
+                  <Form.Control.Feedback type="invalid">
+                    {passwordError}
+                  </Form.Control.Feedback>
+                )}
               </Form.Group>
 
-              <Form.Group className="mb-3" controlId="formSignUpPasswordConfirmation">
+              <Form.Group
+                className="mb-3"
+                controlId="formSignUpPasswordConfirmation"
+              >
                 <Form.Label>Confirmar contraseña</Form.Label>
                 <Form.Control
                   onInput={handlePasswordConfirmationInput}
@@ -128,9 +144,12 @@ const SignUpModal = ({show, handleClose}) => {
                   placeholder="Ingresar contraseña"
                   isInvalid={passwordConfirmationError !== ""}
                 />
-                  {passwordConfirmationError !== "" && (<Form.Control.Feedback type="invalid">{passwordConfirmationError}</Form.Control.Feedback>)}
+                {passwordConfirmationError !== "" && (
+                  <Form.Control.Feedback type="invalid">
+                    {passwordConfirmationError}
+                  </Form.Control.Feedback>
+                )}
               </Form.Group>
-
 
               <div className="text-end">
                 <Button variant="primary" onClick={handleSubmit}>
@@ -142,7 +161,7 @@ const SignUpModal = ({show, handleClose}) => {
         </Col>
       </Row>
     </Modal>
-  )
-}
+  );
+};
 
-export default SignUpModal
+export default SignUpModal;

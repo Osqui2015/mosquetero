@@ -1,28 +1,23 @@
-import React from 'react'
-import Cards from './Cards'
-import Carousel from './Carousel'
-import Bookmark from './Bookmark'
-
-
-
+import React from "react";
+import Cards from "./Cards";
+import Carousel from "./Carousel";
+import Bookmark from "./Bookmark";
 
 const Container = () => {
   return (
-
     <>
       <div>
-        <Carousel/>
+        <Carousel />
       </div>
-      <div className=' my-3'>
-        <Bookmark/>
+      <div className=" my-3">
+        <Bookmark />
       </div>
 
-      <div className=' '>
+      <div className=" ">
         <Cards />
       </div>
     </>
+  );
+};
 
-  )
-}
-
-export default Container
+export default Container;
