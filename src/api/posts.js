@@ -13,4 +13,4 @@ export const updatePostRequest = async (id, newPostFields) =>
     await axios.put(`/posts/${id}`, newPostFields);
 
 
-    
+export const getFeaturedPostsRequest = async () => await axios.get("/featured-posts");

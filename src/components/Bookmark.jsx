@@ -3,9 +3,9 @@ import {Card} from './Card'
 
 export function Bookmark() {
 
-const {posts} = usePosts()
+const {featuredPosts} = usePosts()
 
-  if (posts.length === 0 ) return (
+  if (featuredPosts.length === 0 ) return (
     <div>
       <h1>there are not SHOWS</h1>
     </div>
@@ -21,13 +21,10 @@ const {posts} = usePosts()
             <br/>
                     <div className='row row-cols-2 row-cols-lg-5'>
                         {
-                          posts.filter(post => post.status !== 'No' )
-                          .map(post => (
-                            
+                          featuredPosts.map(post => (                             
                               <div>
                                 <Card post={post} key={post._id}  />
-                              </div>
-                                                      
+                              </div>                                                      
                           )) 
                         }
                     </div>

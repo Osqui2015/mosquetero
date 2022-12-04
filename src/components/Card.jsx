@@ -41,19 +41,18 @@ const handleDelete = (id) => {
                 <div className="card-body">
                   {post.show} 
                 </div>
-                <div className="card-footer text-muted">
+                <div className="card-footer text-muted items-align-center">
                     <Link to="/BuyTicket">
-                      <button type="button" className="btn mx-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>                    
+                      <button type="button" className="btn mx-2 mt-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>                    
                     </Link>
 
-                    <button type="button" className="btn mx-2 btn-outline-warning"> <i className="bi bi-heart"></i> </button>
+                    <button type="button" className="btn mx-2 mt-2 btn-outline-warning"> <i className="bi bi-heart"></i> </button>
 
                     <button  onClick={() => navigate(`/AddShows/${post._id}`)} type="button" className="btn mx-2 mt-2 btn-outline-info"> <i class="bi bi-pencil"></i></button>
 
                     <button onClick={() => handleDelete(post._id)} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i class="bi bi-x-circle-fill"></i> </button>
+
                 </div>
             </div>
-
-
   )
 }

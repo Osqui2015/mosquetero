@@ -4,7 +4,8 @@ import {
   createPostsRequest,
   deletePostRequest,
   getPostRequest,
-  updatePostRequest
+  updatePostRequest,
+  getFeaturedPostsRequest
 } from "../api/posts";
 
 const postContext = createContext();
@@ -15,8 +16,11 @@ export const usePosts = () => {
   return context;
 };
 
+
 export const PostProvider = ({ children }) => {
   const [posts, setPosts] = useState([]);
+
+  const [featuredPosts, setFeaturedPosts] = useState([]);
 
   const getPost = async (id) => {
     try {
@@ -55,15 +59,28 @@ export const PostProvider = ({ children }) => {
     }
   };
 
+  const getFeaturedPosts = async () => {
+    try {
+      const res = await getFeaturedPostsRequest();
+      setFeaturedPosts(res.data)
+      
+    } catch (error) {
+      console.error(error);
+    }
+  };
+
+
+
   useEffect (() => {
         getPost()
+        getFeaturedPosts()
   }, [])
 
 
 
   return (
     <postContext.Provider
-      value={{ posts, getPosts, createPost, deletePost, getPost, updatePost }}
+      value={{ posts, featuredPosts, getPosts, createPost, deletePost, getPost, updatePost, getFeaturedPosts }}
     >
       {children}
     </postContext.Provider>
