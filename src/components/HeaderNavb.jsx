@@ -1,12 +1,15 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Navbar, Container, Nav, Stack, Button, Seeker } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import "../css/Archivo.css";
 import { SiFacebook, SiInstagram } from "react-icons/si";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import { AuthContext } from '../contexts/auth';
 
 function Header() {
+  const { userLoggedIn, loggedUser, logout } = useContext(AuthContext);
+
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
 
@@ -98,11 +101,14 @@ function Header() {
             </div>
 
             <div class="mx-2">
-              <Stack direction="horizontal" className="gap-2">
-                <Button onClick={handleOpenLogin} className="buttIngresar">
-                  Login
-                </Button>
-              </Stack>
+              {userLoggedIn() ? (
+                <Stack direction="horizontal" className="gap-2">
+                  <span className="text-light">Hola: {loggedUser().username}</span>
+                  <Button onClick={logout} className="buttSalir">Logout</Button>
+                </Stack>
+              ) : (
+                <Button onClick={handleOpenLogin} className="buttIngresar">Login</Button>
+              )}
             </div>
           </div>
           {/* BOTON INGRESAR */}

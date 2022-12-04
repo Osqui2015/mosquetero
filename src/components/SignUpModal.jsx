@@ -1,17 +1,23 @@
-import { useState } from "react";
-import { Button, Col, Form, Modal, Row } from "react-bootstrap";
+import axios from "axios";
+import { useState } from "react"
+import { Button, Col, Form, Modal, Row } from "react-bootstrap"
 
 const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
-const SignUpModal = ({ show, handleClose }) => {
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
-  const [passwordConfirmation, setPasswordConfirmation] = useState("");
+const SignUpModal = ({show, handleClose}) => {
+  const [username, setUsername] = useState('')
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const [passwordConfirmation, setPasswordConfirmation] = useState('')
 
-  const [emailError, setEmailError] = useState("");
-  const [passwordError, setPasswordError] = useState("");
-  const [passwordConfirmationError, setPasswordConfirmationError] =
-    useState("");
+  const [usernameError, setUsernameError] = useState('')
+  const [emailError, setEmailError] = useState('')
+  const [passwordError, setPasswordError] = useState('')
+  const [passwordConfirmationError, setPasswordConfirmationError] = useState('')
+
+  const handleUsernameInput = (evt) => {
+    setUsername(evt.target.value)
+  }
 
   const handleEmailInput = (evt) => {
     setEmail(evt.target.value);
@@ -27,6 +33,14 @@ const SignUpModal = ({ show, handleClose }) => {
 
   const validate = () => {
     let ok = true;
+
+    if (username === "") {
+      setUsernameError("Por favor escriba su nombre de usuario");
+      ok = false;
+    } else {
+      setUsernameError("");
+    }
+
     if (email === "") {
       setEmailError("Por favor escriba su correo electronico");
       ok = false;
@@ -61,16 +75,36 @@ const SignUpModal = ({ show, handleClose }) => {
     return ok;
   };
 
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
+  const handleSubmit = async (evt) => {
+    evt.preventDefault()
 
-    if (validate()) {
-      // Enviar Datos...
-      setEmail("");
-      setPassword("");
-      setPasswordConfirmation("");
+    if (!validate()) {
+      return;
+    }
 
-      alert("Su solicitud de registro fue enviada con éxito!");
+    let successRegister = false;
+
+    try {
+      await axios.post('/register', {
+        username,
+        email,
+        password,
+        role: 'user'
+      })
+      successRegister = true
+    } catch (error) {
+      console.log('error###', error)
+      //setUsername()
+    }
+
+    if (successRegister) {
+      setUsername("")
+      setEmail("")
+      setPassword("")
+      setPasswordConfirmation("")
+
+      alert("Su solicitud de registro fue enviada con éxito!")
+      handleClose()
     }
   };
 
@@ -100,6 +134,17 @@ const SignUpModal = ({ show, handleClose }) => {
         <Col>
           <Modal.Body>
             <Form>
+              <Form.Group className="mb-3" controlId="formSignUpUsername">
+                <Form.Label>Nombre de Usuario</Form.Label>
+                <Form.Control
+                  onInput={handleUsernameInput}
+                  value={username}
+                  placeholder="Ingresar nombre de usuario"
+                  isInvalid={usernameError !== ""}
+                />
+                {usernameError !== "" && (<Form.Control.Feedback type="invalid">{usernameError}</Form.Control.Feedback>)}
+              </Form.Group>
+
               <Form.Group className="mb-3" controlId="formSignUpEmail">
                 <Form.Label>Email</Form.Label>
                 <Form.Control
