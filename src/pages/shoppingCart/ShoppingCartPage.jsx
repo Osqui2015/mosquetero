@@ -1,13 +1,15 @@
-import React from "react";
-import { Col, Container, Row } from "react-bootstrap";
-import Carousel from "../../components/Carousel";
+import React, { useState } from 'react'
+import { Col, Container, Row, Form, Button } from 'react-bootstrap'
+
+import Carousel from '../../components/Carousel';
+import Card from 'react-bootstrap/Card';
+
 import Tickets from "./Tickets";
 import Cart from "./Cart";
 import { Link } from "react-router-dom";
-import { useState } from "react";
 
 const ShoppingCartPage = () => {
-  const [cart, setCart] = useState([]);
+    const [cart, setCart] = useState([]);
   const [proof, setProof] = useState(0);
 
   const handleClick = (item) => {
@@ -34,7 +36,9 @@ const ShoppingCartPage = () => {
     if (tempArr[ind].amount >= 10) tempArr[ind].amount = 10;
     setCart([...tempArr]);
   };
+  
   return (
+    
     <Container className="py-5">
       <div>
         <Carousel />
@@ -67,7 +71,7 @@ const ShoppingCartPage = () => {
         </Col>
       </Row>
     </Container>
-  );
-};
+  )
+}
 
-export default ShoppingCartPage;
+export default ShoppingCartPage
