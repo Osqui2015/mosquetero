@@ -17,11 +17,7 @@ const Cards = () => {
 
   return (
     <>
-        <div className="card p-3">
-            <hr/>
-            
-            <hr/>
-                
+        <div className="card p-3">                
                 <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
                        <div class="row justify-content-between">
                           <div class="col-4">

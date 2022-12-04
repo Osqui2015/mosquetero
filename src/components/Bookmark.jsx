@@ -12,9 +12,7 @@ const {featuredPosts} = usePosts()
   )
 
   return (
-    <div className="card p-3">
-            <hr/>            
-            <hr/>                
+    <div className="card p-3">               
                 <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
                   <p className="fs-3 fw-bold">Evento Destacados </p>              
                 </div>

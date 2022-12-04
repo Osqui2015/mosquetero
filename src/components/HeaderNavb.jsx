@@ -44,6 +44,7 @@ function Header() {
               {/* </Nav.Link> */}
             </div>
           </div>
+
           {/* BUSCADOR */}
           <div className="d-flex">
             <input

@@ -33,12 +33,10 @@ const handleDelete = (id) => {
 
   return (
         
-            <div className="card mb-3" >
+            <div className="card mb-3">
               <img src={post.image} className="card-img-top" alt="imagen.png" />
               <div className="card-body">
-                <h5 class="card-title">{post.artist}</h5>
-              </div>
-                <div className="card-body">
+                <h5 class="card-title text-decoration-underline">{post.artist}</h5>            
                   {post.show} 
                 </div>
                 <div className="card-footer text-muted items-align-center">

@@ -1,13 +1,14 @@
 import React from "react";
 
 import { Row, Container, Col, Card } from "react-bootstrap";
-import Carousel from "../../components/Carousel";
+import { Carousels } from "../../components/Carousels";
+
 
 const BlogTwo = () => {
   return (
     <>
       <div>
-        <Carousel />
+        <Carousels/>
       </div>
       <div className="card-body text-white divtituloblog">
         <p className="fs-3 fw-bold">El WikiBlog de tus Artistas </p>
@@ -60,14 +61,14 @@ const BlogTwo = () => {
               <div class="row g-0">
                 <div class="col-md-4">
                   <img
-                    src="https://noticiasargentinas.com/images/NA/Contenidos/1080x1080_px.jpg"
+                    src="https://fmlike.com.ar/wp-content/uploads/2020/11/123852513_171621364604153_3230785696513528073_n-1024x1024.jpg"
                     class="img-fluid rounded"
                     alt="..."
                   />
                 </div>
                 <div class="col-md-8">
                   <div class="card-body">
-                    <h5 class="card-title">David Guetta</h5>
+                    <h5 class="card-title">Dua Lipa</h5>
                     <p class="card-text">
                       Pierre David Guetta(París, 7 de noviembre de 1967) es un
                       DJ, compositor y productor francés. Actualmente, ocupa el
