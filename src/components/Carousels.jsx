@@ -1,6 +1,7 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import {usePosts} from '../context/postContext.js'
+import Image from 'react-bootstrap/Image'
 
 
 
@@ -17,17 +18,16 @@ export const Carousels = () => {
   return (
     <Carousel slide={false}  >
         {
-          posts.slice(0, 1)
-          .map(post => (
-            
-            <Carousel.Item key={post._id}>
-                <img
-                className="d-block w-100"
-                src={post.imageslider}
-                alt="First slide"
-                />
+          posts.slice(0, 2)
+          .map(post => (            
+            <Carousel.Item key={post._id}>            
+                 <img
+                    className="d-block w-100"
+                    src={post.imageslider}
+                    alt="First slide"
+                  />
                 <Carousel.Caption>
-                        <h4 className='text-white bg-dark' >{post.artist}</h4>                                        
+                        <h4 className='text-white' >{post.artist}</h4>                                        
                 </Carousel.Caption>
             </Carousel.Item>
                                       
