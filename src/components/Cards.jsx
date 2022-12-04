@@ -23,11 +23,16 @@ const Cards = () => {
             <hr/>
                 
                 <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
-                       
-                <p className="fs-3 fw-bold">MAS EVENTOS </p> 
-                <Link to="/AddShows" className='text-white'>
-                    Add Shows
-                </Link>               
+                       <div class="row justify-content-between">
+                          <div class="col-4">
+                            <p className="fs-3 fw-bold">MAS EVENTOS </p> 
+                          </div>
+                          <div class="col-4 text-end">
+                            <Link to="/AddShows" className='btn btn-light'>
+                                <i className="bi bi-person-plus-fill"> Añadir Shows </i>
+                            </Link>  
+                          </div>
+                        </div>
                 </div>
             <br/>
                     <div className='row row-cols-2 row-cols-lg-5'>
