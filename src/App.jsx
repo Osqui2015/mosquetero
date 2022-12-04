@@ -7,10 +7,6 @@ import Nosotros from "./pages/home/Nosotros";
 import Terminos from "./pages/home/Terminos";
 import Contacto from "./pages/contact/ContactPage";
 
-import Nosotros from './pages/home/Nosotros';
-import Terminos from './pages/home/Terminos';
-import Contacto from './pages/contact/ContactPage';
-
 
 import './App.scss';
 import Layout from './components/Layout';
@@ -25,6 +21,10 @@ import { PostProvider } from './context/postContext';
 import AddShows from './pages/home/AddShows';
 
 import {Toaster} from 'react-hot-toast'
+
+import Ticket from "./pages/shoppingCart/Ticket";
+import Tickets from "./pages/shoppingCart/Tickets";
+import Cart from "./pages/shoppingCart/Cart";
 
 const App = () => {
   return ( 
@@ -42,7 +42,10 @@ const App = () => {
         <Route path='/ShoppingCart' element={<ShoppingCartPage/>}/>
         <Route path='/BuyTicket' element={<BuyTicketPage/>}/>
         <Route path='/Publicity' element={<Publicity/>}/>
-        <Route path='/AddShows' element={<AddShows/> }/>        
+        <Route path='/AddShows' element={<AddShows/> }/>
+	      <Route path="/Ticket" element={<Ticket />} />
+        <Route path="/Tickets" element={<Tickets />} />
+        <Route path="/Cart" element={<Cart />} />        
       </Route>
     </Routes>
     <Toaster/>  
