@@ -22,6 +22,10 @@ import AddShows from './pages/home/AddShows';
 
 import {Toaster} from 'react-hot-toast'
 
+import Ticket from "./pages/shoppingCart/Ticket";
+import Tickets from "./pages/shoppingCart/Tickets";
+import Cart from "./pages/shoppingCart/Cart";
+
 const App = () => {
   return ( 
   <div>
@@ -39,7 +43,12 @@ const App = () => {
         <Route path='/BuyTicket' element={<BuyTicketPage/>}/>
         <Route path='/Publicity' element={<Publicity/>}/>
         <Route path='/AddShows' element={<AddShows/> }/>
+
         <Route path='/AddShows/:id' element={<AddShows/> }/>
+
+	      <Route path="/Ticket" element={<Ticket />} />
+        <Route path="/Tickets" element={<Tickets />} />
+        <Route path="/Cart" element={<Cart />} />        
       </Route>
     </Routes>
     <Toaster/>  

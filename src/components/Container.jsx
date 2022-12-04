@@ -6,10 +6,8 @@ import { Carousels } from './Carousels'
 
 
 
-
 const Container = () => {
   return (
-
     <>
       <div className='divCarousel'>
         <Carousels/>
@@ -18,12 +16,11 @@ const Container = () => {
         <Bookmark />
       </div>
 
-      <div className=' '>
+      <div className=" ">
         <Cards />
       </div>
     </>
+  );
+};
 
-  )
-}
-
-export default Container
+export default Container;

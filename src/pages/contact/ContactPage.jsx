@@ -1,32 +1,32 @@
-import React, { useState } from 'react'
-import { Col, Container, Row, Form, Button } from 'react-bootstrap'
+import React, { useState } from "react";
+import { Col, Container, Row, Form, Button } from "react-bootstrap";
 
 const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
 const ContactPage = () => {
-  const [name, setName] = useState('')
-  const [email, setEmail] = useState('')
-  const [content, setContent] = useState('')
+  const [name, setName] = useState("");
+  const [email, setEmail] = useState("");
+  const [content, setContent] = useState("");
 
-  const [nameError, setNameError] = useState('')
-  const [emailError, setEmailError] = useState('')
-  const [contentError, setContentError] = useState('')
+  const [nameError, setNameError] = useState("");
+  const [emailError, setEmailError] = useState("");
+  const [contentError, setContentError] = useState("");
 
   const handleEmailInput = (evt) => {
-    setEmail(evt.target.value)
-  }
+    setEmail(evt.target.value);
+  };
 
   const handleNameInput = (evt) => {
-    setName(evt.target.value)
-  }
+    setName(evt.target.value);
+  };
 
   const handleContentInput = (evt) => {
-    setContent(evt.target.value)
-  }
+    setContent(evt.target.value);
+  };
 
   const validate = () => {
     let ok = true;
-    // validate name field
+  
     if (name === "") {
       setNameError("Por favor escriba su nombre y apellido");
       ok = false;
@@ -41,14 +41,15 @@ const ContactPage = () => {
       setEmailError("");
 
       if (!emailRegExp.test(email)) {
-        setEmailError("Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com");
+        setEmailError(
+          "Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com"
+        );
         ok = false;
       } else {
         setEmailError("");
       }
     }
 
-    // validate content field
     if (content === "") {
       setContentError("Por favor escriba su consulta");
       ok = false;
@@ -57,26 +58,23 @@ const ContactPage = () => {
     }
 
     return ok;
-  }
+  };
 
   const handleSubmit = (evt) => {
-    evt.preventDefault()
+    evt.preventDefault();
 
     if (validate()) {
-      // Enviar Datos...
-      setName("")
-      setEmail("")
-      setContent("")
+      setName("");
+      setEmail("");
+      setContent("");
 
-      alert("Su consulta fue enviada con éxito!")
+      alert("Su consulta fue enviada con éxito!");
     }
-  }
+  };
 
   return (
     <Container className="py-5">
-      <p className="display-6 text-primary">
-        Comunicate con RSHOW
-      </p>
+      <p className="display-6 text-primary">Comunicate con RSHOW</p>
       <Row className="align-items-stretch">
         <Col>
           <Form onSubmit={handleSubmit}>
@@ -88,7 +86,11 @@ const ContactPage = () => {
                 onInput={handleNameInput}
                 isInvalid={nameError !== ""}
               />
-              {nameError !== "" && (<Form.Control.Feedback type="invalid">{nameError}</Form.Control.Feedback>)}
+              {nameError !== "" && (
+                <Form.Control.Feedback type="invalid">
+                  {nameError}
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
             <Form.Group className="mb-3" controlId="contactFormEmail">
               <Form.Label>Correo Electronico</Form.Label>
@@ -98,7 +100,11 @@ const ContactPage = () => {
                 onInput={handleEmailInput}
                 isInvalid={emailError !== ""}
               />
-              {emailError !== "" && (<Form.Control.Feedback type="invalid">{emailError}</Form.Control.Feedback>)}
+              {emailError !== "" && (
+                <Form.Control.Feedback type="invalid">
+                  {emailError}
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
             <Form.Group className="mb-3" controlId="contactFormContent">
               <Form.Label>Dejanos tu consulta</Form.Label>
@@ -109,7 +115,11 @@ const ContactPage = () => {
                 onInput={handleContentInput}
                 isInvalid={contentError !== ""}
               />
-              {contentError !== "" && (<Form.Control.Feedback type="invalid">{contentError}</Form.Control.Feedback>)}
+              {contentError !== "" && (
+                <Form.Control.Feedback type="invalid">
+                  {contentError}
+                </Form.Control.Feedback>
+              )}
             </Form.Group>
             <div className="d-flex justify-content-end mb-5">
               <Button variant="primary" type="submit">
@@ -117,7 +127,9 @@ const ContactPage = () => {
               </Button>
             </div>
           </Form>
-          <p className="text-muted">Estamos de Lunes a Viernes de 9:00 AM a 4:00 PM</p>
+          <p className="text-muted">
+            Estamos de Lunes a Viernes de 9:00 AM a 4:00 PM
+          </p>
         </Col>
         <Col className="d-none d-sm-block bg-light">
           <div className="google-maps-code">
@@ -126,17 +138,17 @@ const ContactPage = () => {
               width="600"
               height="450"
               frameborder="0"
-              style={{border:0}}
+              style={{ border: 0 }}
               allowFullscreen
               aria-hidden="false"
               tabindex="0"
-              title='ubicacion'
+              title="ubicacion"
             />
           </div>
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default ContactPage
+export default ContactPage;

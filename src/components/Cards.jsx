@@ -40,7 +40,7 @@ const Cards = () => {
         <hr/><br/>
        </div>
     </>
-  )
-}
+  );
+};
 
-export default Cards
+export default Cards;

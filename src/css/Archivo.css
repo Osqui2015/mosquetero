@@ -129,5 +129,140 @@ body {
   height: 40em !important;
 }
 
+.div-publi {
+  height: 20.5em;
+}
+
+.divticket {
+  margin: 10px;
+  border-color: black;
+  border-radius: 20px;
+}
+section{
+  width: 100%;
+  margin: auto;
+  margin-top: 5%;
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  grid-template-rows: auto;
+}
+
+.ticket{
+  width: 250px;
+  padding: 10px;
+}
+.ticket:hover{
+  box-shadow: 0 10px 10px 10px rgba(0,0,0,0.1);
+  cursor: pointer;
+}
+.details p:nth-child(1){
+  font-weight: bold;
+}
+.details p:nth-child(2){
+  color: grey;
+  font-size: 0.8rem;
+}
+.details p:nth-child(3){
+  font-weight: bold;
+  color: grey;
+}
+.details button{
+  padding: 5px 10px;
+  border: none;
+  font-weight: bold;
+  background-color: skyblue;
+  outline: none;
+  border-radius: 2px;
+}
+
+article{
+  width: 90%;
+  margin: auto;
+}
+.table_box img{
+  width: 50px;
+  height: 50px;
+}
+.table_box{
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 50px;
+  border-bottom: 2px solid red;
+  padding-bottom: 5px;
+}
+.table_box div:nth-child(2) button{
+  padding: 5px 10px;
+  font-weight: bold;
+  margin-right: 5px;
+}
+.table_box div:nth-child(3) button{
+  padding: 5px 10px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  border:none;
+  outline: none;
+  color: white;
+  background-color: red;
+  border-radius: 5px;
+  cursor: pointer;
+}
+.table_box div:nth-child(3) button:hover{
+  background-color: darkseagreen;
+}
+.table_box div:nth-child(3) span{
+  background-color: lightgrey;
+  padding: 5px 10px;
+  border-radius: 5px;
+  margin-right: 10px;
+}
+.total{
+  display: flex;
+  justify-content: space-between;
+}
+.total span:nth-child(1){
+  font-size: 2rem;
+  color: blue;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+.total span:nth-child(2){
+  font-size: 2rem;
+  color: green;
+  font-weight: bold;
+}
+.nav_box{
+  width: 80%;
+  margin: auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+.my_shop{
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: white;
+  font-family: cursive;
+  cursor: pointer;
+}
+.cart{
+  cursor: pointer;
+}
+
+.cart span:nth-child(1){
+  font-size: 2rem;
+  color: white;
+}
+
+.cart span:nth-child(2){
+  padding: 0 3px;
+  background-color: red;
+  color: white;
+  font-weight: bold;
+  border-radius: 5px;
+  position: relative;
+  top: -15px;
+}
+
 @media (min-width: 300px) and (max-width: 991px) {
 }
