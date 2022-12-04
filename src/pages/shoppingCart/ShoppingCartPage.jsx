@@ -1,46 +1,73 @@
-import React, { useState } from 'react'
-import { Col, Container, Row, Form, Button } from 'react-bootstrap'
-import {
-  Table,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  FormGroup,
-  ModalFooter
-} from "reactstrap"
-import Carousel from '../../components/Carousel';
-import Card from 'react-bootstrap/Card';
-
+import React from "react";
+import { Col, Container, Row } from "react-bootstrap";
+import Carousel from "../../components/Carousel";
+import Tickets from "./Tickets";
+import Cart from "./Cart";
+import { Link } from "react-router-dom";
+import { useState } from "react";
 
 const ShoppingCartPage = () => {
-  
+  const [cart, setCart] = useState([]);
+  const [proof, setProof] = useState(0);
+
+  const handleClick = (item) => {
+    let isPresent = false;
+    cart.forEach((product) => {
+      if (item.id === product.id) isPresent = true;
+    });
+    if (isPresent) {
+      setTimeout(() => {}, 2000);
+      return;
+    }
+    setCart([...cart, item]);
+  };
+
+  const handleChange = (item, d) => {
+    let ind = -1;
+    cart.forEach((data, index) => {
+      if (data.id === item.id) ind = index;
+    });
+    const tempArr = cart;
+    tempArr[ind].amount += d;
+
+    if (tempArr[ind].amount === 0) tempArr[ind].amount = 1;
+    if (tempArr[ind].amount >= 10) tempArr[ind].amount = 10;
+    setCart([...tempArr]);
+  };
   return (
-    
     <Container className="py-5">
       <div>
-    <Carousel/>
-    </div>
-      <Row className="align-items-stretch">
-      <p className="display-6 text-danger">
-        Compra tus entradas
-      </p>
+        <Carousel />
+      </div>
+      <Row>
+        <p className="display-6 text-danger">Compra tus entradas</p>
       </Row>
-      <Row className="align-items-stretch">
-        <Col>
-        <Card className='cardnosotros'>
-        <Card.Img variant="top" src="/ShoppingCart.jpg" />
-        <Card.Body>
-          <Card.Title>Lucas Sugo-Luna Park Platea Lateral</Card.Title>
-        </Card.Body>
-        {}
-      </Card>
+      <Row>
+        <Col className="col col-12 col-md-6">
+          <Tickets handleClick={handleClick} setProof={setProof} />
+          <Link to={proof !== 0 && "/BuyTicket"}>
+            <button
+              type="button"
+              disabled={proof === 0 && true}
+              className="btn mx-2 mt-3 text-white"
+              style={{ backgroundColor: "#FE6848" }}
+              onClick={{setProof}}
+            >
+              Comprar
+            </button>
+          </Link>
         </Col>
-        <Col className="d-none d-sm-block bg-light">
-        
+        <Col className="col col-12 col-md-6">
+          <Cart
+            cart={cart}
+            setCart={setCart}
+            handleChange={handleChange}
+            setProof={setProof}
+          />
         </Col>
       </Row>
     </Container>
-  )
-}
+  );
+};
 
-export default ShoppingCartPage
+export default ShoppingCartPage;
