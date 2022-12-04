@@ -1,29 +1,37 @@
-import React from 'react'
+import {usePosts} from '../context/postContext.js'
+import {Card} from './Card'
 
-const bookmark = () => {
-  return (
-    <div className="card">
-     <hr/>
-        <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }}>
-                <p className="fs-3 fw-bold">SHOW DESTACADOS </p>  
-        </div>
-            <hr/>
-            <div className='container'>
-                <div className="card text-dark bg-light mb-3" style={{ maxWidth: "18rem" }}>
-                    <div className="card-header">Header</div>
-                    <div className="card-body">
-                        <h5 className="card-title">Light card title</h5>
-                        <p className="card-text">
-                        Some quick example text to build on the card title and make up the bulk of
-                        the card's content.
-                        </p>
-                    </div>
-                </div>
-            </div>
-        
+export function Bookmark() {
 
+const {posts} = usePosts()
+
+  if (posts.length === 0 ) return (
+    <div>
+      <h1>there are not SHOWS</h1>
     </div>
   )
-}
 
-export default bookmark
+  return (
+    <div className="card p-3">
+            <hr/>            
+            <hr/>                
+                <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
+                  <p className="fs-3 fw-bold">Evento Destacados </p>              
+                </div>
+            <br/>
+                    <div className='row row-cols-2 row-cols-lg-5'>
+                        {
+                          posts.filter(post => post.status !== 'No' )
+                          .map(post => (
+                            
+                              <div>
+                                <Card post={post} key={post._id}  />
+                              </div>
+                                                      
+                          )) 
+                        }
+                    </div>
+        <hr/><br/>
+       </div>
+  )
+}

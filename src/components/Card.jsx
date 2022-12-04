@@ -54,6 +54,6 @@ const handleDelete = (id) => {
                 </div>
             </div>
 
- 
+
   )
 }

@@ -16,7 +16,8 @@ const AddShows = () => {
         image: '',
         show: '',
         blog: '',
-        imageslider: ''
+        imageslider: '',
+        state:'No'
     })
     
     useEffect (()=>{
@@ -30,6 +31,7 @@ const AddShows = () => {
                     show: results.show,
                     blog: results.blog,
                     imageslider: results.imageslider,
+                    state: results.state
                 })
             }
          })();
@@ -47,7 +49,8 @@ const AddShows = () => {
                 image: Yup.string().required('add text'),
                 show: Yup.string().required('add text'),
                 blog: Yup.string().required('add text'),
-                imageslider:Yup.string().required('add text')
+                imageslider:Yup.string().required('add text'),
+                state:Yup.string().required('add text')
             })}
 
             onSubmit={async (values, actions) => {
@@ -87,6 +90,21 @@ const AddShows = () => {
                             <Field name="imageslider" className="form-control" placeholder="imageslider URL" />
                             <ErrorMessage  component="p" name="imageslider" className="font-monospace text-danger" />
                         </div>
+                        <div className='mt-4' id="my-radio-group">Destacar</div>
+                        <div className='mt-4' role="group" aria-labelledby="my-radio-group">
+                            <label>
+                            <Field type="radio" name="state" value="Si" className="mx-4" />
+                                Si
+                            </label>
+                            <label>
+                            <Field type="radio" name="state" value="No" className="mx-4"  />
+                                No
+                            </label>
+                        </div>
+
+
+
+
                         <hr/>
                         <button type='submit' className="btn btn-success mx-3">
                                 Guardar
