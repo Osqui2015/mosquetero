@@ -3,16 +3,23 @@ body {
   background-color: #f6f6f6 !important;
 }
 
-.div-Navbar {
-  /* display: flex; */
-  justify-content: space-evenly;
+
+
+/* modificaciones */
+.busq-redes{
+  display: flex;
+  flex-direction: row;
 }
 
-.searchBar {
-  width: auto;
-  margin-left: 0%;
-  padding-left: 0%;
+
+.Burger{
+  background-color: #fe6848;
+  color: #fe6848;
 }
+
+
+
+
 
 .iconface,
 .iconinst {
@@ -22,20 +29,36 @@ body {
 
 
 .buttIngresar,
-.buttRegistrarse {
+.buttRegistrarse, .btn-like, .btn-search {
   background-color: #fe6848 !important;
   border: none !important;
-  padding: 4px 8px !important;
+  /* padding: 4px 8px !important; */
   font-size: 16px !important;
   font-weight: 500 !important;
-
-
 }
 
+.buttIngresar:hover, .btn-search:hover,
+.buttRegistrarse, .btn-like:hover {
+  background-color: #2bb5aa !important;
+}
+
+
 .nav-link-menu {
-  color: #2bb5aa !important;
+  color: white !important;
   font-weight: 600 !important;
   font-size: 16px !important;
+}
+
+.nav-link-menu:hover{
+  color: #fe6848 !important;
+}
+
+.btn-like, .btn-search{
+  color: white;
+}
+.bg-burger{
+  background-color: #fe6848 !important;
+  border-radius: 5px;
 }
 .footercont {
   background-color: #333333 !important;
@@ -56,9 +79,18 @@ body {
   text-align: center;
   color: white;
   margin-top: 1em;
+  font-size: small;
+}
+.div-Terminos{
+height: 600px;
+overflow-y: scroll;
+}
+.text-terminos{
+  font-size: small;
 }
 .tituterminos {
   text-align: center;
+  font-size: large;
 }
 .divterminos {
   padding: 5px;
@@ -80,11 +112,6 @@ body {
   border-color: black;
   border-radius: 20px;
 }
-.divticket {
-  margin: 10px;
-  border-color: black;
-  border-radius: 20px;
-}
 .cardnosotros {
   border-radius: 20px;
   border-color: black;
@@ -100,22 +127,13 @@ body {
 }
 .titu-divididos{
   text-align: center;
+  min-height: 100v;
 }
-
-.warning{
-  height: 40px;
-  width: 250px;
-  position: absolute;
-  right: 0;
-  top: 10%;
-  background-color: rgb(210, 91, 91);
-  font-size: 1.1rem;
-  color: white;
-  font-family: cursive;
-  padding: 5px;
-  border-radius: 5px;
+.divticket {
+  margin: 10px;
+  border-color: black;
+  border-radius: 20px;
 }
-
 section{
   width: 100%;
   margin: auto;
@@ -243,9 +261,8 @@ article{
 }
 
 
-@media (min-width: 396px) and (max-width: 991px) {
+@media (min-width: 300px) and (max-width: 991px) {
 
-
-
+ 
   
 }
