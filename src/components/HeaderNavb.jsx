@@ -1,14 +1,31 @@
-import React, { useState } from "react";
+import React, { useState, useContext } from "react";
 import { Navbar, Container, Nav, Stack, Button, Seeker } from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import "../css/Archivo.css";
 import { SiFacebook, SiInstagram } from "react-icons/si";
 import LoginModal from "./LoginModal";
 import SignUpModal from "./SignUpModal";
+import { AuthContext } from '../contexts/auth';
+import { usePosts } from "../context/postContext";
 
 function Header() {
+ 
+  const {getPost} = usePosts()
+
+  const { userLoggedIn, loggedUser, logout } = useContext(AuthContext);
+
   const [showLogin, setShowLogin] = useState(false);
   const [showSignUp, setShowSignUp] = useState(false);
+
+  const [query, setQuery] = useState ('')
+
+  const handleSearchInput = (evt) =>{
+    setQuery(evt.target.value)
+  }
+
+  const handleSearchBtn = () => {
+    getPost(query)
+  }
 
   const handleOpenLogin = () => {
     setShowLogin(true);
@@ -49,30 +66,29 @@ function Header() {
           <div className="d-flex">
             <input
               type="text"
-              className="form-control form-control-sm"
-              placeholder="Buscá tu evento"
+
+              class="form-control form-control-sm"
+              placeholder="Busca tu evento"
+
               aria-describedby="button-addon2"
               size="20"
+              value={query}
+              onInput = {handleSearchInput}
             ></input>
             <button
               class="btn btn-search btn-botones"
               type="button"
               id="button-addon2"
+              onClick={handleSearchBtn}
             >
               <i className="bi bi-search"></i>
             </button>
           </div>
 
-          <div className="d-flex align-items-center">
-            <div className=" mx-2">
-              <button type="button" className="btn btn-like">
-                {" "}
-                <i className="bi bi-heart"></i>{" "}
-              </button>
-            </div>
 
-            {/* facebook */}
-            <div className="divface no-redes mx-2">
+          <div className="menu-derecha d-flex align-items-center">            
+            <div class="divface no-redes mx-2">
+
               <a
                 href="https://www.facebook.com"
                 target="_blank"
@@ -84,8 +100,8 @@ function Header() {
                 </i>
               </a>
             </div>
-            {/* instagram */}
-            <div className="divface no-redes mx-2">
+
+            <div class="divface no-redes mx-2">
               <a
                 href="https://www.instagram.com"
                 target="_blank"
@@ -97,20 +113,18 @@ function Header() {
               </a>
             </div>
 
-            <div className="mx-2">
-              <Stack direction="horizontal" className="gap-2">
-                <Button onClick={handleOpenLogin} className="buttIngresar">
-                  Login
-                </Button>
-              </Stack>
-            </div>
-          </div>
-          {/* BOTON INGRESAR */}
-          {/* <div class="mx-2">
+
+            <div class="mx-2">
+              {userLoggedIn() ? (
                 <Stack direction="horizontal" className="gap-2">
-                  <Button onClick={handleOpenLogin} className="buttIngresar">Login</Button>
+                  <span className="text-light">Hola: {loggedUser().username}</span>
+                  <Button onClick={logout} className="buttSalir">Logout</Button>
                 </Stack>
-              </div> */}
+              ) : (
+                <Button onClick={handleOpenLogin} className="buttIngresar">Login</Button>
+              )}
+            </div>
+          </div>          
           <LoginModal
             show={showLogin}
             handleClose={handleCloseLogin}
@@ -119,7 +133,6 @@ function Header() {
           <SignUpModal show={showSignUp} handleClose={handleCloseSignUp} />
         </Container>
       </Navbar>
-      {/* NAVBAR EN MODO SMALL */}
       <Navbar className=" bg-dark py-1" expand="md">
         <Container className="">
           <Navbar.Brand className="d-md-none">
@@ -149,7 +162,7 @@ function Header() {
                   Nosotros
                 </NavLink>
                 <NavLink className="nav-link mx-1 nav-link-menu" to="/Blogtwo">
-                  Blogtwo
+                  Blog
                 </NavLink>
                 <NavLink className="nav-link mx-1 nav-link-menu" to="/Contacto">
                   Contacto
@@ -164,13 +177,7 @@ function Header() {
                         Login
                       </Button>
                     </Stack>
-                  </div>
-                  <div className=" ms-2 d-lg-none">
-                    <button type="button" className="btn btn-like">
-                      {" "}
-                      <i className="bi bi-heart"></i>{" "}
-                    </button>
-                  </div>
+                  </div>                  
                 </div>
                 <div className="d-flex d-lg-none my-2">
                   <input

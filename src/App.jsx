@@ -21,6 +21,7 @@ import AddShows from "./pages/home/AddShows";
 import NotFunction from "./pages/home/NotFunction";
 import { Toaster } from "react-hot-toast";
 
+
 import Ticket from "./pages/shoppingCart/Ticket";
 import Tickets from "./pages/shoppingCart/Tickets";
 import Cart from "./pages/shoppingCart/Cart";

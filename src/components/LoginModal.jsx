@@ -1,24 +1,69 @@
-import { useState } from "react";
-import { Button, Col, Form, Modal, Row } from "react-bootstrap";
-import { useNavigate } from "react-router-dom";
+import { useContext } from "react"
+import { useState } from "react"
+import { Button, Col, Form, Modal, Row } from "react-bootstrap"
+import { useNavigate } from "react-router-dom"
+import { AuthContext } from "../contexts/auth"
 
-const LoginModal = ({ show, handleClose, handleCloseLoginAndOpenSignUp }) => {
-  const navigate = useNavigate();
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
+const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
+  const { login } = useContext(AuthContext);
 
-  const handleEmailInput = (evt) => {
-    setEmail(evt.target.value);
-  };
+  const navigate = useNavigate()
+  const [username, setUsername] = useState('')
+  const [password, setPassword] = useState('')
+
+  const [usernameError, setUsernameError] = useState('');
+  const [passwordError, setPasswordError] = useState('');
+
+  const handleUsernameInput = (evt) => {
+    setUsernameError('')
+    setUsername(evt.target.value)
+  }
 
   const handlePasswordInput = (evt) => {
-    setPassword(evt.target.value);
-  };
+    setPasswordError('')
+    setPassword(evt.target.value)
+  }
 
   const handleForgotPassword = () => {
     handleClose();
     navigate("/forgot-password");
   };
+
+  const handleSubmit = async () => {
+    if (!validate()) {
+      return;
+    }
+
+    const successLogin = await login(username, password, setUsernameError)
+
+    if (successLogin) {
+      setUsername('')
+      setPassword('')
+      setUsernameError('')
+      setPasswordError('')
+      handleClose()
+      navigate("/")
+    }
+  }
+
+  const validate = () => {
+    let ok = true;
+    if (username === "") {
+      setUsernameError("Por favor escriba su nombre de usuario");
+      ok = false;
+    } else {
+      setUsernameError("");
+    }
+
+    if (password.length < 6) {
+      setPasswordError("Porfavor ingresa una contraseña que tenga al menos 6 caracteres");
+      ok = false;
+    } else {
+      setPasswordError("")
+    }
+
+    return ok;
+  }
 
   return (
     <Modal show={show} size="lg" fullscreen="sm-down" onHide={handleClose}>
@@ -45,14 +90,16 @@ const LoginModal = ({ show, handleClose, handleCloseLoginAndOpenSignUp }) => {
         <Col>
           <Modal.Body>
             <Form>
-              <Form.Group className="mb-3" controlId="formLoginEmail">
-                <Form.Label>Email</Form.Label>
+              <Form.Group className="mb-3" controlId="formLoginUsername">
+                <Form.Label>Nombre de usuario</Form.Label>
                 <Form.Control
-                  onInput={handleEmailInput}
-                  value={email}
-                  type="email"
-                  placeholder="Ingresar Email"
+                  onInput={handleUsernameInput}
+                  value={username}
+                  type="username"
+                  placeholder="Ingresar Nombre de usuario"
+                  isInvalid={usernameError !== ''}
                 />
+                {usernameError !== "" && (<Form.Control.Feedback type="invalid">{usernameError}</Form.Control.Feedback>)}
               </Form.Group>
 
               <Form.Group className="mb-3" controlId="formLoginPassword">
@@ -62,7 +109,9 @@ const LoginModal = ({ show, handleClose, handleCloseLoginAndOpenSignUp }) => {
                   value={password}
                   type="password"
                   placeholder="Ingresar contraseña"
+                  isInvalid={passwordError !== ''}
                 />
+                {passwordError !== "" && (<Form.Control.Feedback type="invalid">{passwordError}</Form.Control.Feedback>)}
               </Form.Group>
 
               <div className="text-end">
@@ -81,7 +130,7 @@ const LoginModal = ({ show, handleClose, handleCloseLoginAndOpenSignUp }) => {
                   </Button>
                 </p>
 
-                <Button variant="primary" onClick={handleClose}>
+                <Button variant="primary" onClick={handleSubmit}>
                   Enviar
                 </Button>
               </div>
