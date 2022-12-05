@@ -76,38 +76,38 @@ body {
   margin-top: 1em;
   font-size: small;
 }
-.div-Terminos {
+.div-Terms {
   height: 600px;
   overflow-y: scroll;
 }
-.text-terminos {
+.text-terms {
   font-size: small;
 }
-.tituterminos {
+.tituterms {
   text-align: center;
   font-size: large;
 }
-.divterminos {
+.divterms {
   padding: 5px;
   margin: 20px;
 }
-.cardterminos {
+.cardterms {
   border-radius: 30px;
   border-color: black;
 }
 
-.titunosotros {
+.tituwe {
   font-family: "Poppins", sans-serif;
   color: #fe6848;
   font-weight: 800;
   text-align: center;
 }
-.divnosotros {
+.divwe {
   margin: 10px;
   border-color: black;
   border-radius: 20px;
 }
-.cardnosotros {
+.cardwe {
   border-radius: 20px;
   border-color: black;
   padding: 5px;
@@ -116,7 +116,7 @@ body {
   width: auto;
   height: 621.1%;
 }
-.divtituloblog {
+.divtitleblog {
   background-color: #fe6848;
   text-align: center;
 }
@@ -263,6 +263,15 @@ article {
   position: relative;
   top: -15px;
 }
-
+.div-error {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  /* margin-top: 1em; */
+}
+.img-404 {
+  justify-content: center !important;
+  align-items: center !important;
+}
 @media (min-width: 300px) and (max-width: 991px) {
 }

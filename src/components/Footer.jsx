@@ -29,6 +29,12 @@ const Footer = () => {
             </NavLink>
             <NavLink
               className="nav-link nav-item mt-1 nav-link-menu"
+              to="/NotFunction"
+            >
+              404
+            </NavLink>
+            <NavLink
+              className="nav-link nav-item mt-1 nav-link-menu"
               to="/Terminos"
             >
               Terminos y Condiciones
@@ -50,8 +56,8 @@ const Footer = () => {
             </NavLink>
           </Col>
           <Col xs={12} md={3}>
-            <div class="d-flex divredesFooter ">
-              <div class="divface mx-1">
+            <div className="d-flex divredesFooter ">
+              <div className="divface mx-1">
                 <a
                   href="https://www.facebook.com"
                   target="_blank"

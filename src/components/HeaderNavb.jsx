@@ -56,7 +56,7 @@ function Header() {
           <div className="d-flex justify-content-center">
             <div>
               <Link to="/">
-                <img alt="" src="/logo.png" height="30" class="img-logo" />{" "}
+                <img alt="" src="/logo.png" height="30" className="img-logo" />{" "}
               </Link>
               {/* </Nav.Link> */}
             </div>
@@ -66,8 +66,10 @@ function Header() {
           <div className="d-flex">
             <input
               type="text"
+
               class="form-control form-control-sm"
               placeholder="Busca tu evento"
+
               aria-describedby="button-addon2"
               size="20"
               value={query}
@@ -79,12 +81,14 @@ function Header() {
               id="button-addon2"
               onClick={handleSearchBtn}
             >
-              <i class="bi bi-search"></i>
+              <i className="bi bi-search"></i>
             </button>
           </div>
 
+
           <div className="menu-derecha d-flex align-items-center">            
             <div class="divface no-redes mx-2">
+
               <a
                 href="https://www.facebook.com"
                 target="_blank"
@@ -96,6 +100,7 @@ function Header() {
                 </i>
               </a>
             </div>
+
             <div class="divface no-redes mx-2">
               <a
                 href="https://www.instagram.com"
@@ -107,6 +112,7 @@ function Header() {
                 </i>
               </a>
             </div>
+
 
             <div class="mx-2">
               {userLoggedIn() ? (
@@ -182,11 +188,11 @@ function Header() {
                     size="20"
                   ></input>
                   <button
-                    class="btn btn-search btn-botones"
+                    className="btn btn-search btn-botones"
                     type="button"
                     id="button-addon2"
                   >
-                    <i class="bi bi-search"></i>
+                    <i className="bi bi-search"></i>
                   </button>
                 </div>
               </Nav>

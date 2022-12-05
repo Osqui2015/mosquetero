@@ -1,13 +1,17 @@
 //import React, { useEffect} from 'react'
+
 import { Link } from 'react-router-dom'
 import {Card} from './Card'
 import {usePosts} from '../context/postContext.js'
 import { AuthContext } from '../contexts/auth';
 import { useContext } from 'react';
+
 //import { Router } from 'workbox-routing'
 // import Loading from './Loading'
 // import { propTypes } from 'react-bootstrap/esm/Image'
 const Cards = () => {
+  const { posts } = usePosts();
+
 
   const {posts} = usePosts()
   const { loggedAs } = useContext(AuthContext);

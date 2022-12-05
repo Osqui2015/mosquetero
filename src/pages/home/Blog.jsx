@@ -10,7 +10,7 @@ const Blog = () => {
       <div>
         <Carousel />
       </div>
-      <div className="card-body text-white divtituloblog">
+      <div className="card-body text-white divtitleblog">
         <p className="fs-3 fw-bold">El WikiBlog de tus Artistas </p>
       </div>
       {/* <br/> */}

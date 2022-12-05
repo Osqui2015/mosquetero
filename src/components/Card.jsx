@@ -1,10 +1,14 @@
+
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import {usePosts} from '../context/postContext.js'
 import { AuthContext } from '../contexts/auth';
 import React, { useContext } from "react";
 
-export function Card ({post}) {
+
+export function Card({ post }) {
+  const { deletePost } = usePosts();
+  const navigate = useNavigate();
 
   const { loggedAs, token } = useContext(AuthContext);
 
@@ -28,14 +32,15 @@ const handleDelete = (id) => {
             </button>
           </div>
         </div>
-    </div>
-   ),{
-    style: {backgroundColor : "#202020"}
-   })
-}
-
+      ),
+      {
+        style: { backgroundColor: "#202020" },
+      }
+    );
+  };
 
   return (
+
         
             <div className="card mb-3">
               <img src={post.image} className="card-img-top" alt="imagen.png" />
@@ -57,7 +62,15 @@ const handleDelete = (id) => {
                     ) : null }
                     
 
-                </div>
-            </div>
-  )
+        <button
+          onClick={() => handleDelete(post._id)}
+          type="button"
+          className="btn mx-2 mt-2 btn-outline-danger"
+        >
+          {" "}
+          <i class="bi bi-x-circle-fill"></i>{" "}
+        </button>
+      </div>
+    </div>
+  );
 }
