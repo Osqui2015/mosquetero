@@ -1,20 +1,14 @@
 import React from "react";
-import { Card, Container, Row } from "react-bootstrap";
+import { Card, Container } from "react-bootstrap";
 
 const NotFunction = () => {
   return (
-    <div>
-      <Card className="bg-dark text-white">
-        <Card.Img src="error.jpg" alt="Card image" />
-        <Card.ImgOverlay>
-          <Card.Title>Card title</Card.Title>
-          <Card.Text>
-            This is a wider card with supporting text below as a natural lead-in
-            to additional content. This content is a little bit longer.
-          </Card.Text>
-          <Card.Text>Last updated 3 mins ago</Card.Text>
-        </Card.ImgOverlay>
-      </Card>
+    <div className="container-fluid div-error">
+      <div className="row div-error">
+        <div className="col col-sm-12 div-error">
+          <img src="error.jpg" className="img-fluid img-404" alt="error_404" />
+        </div>
+      </div>
     </div>
   );
 };
