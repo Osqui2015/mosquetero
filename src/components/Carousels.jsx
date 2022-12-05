@@ -3,21 +3,18 @@ import Carousel from 'react-bootstrap/Carousel';
 import {usePosts} from '../context/postContext.js'
 
 
-export const Carousels = () => {
-    
+export const Carousels = () => {    
     const {posts} = usePosts()
-
     if (posts.length === 0 ) return (
         <div>
-        <h1>No Hay Shows Disponibles</h1>
+          <h1>No Hay Shows Disponibles</h1>
         </div>
     )
-
   return (
     <Carousel slide={false}  >
         {
           posts.slice(0, 2)
-          .map(post => (            
+          .map(post => (
             <Carousel.Item key={post._id}>            
                  <img
                     className="d-block w-100"
@@ -26,9 +23,8 @@ export const Carousels = () => {
                   />
                 <Carousel.Caption>                        
                 </Carousel.Caption>
-            </Carousel.Item>
-                                      
-          )) 
+            </Carousel.Item>              
+          ))
         }
     </Carousel>
   )
