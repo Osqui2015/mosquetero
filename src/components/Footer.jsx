@@ -29,6 +29,12 @@ const Footer = () => {
             </NavLink>
             <NavLink
               className="nav-link nav-item mt-1 nav-link-menu"
+              to="/NotFunction"
+            >
+              404
+            </NavLink>
+            <NavLink
+              className="nav-link nav-item mt-1 nav-link-menu"
               to="/Terminos"
             >
               Terminos y Condiciones

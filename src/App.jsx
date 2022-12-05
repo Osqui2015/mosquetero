@@ -18,13 +18,13 @@ import Publicity from "./pages/home/Publicity";
 import BuyTicketPage from "./pages/buyTicket/BuyTicketPage";
 import { PostProvider } from "./context/postContext";
 import AddShows from "./pages/home/AddShows";
-
+import NotFunction from "./pages/home/NotFunction";
 import { Toaster } from "react-hot-toast";
 
 import Ticket from "./pages/shoppingCart/Ticket";
 import Tickets from "./pages/shoppingCart/Tickets";
 import Cart from "./pages/shoppingCart/Cart";
-import error from "./pages/home/error";
+
 
 const App = () => {
   return (
@@ -38,6 +38,8 @@ const App = () => {
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/Nosotros" element={<Nosotros />} />
             <Route path="/Terminos" element={<Terminos />} />
+            <Route path="/NotFunction" element={<NotFunction/>} />
+
             <Route path="/BlogTwo" element={<BlogTwo />} />
             <Route path="/ShoppingCart" element={<ShoppingCartPage />} />
             <Route path="/BuyTicket" element={<BuyTicketPage />} />
