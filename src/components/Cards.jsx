@@ -24,11 +24,11 @@ const Cards = () => {
     <>
         <div className="card p-3">                
                 <div className="card-body text-white"  style={{ backgroundColor: "#FE6848" }} >
-                       <div class="row justify-content-between">
-                          <div class="col-4">
+                       <div className="row justify-content-between">
+                          <div className="col-4">
                             <p className="fs-5 fw-bold text-center">MAS EVENTOS</p> 
                           </div>
-                          <div class="col-4 text-end">
+                          <div className="col-4 text-end">
                             {loggedAs('admin') ? (
                               <>
                                 <Link to="/AddShows" className='btn btn-light'>

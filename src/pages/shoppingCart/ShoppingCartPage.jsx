@@ -62,7 +62,7 @@ const ShoppingCartPage = () => {
                           Comprar
                         </button>
                     ) : (
-                      <label class="text-dark mt-5"> <h3> Compra tu Ticket Iniciando Sesión </h3> </label>
+                      <label className="text-dark mt-5"> <h3> Compra tu Ticket Iniciando Sesión </h3> </label>
                     )}            
           </Link>
         </Col>

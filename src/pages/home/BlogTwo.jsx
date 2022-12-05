@@ -60,7 +60,7 @@ const BlogTwo = () => {
                 <div className="col-md-4">
                   <img
                     src="https://fmlike.com.ar/wp-content/uploads/2020/11/123852513_171621364604153_3230785696513528073_n-1024x1024.jpg"
-                    class="img-fluid rounded"
+                    className="img-fluid rounded"
                     alt="..."
                   />
                 </div>

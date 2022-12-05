@@ -64,7 +64,7 @@ function Header() {
             <input
               type="text"
 
-              class="form-control form-control-sm"
+              className="form-control form-control-sm"
               placeholder="Busca tu evento"
 
               aria-describedby="button-addon2"
@@ -73,7 +73,7 @@ function Header() {
               onInput = {handleSearchInput}
             ></input>
             <button
-              class="btn btn-search btn-botones"
+              className="btn btn-search btn-botones"
               type="button"
               id="button-addon2"
               onClick={handleSearchBtn}
@@ -84,7 +84,7 @@ function Header() {
 
 
           <div className="menu-derecha d-flex align-items-center">            
-            <div class="divface no-redes mx-2">
+            <div className="divface no-redes mx-2">
 
               <a
                 href="https://www.facebook.com"
@@ -98,7 +98,7 @@ function Header() {
               </a>
             </div>
 
-            <div class="divface no-redes mx-2">
+            <div className="divface no-redes mx-2">
               <a
                 href="https://www.instagram.com"
                 target="_blank"
@@ -111,7 +111,7 @@ function Header() {
             </div>
 
 
-            <div class="mx-2">
+            <div className="mx-2">
               {userLoggedIn() ? (
                 <Stack direction="horizontal" className="gap-2">
                   <span className="text-light">Hola: {loggedUser().username}</span>
@@ -134,7 +134,7 @@ function Header() {
         <Container className="">
           <Navbar.Brand className="d-md-none">
             <Link to="/">
-              <img alt="" src="/logo.png" height="30" class="img-logo" />{" "}
+              <img alt="" src="/logo.png" height="30" className="img-logo" />{" "}
             </Link>
           </Navbar.Brand>
           <span className="bg-burger">
@@ -159,7 +159,7 @@ function Header() {
                   Contacto
                 </NavLink>
                 <div className="div d-flex">
-                  <div class=" d-lg-none">
+                  <div className=" d-lg-none">
                     {userLoggedIn() ? (
                         <Stack direction="horizontal" className="gap-2">
                           <span className="text-light">Hola: {loggedUser().username}</span>
@@ -174,7 +174,7 @@ function Header() {
                   <input
                       type="text"
 
-                      class="form-control form-control-sm"
+                      className="form-control form-control-sm"
                       placeholder="Busca tu evento"
 
                       aria-describedby="button-addon2"
@@ -183,7 +183,7 @@ function Header() {
                       onInput = {handleSearchInput}
                     ></input>
                     <button
-                      class="btn btn-search btn-botones"
+                      className="btn btn-search btn-botones"
                       type="button"
                       id="button-addon2"
                       onClick={handleSearchBtn}

@@ -71,26 +71,26 @@ const AddShows = () => {
         >
             {({handleSubmit}) => (
                 <Form onSubmit={handleSubmit}>
-                    <div class="container">
+                    <div className="container">
                             
                         <br /><br /><hr/>
-                        <div class="row mt-4">
+                        <div className="row mt-4">
                             <Field name="artist" className="form-control" placeholder="Artist" />
                             <ErrorMessage component="p"  name="artist" className="font-monospace text-danger" />
                         </div>
-                        <div class="row mt-4">
+                        <div className="row mt-4">
                             <Field name="image" className="form-control" placeholder="image URL" />
                             <ErrorMessage  component="p" name="image" className="font-monospace text-danger" />
                         </div>
-                        <div class="row mt-4">
+                        <div className="row mt-4">
                             <Field component="textarea" name="show" className="form-control" placeholder="show" />
                             <ErrorMessage  component="p" name="show" className="font-monospace text-danger" />
                         </div>
-                        <div class="row mt-4">
+                        <div className="row mt-4">
                             <Field component="textarea" name="blog" className="form-control" placeholder="blog" rows={3} />
                             <ErrorMessage  component="p" name="blog" className="font-monospace text-danger" />
                         </div>
-                        <div class="row mt-4">
+                        <div className="row mt-4">
                             <Field name="imageslider" className="form-control" placeholder="imageslider URL" />
                             <ErrorMessage  component="p" name="imageslider" className="font-monospace text-danger" />
                         </div>

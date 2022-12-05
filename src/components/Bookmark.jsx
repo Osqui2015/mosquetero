@@ -17,15 +17,15 @@ const {featuredPosts} = usePosts()
                   <p className="fs-3 fw-bold">Evento Destacados </p>              
                 </div>
             <br/>
-                    <div className='row row-cols-2 row-cols-lg-5'>
-                        {
-                          featuredPosts.map(post => (                             
-                              <div>
-                                <Card post={post} key={post._id}  />
-                              </div>                                                      
-                          )) 
-                        }
-                    </div>
+                <div className='row row-cols-2 row-cols-lg-5'>
+                    {
+                      featuredPosts.map(post => (                             
+                          <div>
+                            <Card post={post} key={post._id}  />
+                          </div>                                                      
+                      )) 
+                    }
+                </div>
         <hr/><br/>
        </div>
   )

@@ -15,7 +15,7 @@ const Footer = () => {
                 alt=""
                 src="/logo.png"
                 height="30"
-                class="img-logo-footer "
+                className="img-logo-footer "
               />{" "}
             </Link>
           </Col>
@@ -63,7 +63,7 @@ const Footer = () => {
                 </a>
               </div>
 
-              <div class="divface mx-1">
+              <div className="divface mx-1">
                 <a
                   href="https://www.instagram.com"
                   target="_blank"

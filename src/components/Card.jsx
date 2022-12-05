@@ -38,7 +38,7 @@ export function Card({ post }) {
             <div className="card mb-3">
               <img src={post.image} className="card-img-top" alt="imagen.png" />
               <div className="card-body">
-                <h5 class="card-title text-decoration-underline">{post.artist}</h5>            
+                <h5 className="card-title text-decoration-underline">{post.artist}</h5>            
                   {post.show} 
                 </div>
                 <div className="card-footer text-muted items-align-center">
@@ -48,9 +48,9 @@ export function Card({ post }) {
                     
                     {loggedAs('admin') ? (
                       <>
-                        <button  onClick={() => navigate(`/AddShows/${post._id}`)} type="button" className="btn mx-2 mt-2 btn-outline-info"> <i class="bi bi-pencil"></i></button>
+                        <button  onClick={() => navigate(`/AddShows/${post._id}`)} type="button" className="btn mx-2 mt-2 btn-outline-info"> <i className="bi bi-pencil"></i></button>
 
-                        <button onClick={() => handleDelete(post._id)} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i class="bi bi-x-circle-fill"></i> </button>
+                        <button onClick={() => handleDelete(post._id)} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i className="bi bi-x-circle-fill"></i> </button>
                       </>
                     ) : null }
               </div>
