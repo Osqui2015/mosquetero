@@ -9,7 +9,7 @@ export const AuthProvider = ({ children }) => {
 
   const login = async (username, password, setError) => {
     try {
-      const rs = await axios.post('/login', { username, password });
+      const rs = await axios.post('https://shows-9tkg.onrender.com/login', { username, password });
       setToken(rs.data.data.token);
       localStorage.setItem('userToken', rs.data.data.token);
       return true;

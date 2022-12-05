@@ -85,7 +85,7 @@ const SignUpModal = ({show, handleClose}) => {
     let successRegister = false;
 
     try {
-      await axios.post('/register', {
+      await axios.post('https://shows-9tkg.onrender.com/register', {
         username,
         email,
         password,
