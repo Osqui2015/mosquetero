@@ -22,9 +22,9 @@ export const PostProvider = ({ children }) => {
 
   const [featuredPosts, setFeaturedPosts] = useState([]);
 
-  const getPost = async (id) => {
+  const getPost = async (query = '') => {
     try {
-      const res = await getPostsRequest(id);
+      const res = await getPostsRequest(query);
       setPosts(res.data)
       
     } catch (error) {
@@ -32,27 +32,27 @@ export const PostProvider = ({ children }) => {
     }
   };
 
-  const createPost = async (post) =>{
-    const res = await createPostsRequest (post)
+  const createPost = async (post, token) =>{
+    const res = await createPostsRequest (post, token)
     setPosts ([...posts, res.data])
   }
 
-  const deletePost = async (id) => {
-    const res = await deletePostRequest(id);
+  const deletePost = async (id, token) => {
+    const res = await deletePostRequest(id, token);
     if (res.status === 204) {
       setPosts(posts.filter((post) => post._id !== id));
     }
   }; 
 
-  
+   
   const getPosts = async (id) => {
     const res = await getPostRequest (id)
     return res.data
   }
 
-  const updatePost = async (id, post) => {
+  const updatePost = async (id, post, token) => {
     try {
-      const res = await updatePostRequest(id, post);
+      const res = await updatePostRequest(id, post, token);
       setPosts(posts.map((post) => (post._id === id ? res.data : post)));
     } catch (error) {
       console.error(error);

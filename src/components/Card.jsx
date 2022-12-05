@@ -1,8 +1,12 @@
 import toast from 'react-hot-toast'
 import { Link, useNavigate } from 'react-router-dom'
 import {usePosts} from '../context/postContext.js'
+import { AuthContext } from '../contexts/auth';
+import React, { useContext } from "react";
 
 export function Card ({post}) {
+
+  const { loggedAs, token } = useContext(AuthContext);
 
   const {deletePost} = usePosts()
   const navigate = useNavigate()
@@ -14,7 +18,7 @@ const handleDelete = (id) => {
       
         <div className="row justify-content-md-center">
           <div className="col">
-            <button type="button" className="btn btn-warning mx-2" onClick={ () => {deletePost(id); toast.dismiss(t.id)}} >
+            <button type="button" className="btn btn-warning mx-2" onClick={ () => {deletePost(id,token); toast.dismiss(t.id)}} >
               BORRAR
             </button>
           </div>
@@ -43,12 +47,15 @@ const handleDelete = (id) => {
                     <Link to="/ShoppingCart">
                       <button type="button" className="btn mx-2 mt-2 text-white" style={{ backgroundColor: "#FE6848" }}>Comprar</button>                    
                     </Link>
+                    
+                    {loggedAs('admin') ? (
+                      <>
+                        <button  onClick={() => navigate(`/AddShows/${post._id}`)} type="button" className="btn mx-2 mt-2 btn-outline-info"> <i class="bi bi-pencil"></i></button>
 
-                    <button type="button" className="btn mx-2 mt-2 btn-outline-warning"> <i className="bi bi-heart"></i> </button>
-
-                    <button  onClick={() => navigate(`/AddShows/${post._id}`)} type="button" className="btn mx-2 mt-2 btn-outline-info"> <i class="bi bi-pencil"></i></button>
-
-                    <button onClick={() => handleDelete(post._id)} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i class="bi bi-x-circle-fill"></i> </button>
+                        <button onClick={() => handleDelete(post._id)} type="button" className="btn mx-2 mt-2 btn-outline-danger"> <i class="bi bi-x-circle-fill"></i> </button>
+                      </>
+                    ) : null }
+                    
 
                 </div>
             </div>
