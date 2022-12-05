@@ -14,7 +14,6 @@ export function Card({ post }) {
       toast((t) => ( 
           <div className='text-white'>
             <p>Seguro que quieres eliminar el Show? <strong> {id} </strong> </p>
-          
               <div className="row justify-content-md-center">
                 <div className="col">
                   <button type="button" className="btn btn-warning mx-2" onClick={ () => {deletePost(id,token); toast.dismiss(t.id)}} >
@@ -35,10 +34,7 @@ export function Card({ post }) {
         );
 
     };
-
   return (
-
-        
             <div className="card mb-3">
               <img src={post.image} className="card-img-top" alt="imagen.png" />
               <div className="card-body">

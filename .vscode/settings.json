@@ -1,6 +1,7 @@
 {
-    "cSpell.words": [
-        "peticion"
-    ],
-    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  "cSpell.words": ["peticion"],
+  "editor.defaultFormatter": "esbenp.prettier-vscode",
+  "[scss]": {
+    "editor.defaultFormatter": "rvest.vs-code-prettier-eslint"
+  }
 }
