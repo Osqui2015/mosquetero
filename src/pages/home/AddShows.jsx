@@ -1,13 +1,17 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import { Formik, Field, Form, ErrorMessage } from "formik"
 import { usePosts } from '../../context/postContext'
 import { Link, useNavigate, useParams } from 'react-router-dom'
 import * as Yup from 'yup'
+import { AuthContext } from '../../contexts/auth'
+
+
 
 
 const AddShows = () => {
 
     const {createPost, getPosts, updatePost} = usePosts ()
+    const { loggedAs, token } = useContext(AuthContext);
     const navigate = useNavigate ()
     const params = useParams()
     
@@ -56,9 +60,9 @@ const AddShows = () => {
             onSubmit={async (values, actions) => {
 
                 if (params.id){
-                    await updatePost(params.id, values)
+                    await updatePost(params.id, values, token)
                 }else{
-                    await createPost(values)
+                    await createPost(values, token)
                 }
                 navigate ('/')
             }}

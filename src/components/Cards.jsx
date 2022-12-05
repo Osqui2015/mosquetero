@@ -2,12 +2,16 @@
 import { Link } from 'react-router-dom'
 import {Card} from './Card'
 import {usePosts} from '../context/postContext.js'
+import { AuthContext } from '../contexts/auth';
+import { useContext } from 'react';
 //import { Router } from 'workbox-routing'
 // import Loading from './Loading'
 // import { propTypes } from 'react-bootstrap/esm/Image'
 const Cards = () => {
 
   const {posts} = usePosts()
+  const { loggedAs } = useContext(AuthContext);
+
 
   if (posts.length === 0 ) return (
     <div>
@@ -24,9 +28,13 @@ const Cards = () => {
                             <p className="fs-3 fw-bold">MAS EVENTOS </p> 
                           </div>
                           <div class="col-4 text-end">
-                            <Link to="/AddShows" className='btn btn-light'>
-                                <i className="bi bi-person-plus-fill"> Añadir Shows </i>
-                            </Link>  
+                            {loggedAs('admin') ? (
+                              <>
+                                <Link to="/AddShows" className='btn btn-light'>
+                                    <i className="bi bi-person-plus-fill"> Añadir Shows </i>
+                                </Link>  
+                              </>
+                            ) : null }
                           </div>
                         </div>
                 </div>
