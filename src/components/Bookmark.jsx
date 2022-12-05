@@ -19,10 +19,10 @@ const {featuredPosts} = usePosts()
             <br/>
                 <div className='row row-cols-2 row-cols-lg-5'>
                     {
-                      featuredPosts.map(post => (                             
+                      featuredPosts?.map(post => (
                           <div>
                             <Card post={post} key={post._id}  />
-                          </div>                                                      
+                          </div>
                       )) 
                     }
                 </div>
