@@ -26,13 +26,7 @@ const Footer = () => {
               to="/Contacto"
             >
               Contacto
-            </NavLink>
-            <NavLink
-              className="nav-link nav-item mt-1 nav-link-menu"
-              to="/NotFunction"
-            >
-              404
-            </NavLink>
+            </NavLink>            
             <NavLink
               className="nav-link nav-item mt-1 nav-link-menu"
               to="/Terminos"
@@ -52,7 +46,7 @@ const Footer = () => {
               className="nav-link nav-item mt-1 nav-link-menu"
               to="/BlogTwo"
             >
-              BlogTwo
+              Blog
             </NavLink>
           </Col>
           <Col xs={12} md={3}>

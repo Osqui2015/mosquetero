@@ -1,8 +1,6 @@
 import React from 'react'
 import Carousel from 'react-bootstrap/Carousel';
 import {usePosts} from '../context/postContext.js'
-import Image from 'react-bootstrap/Image'
-
 
 
 export const Carousels = () => {
@@ -11,7 +9,7 @@ export const Carousels = () => {
 
     if (posts.length === 0 ) return (
         <div>
-        <h1>there are not SHOWS</h1>
+        <h1>No Hay Shows Disponibles</h1>
         </div>
     )
 
@@ -26,8 +24,7 @@ export const Carousels = () => {
                     src={post.imageslider}
                     alt="First slide"
                   />
-                <Carousel.Caption>
-                        <h4 className='text-white' >{post.artist}</h4>                                        
+                <Carousel.Caption>                        
                 </Carousel.Caption>
             </Carousel.Item>
                                       

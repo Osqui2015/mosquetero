@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import toast from "react-hot-toast";
 import { Link } from "react-router-dom";
 
 const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
@@ -40,14 +41,25 @@ const HomePage = () => {
     if (validate()) {
       setEmail("");
 
-      alert(
-        "Las instrucciones para recuperar tu contraseña fueron enviadas a tu email!"
-      );
+
+        toast((t) => ( 
+          <div className='text-white'>
+            <p>  Las instrucciones para recuperar tu contraseña fueron enviadas a tu email!  </p>
+          
+            
+          </div>
+        ),
+          {
+            style: { backgroundColor: "#a63232" },
+          }
+        );
+
+
     }
   };
 
   return (
-    <Container>
+    <Container className="mt-5">
       <p className="display-6 text-primary text-center">
         ¿Olvidaste tu contraseña?
       </p>

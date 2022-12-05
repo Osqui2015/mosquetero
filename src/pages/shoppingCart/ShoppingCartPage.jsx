@@ -1,7 +1,5 @@
 import React, { useContext, useState } from 'react'
-import { Col, Container, Row, Form, Button } from 'react-bootstrap'
-
-import Card from 'react-bootstrap/Card';
+import { Col, Container, Row } from 'react-bootstrap'
 
 import Tickets from "./Tickets";
 import Cart from "./Cart";
@@ -64,9 +62,7 @@ const ShoppingCartPage = () => {
                           Comprar
                         </button>
                     ) : (
-                      <div className="badge bg-danger text-wrap mt-4" style={{ width: "18rem" }}>
-                        <h3> Inicia Sesión POR FAVOR...!! </h3>
-                      </div>
+                      <label class="text-dark mt-5"> <h3> Compra tu Ticket Iniciando Sesión </h3> </label>
                     )}            
           </Link>
         </Col>

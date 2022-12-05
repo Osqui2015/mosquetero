@@ -7,7 +7,7 @@ const {featuredPosts} = usePosts()
 
   if (featuredPosts.length === 0 ) return (
     <div>
-      <h1>there are not SHOWS</h1>
+      <h1>No Hay Shows Disponibles</h1>
     </div>
   )
 

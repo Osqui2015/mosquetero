@@ -9,10 +9,10 @@ import { Carousels } from './Carousels'
 const Container = () => {
   return (
     <>
-      <div className='divCarousel'>
+      <div>
         <Carousels/>
       </div>
-      <div className=' my-3'>
+      <div className='my-1'>
         <Bookmark />
       </div>
 

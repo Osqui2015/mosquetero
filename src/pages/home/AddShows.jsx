@@ -11,7 +11,7 @@ import { AuthContext } from '../../contexts/auth'
 const AddShows = () => {
 
     const {createPost, getPosts, updatePost} = usePosts ()
-    const { loggedAs, token } = useContext(AuthContext);
+    const { token } = useContext(AuthContext);
     const navigate = useNavigate ()
     const params = useParams()
     

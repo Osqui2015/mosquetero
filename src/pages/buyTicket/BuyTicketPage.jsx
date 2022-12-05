@@ -200,11 +200,7 @@ const BuyTicketPage = () => {
                 {cvcNumberError}
               </Form.Control.Feedback>
             )}
-          </Form.Group>
-          <div className="total">
-        <span>Total</span>
-        <span>12</span>
-      </div>
+          </Form.Group>          
           <div className="d-flex justify-content-end mb-5">
             <Button className="btn mt-3" variant="primary" type="submit">
               Enviar

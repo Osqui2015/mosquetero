@@ -1,5 +1,5 @@
 import React, { useState, useContext } from "react";
-import { Navbar, Container, Nav, Stack, Button, Seeker } from "react-bootstrap";
+import { Navbar, Container, Nav, Stack, Button} from "react-bootstrap";
 import { NavLink, Link } from "react-router-dom";
 import "../css/Archivo.css";
 import { SiFacebook, SiInstagram } from "react-icons/si";
@@ -35,10 +35,7 @@ function Header() {
     setShowLogin(false);
   };
 
-  const handleOpenSignUp = () => {
-    setShowSignUp(true);
-  };
-
+  
   const handleCloseSignUp = () => {
     setShowSignUp(false);
   };
@@ -118,10 +115,10 @@ function Header() {
               {userLoggedIn() ? (
                 <Stack direction="horizontal" className="gap-2">
                   <span className="text-light">Hola: {loggedUser().username}</span>
-                  <Button onClick={logout} className="buttSalir">Logout</Button>
+                  <Button onClick={logout} className="buttSalir">Salir</Button>
                 </Stack>
               ) : (
-                <Button onClick={handleOpenLogin} className="buttIngresar">Login</Button>
+                <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
               )}
             </div>
           </div>          
@@ -151,13 +148,7 @@ function Header() {
               <Nav className="me-auto" id="headerLinks">
                 <NavLink className="nav-link mx-1 nav-link-menu" to="/">
                   Home
-                </NavLink>
-                <NavLink
-                  className="nav-link mx-1 nav-link-menu"
-                  to="/Destacado"
-                >
-                  Destacado
-                </NavLink>
+                </NavLink>                
                 <NavLink className="nav-link mx-1 nav-link-menu" to="/Nosotros">
                   Nosotros
                 </NavLink>
@@ -169,47 +160,42 @@ function Header() {
                 </NavLink>
                 <div className="div d-flex">
                   <div class=" d-lg-none">
-                    <Stack direction="horizontal" className="gap-2">
-                      <Button
-                        onClick={handleOpenLogin}
-                        className="buttIngresar"
-                      >
-                        Login
-                      </Button>
-                    </Stack>
+                    {userLoggedIn() ? (
+                        <Stack direction="horizontal" className="gap-2">
+                          <span className="text-light">Hola: {loggedUser().username}</span>
+                          <Button onClick={logout} className="buttSalir">Salir</Button>
+                        </Stack>
+                      ) : (
+                        <Button onClick={handleOpenLogin} className="buttIngresar">Ingresar</Button>
+                      )}
                   </div>                  
                 </div>
                 <div className="d-flex d-lg-none my-2">
                   <input
-                    type="text"
-                    class="form-control form-control-sm"
-                    placeholder="Buscá tu evento"
-                    aria-describedby="button-addon2"
-                    size="20"
-                  ></input>
-                  <button
-                    className="btn btn-search btn-botones"
-                    type="button"
-                    id="button-addon2"
-                  >
-                    <i className="bi bi-search"></i>
-                  </button>
+                      type="text"
+
+                      class="form-control form-control-sm"
+                      placeholder="Busca tu evento"
+
+                      aria-describedby="button-addon2"
+                      size="20"
+                      value={query}
+                      onInput = {handleSearchInput}
+                    ></input>
+                    <button
+                      class="btn btn-search btn-botones"
+                      type="button"
+                      id="button-addon2"
+                      onClick={handleSearchBtn}
+                    >
+                      <i className="bi bi-search"></i>
+                    </button>
                 </div>
               </Nav>
             </div>
           </Navbar.Collapse>
         </Container>
       </Navbar>
-
-      {/* //   <Navbar bg="danger" expand='lg' className='div-Navbar'>
-    //   <Navbar.Collapse id="basic-navbar-nav">
-    //   <Container className='container-navbar2'   id="basic-navbar-nav">
-    //       <NavLink className="nav-link mx-1 nav-link-menu" to="/">Home</NavLink>
-    //       <NavLink className="nav-link mx-1 nav-link-menu" to="/Contacto">Contacto</NavLink>
-    //       <NavLink className="nav-link mx-1 nav-link-menu" to="/Destacado">Destacado</NavLink>  
-    //   </Container>
-    // </Navbar.Collapse>
-    // </Navbar> */}
     </>
   );
 }
