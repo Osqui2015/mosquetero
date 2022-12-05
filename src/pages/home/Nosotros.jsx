@@ -9,7 +9,7 @@ const Nosotros = () => {
       <h1 className="tituwe">NOSOTROS SOMOS RSHOW</h1>
       <CardGroup className="divwe">
         <Card className="cardwe">
-          <Card.Img variant="top" src="/oscar.jpeg" className="img-fluid" />
+          <Card.Img variant="top" src="/Oscar.jpeg" className="img-fluid" />
           <Card.Body>
             <Card.Title>Oscar Guerrero</Card.Title>
             <Card.Text>
