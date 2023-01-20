@@ -8,6 +8,7 @@ import SignUpModal from "./SignUpModal";
 import { AuthContext } from "../contexts/auth";
 import { usePosts } from "../context/postContext";
 import { AiOutlineHeart } from "react-icons/ai";
+import Badge from "react-bootstrap/Badge";
 
 function Header(addFav, favoriteQ) {
   const { getPost } = usePosts();
@@ -111,15 +112,15 @@ function Header(addFav, favoriteQ) {
                   <span className="text-light">
                     Hola: {loggedUser().username}
                   </span>
-                  <Button
-                    className="btn mx-2 mt-2 text-white"
-                    style={{ backgroundColor: "#FE6848" }}
-                  >
-                    <AiOutlineHeart />{" "}
-                    {/* {() =>
-                      favoriteQ() > 0 && <span> {`(${favoriteQ()})`}</span>
-                    } */}
+                  <Button variant="primary">
+                    <AiOutlineHeart /> <Badge bg="secondary">0</Badge>
+                    <span className="visually-hidden">unread messages</span>
                   </Button>
+
+                  {/*{() =>
+                      favoriteQ() > 0 && <span> {`(${favoriteQ()})`}</span>
+                    }
+                   */}
                   <Button onClick={logout} className="buttSalir">
                     Salir
                   </Button>
@@ -174,17 +175,20 @@ function Header(addFav, favoriteQ) {
                         <span className="text-light">
                           Hola: {loggedUser().username}
                         </span>
-                        <Button
-                          className="btn mx-2 mt-2 text-white"
-                          style={{ backgroundColor: "#FE6848" }}
-                        >
-                          <AiOutlineHeart />
-                          {/* {() =>
+
+                        <Button variant="primary">
+                          <AiOutlineHeart /> <Badge bg="secondary">0</Badge>
+                          <span className="visually-hidden">
+                            unread messages
+                          </span>
+                        </Button>
+
+                        {/* {() =>
                             favoriteQ() > 0 && (
                               <span> {`(${favoriteQ()})`}</span>
                             )
-                          } */}
-                        </Button>
+                          }
+                         */}
                         <Button onClick={logout} className="buttSalir">
                           Salir
                         </Button>
