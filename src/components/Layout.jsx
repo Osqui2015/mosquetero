@@ -1,18 +1,18 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Footer from './Footer'
-import HeaderNavb from './HeaderNavb'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
+import HeaderNavb from "./HeaderNavb";
 
-const Layout = () => {
+const Layout = (addFav, favoriteQ) => {
   return (
     <React.Fragment>
-      <HeaderNavb/>
-      <div className='minheight'>
+      <HeaderNavb addFav={addFav} favoriteQ={favoriteQ} />
+      <div className="minheight">
         <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;

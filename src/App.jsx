@@ -20,18 +20,36 @@ import { PostProvider } from "./context/postContext";
 import AddShows from "./pages/home/AddShows";
 import { Toaster } from "react-hot-toast";
 
-
 import Ticket from "./pages/shoppingCart/Ticket";
 import Tickets from "./pages/shoppingCart/Tickets";
 import Cart from "./pages/shoppingCart/Cart";
-
+import { useState } from "react";
 
 const App = () => {
+  const [Fav, setFav] = useState([]);
+
+  const addFav = (p) => {
+    setFav([...Fav, p]);
+  };
+
+  const favoriteQ = () => {
+    // console.log("favoriteQ");
+    let q = 0;
+    for (let i = 0; i < Fav.length; i++) {
+      const element = Fav[i];
+      q = q + element.q;
+    }
+    return q;
+  };
+
   return (
     <div>
       <PostProvider>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route
+            path="/"
+            element={<Layout addFav={addFav} favoriteQ={favoriteQ} />}
+          >
             <Route index element={<HomePage />} />
             <Route path="/destacado" element={<Destacado />} />
             <Route path="/contacto" element={<Contacto />} />
@@ -49,7 +67,10 @@ const App = () => {
 
             <Route path="/Ticket" element={<Ticket />} />
             <Route path="/Tickets" element={<Tickets />} />
-            <Route path="/Cart" element={<Cart />} />
+            <Route
+              path="/Cart"
+              element={<Cart addFav={addFav} favoriteQ={favoriteQ} />}
+            />
           </Route>
         </Routes>
         <Toaster />
