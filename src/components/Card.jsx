@@ -66,13 +66,7 @@ export function Card({post}) {
           </button>
         </Link>
 
-        <button
-        
-          className="btn mx-2 mt-2 text-white"
-          style={{ backgroundColor: "#FE6848" }}
-        >
-          <AiOutlineHeart />
-        </button>
+      
 
         {loggedAs("admin") ? (
           <>

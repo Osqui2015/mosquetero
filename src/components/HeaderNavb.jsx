@@ -112,15 +112,7 @@ function Header() {
                   <span className="text-light">
                     Hola: {loggedUser().username}
                   </span>
-                  <Button variant="primary">
-                    <AiOutlineHeart /> <Badge bg="secondary">0</Badge>
-                    <span className="visually-hidden">unread messages</span>
-                  </Button>
-
-                  {/*{() =>
-                      favoriteQ() > 0 && <span> {`(${favoriteQ()})`}</span>
-                    }
-                   */}
+                  
                   <Button onClick={logout} className="buttSalir">
                     Salir
                   </Button>
@@ -176,19 +168,6 @@ function Header() {
                           Hola: {loggedUser().username}
                         </span>
 
-                        <Button variant="primary">
-                          <AiOutlineHeart /> <Badge bg="secondary">0</Badge>
-                          <span className="visually-hidden">
-                            unread messages
-                          </span>
-                        </Button>
-
-                        {/* {() =>
-                            favoriteQ() > 0 && (
-                              <span> {`(${favoriteQ()})`}</span>
-                            )
-                          }
-                         */}
                         <Button onClick={logout} className="buttSalir">
                           Salir
                         </Button>
