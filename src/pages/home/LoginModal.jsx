@@ -1,20 +1,24 @@
-import { useContext } from "react"
-import { useState } from "react"
-import { Button, Col, Form, Modal, Row } from "react-bootstrap"
+import React, { useState, useContext } from "react";
+
+import { Modal, Button, Form } from "react-bootstrap";
+import { AuthContext } from "../../contexts/auth";
 import { useNavigate } from "react-router-dom"
-import { AuthContext } from "../contexts/auth"
- 
-const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
+
+const LoginModal = () => {
   const { login } = useContext(AuthContext);
+  const [show, setShow] = useState(false);
 
   const navigate = useNavigate()
-  const [username, setUsername] = useState('')
-  const [password, setPassword] = useState('')
+  const [username, setUsername] = useState("");
+  const [password, setPassword] = useState("");
 
   const [usernameError, setUsernameError] = useState('');
   const [passwordError, setPasswordError] = useState('');
 
-  const handleUsernameInput = (evt) => {
+  const handleClose = () => setShow(false);
+  const handleShow = () => setShow(true);
+
+const handleUsernameInput = (evt) => {
     setUsernameError('')
     setUsername(evt.target.value)
   }
@@ -42,7 +46,7 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
       setUsernameError('')
       setPasswordError('')
       handleClose()
-      navigate("/")
+      navigate("/shoppingCart")
     }
   }
 
@@ -64,32 +68,19 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
 
     return ok;
   }
- 
+
   return (
-    <Modal show={show} size="lg" fullscreen="sm-down" onHide={handleClose}>
-      <Modal.Header closeButton>
-        <Modal.Title className="text-primary">Inicio de Sesión</Modal.Title>
-      </Modal.Header>
-      <Row className="align-items-stretch">
-        <Col className="d-none d-sm-flex">
-          <Modal.Body
-            className="bg-login-modal text-light"
-            style={{
-              backgroundImage: 'url("/images/login-bg.png")',
-            }}
-          >
-            <div className="p-5">
-              <h1 className="font-poppins text-primary">Rshow</h1>
-              <p>
-                Inicia sesion y compra tu anticipada con descuento y accede a
-                contenido exclusivo de tus artistas favoritos.
-              </p>
-            </div>
-          </Modal.Body>
-        </Col>
-        <Col>
-          <Modal.Body>
-            <Form>
+    <>
+      <Button variant="primary" onClick={handleShow}>
+        <h5>Login</h5>
+      </Button>
+      <br />
+      <Modal show={show} onHide={handleClose}>
+        <Modal.Header closeButton>
+          <Modal.Title>Login</Modal.Title>
+        </Modal.Header>
+        <Modal.Body>
+           <Form>
               <Form.Group className="mb-3" controlId="formLoginUsername">
                 <Form.Label>Nombre de usuario</Form.Label>
                 <Form.Control
@@ -124,7 +115,7 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
                   ¿Sos nuevo?{" "}
                   <Button
                     variant="link"
-                    onClick={handleCloseLoginAndOpenSignUp}
+                    
                   >
                     Registrate aqui
                   </Button>
@@ -135,10 +126,9 @@ const LoginModal = ({show, handleClose, handleCloseLoginAndOpenSignUp}) => {
                 </Button>
               </div>
             </Form>
-          </Modal.Body>
-        </Col>
-      </Row>
-    </Modal>
+        </Modal.Body>
+      </Modal>
+    </>
   );
 };
 

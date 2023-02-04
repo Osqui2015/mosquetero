@@ -20,10 +20,11 @@ function Header() {
 
   const [query, setQuery] = useState("");
 
-  const handleSearchInput = (evt) => {
-    setQuery(evt.target.value);
-  };
 
+  const handleSearchInput = (evt) =>{
+    setQuery(evt.target.value)
+  } 
+ 
   const handleSearchBtn = () => {
     getPost(query);
   };
@@ -119,7 +120,7 @@ function Header() {
                 </Stack>
               ) : (
                 <Button onClick={handleOpenLogin} className="buttIngresar">
-                  Ingresar
+                  Ingresar.
                 </Button>
               )}
             </div>

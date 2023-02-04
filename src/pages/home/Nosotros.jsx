@@ -1,12 +1,23 @@
 import React from "react";
 import Card from "react-bootstrap/Card";
 import CardGroup from "react-bootstrap/CardGroup";
+import LoginModal from "../home/LoginModal";
+
+
 
 const Nosotros = () => {
   return (
     <div>
       <br />
+      <br />
+      <br />
+      
+      <LoginModal/>
+
+      <br />
+      <br />
       <h1 className="tituwe">NOSOTROS SOMOS RSHOW</h1>
+      
       <CardGroup className="divwe">
         <Card className="cardwe">
           <Card.Img variant="top" src="/Oscar.jpeg" className="img-fluid" />
@@ -57,6 +68,7 @@ const Nosotros = () => {
           <Card.Img variant="top" src="/franco.jpeg" className="img-fluid" />
           <Card.Body>
             <Card.Title>Franco Herrera</Card.Title>
+            
             <Card.Text>
               Mi nombre es Franco y soy el administrador y uno de los creadores
               del sitio. Amo la musica desde muy chiquito y me apasiona poder
@@ -68,6 +80,8 @@ const Nosotros = () => {
         </Card.Footer> */}
         </Card>
       </CardGroup>
+
+      
     </div>
   );
 };
