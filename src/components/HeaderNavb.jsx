@@ -128,7 +128,7 @@ function Header() {
                 </Stack>
               ) : (
                 <Button onClick={handleOpenLogin} className="buttIngresar">
-                  Ingresar
+                  Ingresar.
                 </Button>
               )}
             </div>
