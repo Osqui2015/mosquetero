@@ -26,21 +26,21 @@ import Cart from "./pages/shoppingCart/Cart";
 import { useState } from "react";
 
 const App = () => {
-  const [Fav, setFav] = useState([]);
+  // const [Fav, setFav] = useState([]);
 
-  const addFav = (p) => {
-    setFav([...Fav, p]);
-  };
+  // const addFav = (p) => {
+  //   setFav([...Fav, p]);
+  // };
 
-  const favoriteQ = () => {
-    // console.log("favoriteQ");
-    let q = 0;
-    for (let i = 0; i < Fav.length; i++) {
-      const element = Fav[i];
-      q = q + element.q;
-    }
-    return q;
-  };
+  // const favoriteQ = () => {
+  //   // console.log("favoriteQ");
+  //   let q = 0;
+  //   for (let i = 0; i < Fav.length; i++) {
+  //     const element = Fav[i];
+  //     q = q + element.q;
+  //   }
+  //   return q;
+  // };
 
   return (
     <div>
