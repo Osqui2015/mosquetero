@@ -8,7 +8,7 @@ import { useContext } from "react";
 //import { Router } from 'workbox-routing'
 // import Loading from './Loading'
 // import { propTypes } from 'react-bootstrap/esm/Image'
-const Cards = (favoriteQ, addFav) => {
+const Cards = () => {
   const { posts } = usePosts();
 
   const { loggedAs } = useContext(AuthContext);
@@ -48,8 +48,7 @@ const Cards = (favoriteQ, addFav) => {
             <Card
               post={post}
               key={post._id}
-              addFav={addFav}
-              favoriteQ={favoriteQ}
+            
             />
           ))}
         </div>

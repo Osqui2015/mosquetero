@@ -10,7 +10,7 @@ import { usePosts } from "../context/postContext";
 import { AiOutlineHeart } from "react-icons/ai";
 import Badge from "react-bootstrap/Badge";
 
-function Header(addFav, favoriteQ) {
+function Header() {
   const { getPost } = usePosts();
 
   const { userLoggedIn, loggedUser, logout } = useContext(AuthContext);

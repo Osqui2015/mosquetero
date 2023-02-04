@@ -5,7 +5,7 @@ import { AuthContext } from "../contexts/auth";
 import React, { useContext } from "react";
 import { AiOutlineHeart } from "react-icons/ai";
 
-export function Card({ post, favoriteQ }) {
+export function Card({post}) {
   const { deletePost } = usePosts();
   const navigate = useNavigate();
 
@@ -67,9 +67,7 @@ export function Card({ post, favoriteQ }) {
         </Link>
 
         <button
-          onClick={() => {
-            favoriteQ();
-          }}
+        
           className="btn mx-2 mt-2 text-white"
           style={{ backgroundColor: "#FE6848" }}
         >

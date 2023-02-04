@@ -1,7 +1,7 @@
 import { usePosts } from "../context/postContext.js";
 import { Card } from "./Card";
 
-export function Bookmark(favoriteQ, addFav) {
+export function Bookmark() {
   const { featuredPosts } = usePosts();
 
   if (featuredPosts.length === 0)
@@ -24,10 +24,6 @@ export function Bookmark(favoriteQ, addFav) {
         {featuredPosts?.map((post) => (
           <div>
             <Card
-              post={post}
-              key={post._id}
-              addFav={addFav}
-              favoriteQ={favoriteQ}
             />
           </div>
         ))}

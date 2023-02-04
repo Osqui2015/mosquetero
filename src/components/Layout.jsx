@@ -3,10 +3,10 @@ import { Outlet } from "react-router-dom";
 import Footer from "./Footer";
 import HeaderNavb from "./HeaderNavb";
 
-const Layout = (addFav, favoriteQ) => {
+const Layout = () => {
   return (
     <React.Fragment>
-      <HeaderNavb addFav={addFav} favoriteQ={favoriteQ} />
+      <HeaderNavb  />
       <div className="minheight">
         <Outlet />
       </div>
