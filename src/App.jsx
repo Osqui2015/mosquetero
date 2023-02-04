@@ -20,18 +20,20 @@ import { PostProvider } from "./context/postContext";
 import AddShows from "./pages/home/AddShows";
 import { Toaster } from "react-hot-toast";
 
-
 import Ticket from "./pages/shoppingCart/Ticket";
 import Tickets from "./pages/shoppingCart/Tickets";
 import Cart from "./pages/shoppingCart/Cart";
 
 
 const App = () => {
-  return (
+ return (
     <div>
       <PostProvider>
         <Routes>
-          <Route path="/" element={<Layout />}>
+          <Route
+            path="/"
+            element={<Layout />}
+          >
             <Route index element={<HomePage />} />
             <Route path="/destacado" element={<Destacado />} />
             <Route path="/contacto" element={<Contacto />} />
@@ -49,7 +51,10 @@ const App = () => {
 
             <Route path="/Ticket" element={<Ticket />} />
             <Route path="/Tickets" element={<Tickets />} />
-            <Route path="/Cart" element={<Cart />} />
+            <Route
+              path="/Cart"
+              element={<Cart/>}
+            />
           </Route>
         </Routes>
         <Toaster />
