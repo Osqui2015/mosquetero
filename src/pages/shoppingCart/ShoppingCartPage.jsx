@@ -7,6 +7,8 @@ import { Link } from "react-router-dom";
 import { Carousels } from '../../components/Carousels';
 import { AuthContext } from '../../contexts/auth';
 
+import LoginModal from "../home/LoginModal";
+
 const ShoppingCartPage = () => {
     const [cart, setCart] = useState([]);
   const [proof, setProof] = useState(0);
@@ -62,7 +64,7 @@ const ShoppingCartPage = () => {
                           Comprar
                         </button>
                     ) : (
-                      <label className="text-dark mt-5"> <h3> Compra tu Ticket Iniciando Sesión </h3> </label>
+                      <label className="text-dark mt-5"> <h3> <LoginModal />  </h3> </label>
                     )}            
           </Link>
         </Col>

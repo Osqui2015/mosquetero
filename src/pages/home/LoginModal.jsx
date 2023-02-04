@@ -46,7 +46,7 @@ const handleUsernameInput = (evt) => {
       setUsernameError('')
       setPasswordError('')
       handleClose()
-      navigate("/")
+      navigate("/shoppingCart")
     }
   }
 
@@ -72,7 +72,7 @@ const handleUsernameInput = (evt) => {
   return (
     <>
       <Button variant="primary" onClick={handleShow}>
-        <h1>Login</h1>
+        <h5>Login</h5>
       </Button>
       <br />
       <Modal show={show} onHide={handleClose}>
