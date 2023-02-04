@@ -17,6 +17,7 @@ import ShoppingCartPage from "./pages/shoppingCart/ShoppingCartPage";
 import Publicity from "./pages/home/Publicity";
 import BuyTicketPage from "./pages/buyTicket/BuyTicketPage";
 import { PostProvider } from "./context/postContext";
+import LoginModal from "./pages/home/LoginModal";
 import AddShows from "./pages/home/AddShows";
 import { Toaster } from "react-hot-toast";
 
@@ -33,12 +34,14 @@ const App = () => {
         <Routes>
           <Route path="/" element={<Layout />}>
             <Route index element={<HomePage />} />
+            <Route path="/LoginModal" element={<LoginModal />} />
             <Route path="/destacado" element={<Destacado />} />
             <Route path="/contacto" element={<Contacto />} />
             <Route path="/forgot-password" element={<ForgotPasswordPage />} />
             <Route path="/Nosotros" element={<Nosotros />} />
             <Route path="/Terminos" element={<Terminos />} />
-
+            
+            
             <Route path="/BlogTwo" element={<BlogTwo />} />
             <Route path="/ShoppingCart" element={<ShoppingCartPage />} />
             <Route path="/BuyTicket" element={<BuyTicketPage />} />

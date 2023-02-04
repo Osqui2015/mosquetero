@@ -21,7 +21,7 @@ function Header() {
 
   const handleSearchInput = (evt) =>{
     setQuery(evt.target.value)
-  }
+  } 
 
   const handleSearchBtn = () => {
     getPost(query)
