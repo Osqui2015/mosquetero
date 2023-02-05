@@ -9,7 +9,7 @@ const validationSchema = Yup.object({
   name:Yup.string()
                   .max(40,'El nombre debe tener 40 caracteres')
                   .matches(
-                    /^[a-zA-ZÀ-ÿ\u00f1\u00d1]+(\s*[a-zA-ZÀ-ÿ\u00f1\u00d1]*)*[a-zA-ZÀ-ÿ\u00f1\u00d1]+$/g,
+                    /^[a-zA-Z]+([a-zA-Z ]+)*$/,
                     "Solo letras, puede contener espacios solo entre nombres."
                   )
                   .required('El campo nombre es requerido'),
