@@ -1,18 +1,18 @@
-import React from 'react'
-import { Outlet } from 'react-router-dom'
-import Footer from './Footer'
-import HeaderNavb from './HeaderNavb'
+import React from "react";
+import { Outlet } from "react-router-dom";
+import Footer from "./Footer";
+import HeaderNavb from "./HeaderNavb";
 
 const Layout = () => {
   return (
     <React.Fragment>
-      <HeaderNavb/>
-      <div className='minheight'>
+      <HeaderNavb  />
+      <div className="minheight">
         <Outlet />
       </div>
-      <Footer/>
+      <Footer />
     </React.Fragment>
-  )
-}
+  );
+};
 
-export default Layout
+export default Layout;
