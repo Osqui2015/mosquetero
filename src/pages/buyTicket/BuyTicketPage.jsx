@@ -43,10 +43,10 @@ const BuyTicketPage = () => {
       )
       .then(
         (result) => {
-          alert("Mensaje enviado con éxito.", result.text);
+          alert("Compra realizada con éxito, recibiras un correo de confirmación de tu compra", result.text);
         },
         (error) => {
-          alert("Mensaje no enviado.", error.text);
+          alert("No se registró tu compra", error.text);
         }
       )
       .then(formik.resetForm());
@@ -168,7 +168,7 @@ const BuyTicketPage = () => {
       
       <div className="d-flex justify-content-end mb-5">
             <Button className="btn mt-3" variant="primary" type="submit">
-              Enviar
+              Comprar
             </Button>
           </div>
       </form>
