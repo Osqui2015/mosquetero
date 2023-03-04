@@ -1,213 +1,177 @@
-import React, { useState } from "react";
-import { Container, Row, Form, Button } from "react-bootstrap";
+import { useRef } from "react";
+import { Container,Button } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
+import { useFormik } from "formik";
 
-const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
-const nameRegExp = /^[a-zA-Z ]*$/;
+import * as Yup from "yup";
+
+const validationSchema = Yup.object({
+  name:Yup.string()
+                  .max(40,'El nombre debe tener 40 caracteres')
+                  .matches(
+                    /^[a-zA-Z]+([a-zA-Z ]+)*$/,
+                    "Solo letras, puede contener espacios solo entre nombres."
+                  )
+                  .required('El campo nombre es requerido'),
+                email:Yup.string()
+                  .email('El formato de correo electrónico no es correcto')
+                  .required('El campo email es requerido'),
+                creditnumber: Yup.number()
+                .min(16,'El número de tarjeta de crédito debe tener 16 números')
+                .required('El campo número de tarjeta de crédito es requerido'),
+                cvcnumber:Yup.number()
+                .min(3,'El Campo CVC no debe tener mas de 3 dígitos')
+                .required('El campo CVC es requerido'),
+                monthSelected:  Yup.number()
+                .required('El campo mes es requerido'),
+                yearSelected: Yup.number()
+                .required('El campo año es requerido'),
+                
+});
 
 const BuyTicketPage = () => {
 
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [creditnumber, setCreditNumber] = useState("");
-  const [cvcnumber, setCVCNumber] = useState("");
+  const form = useRef();
 
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [creditNumberError, setCreditNumberError] = useState("");
-  const [cvcNumberError, setCVCNumberError] = useState("");
+  const onSubmit = ({ resetForm }, e) => {
+    emailjs
+      .sendForm(
+        "service_q2hc72l",
+        "template_90fw8cw",
+        form.current,
+        'bxv6pJBdM3qZ_otFC'
+      )
+      .then(
+        (result) => {
+          alert("Compra realizada con éxito, recibiras un correo de confirmación de tu compra", result.text);
+        },
+        (error) => {
+          alert("No se registró tu compra", error.text);
+        }
+      )
+      .then(formik.resetForm());
 
-  const handleEmailInput = (evt) => {
-    setEmail(evt.target.value);
+    e.preventDefault();
   };
 
-  const handleNameInput = (evt) => {
-    setName(evt.target.value);
-  };
-
-  const handleCreditNumberInput = (evt) => {
-    setCreditNumber(evt.target.value);
-  };
-
-  const handleCVCNumberInput = (evt) => {
-    setCVCNumber(evt.target.value);
-  };
-
-  const validate = () => {
-    let ok = true;
-    if (name === "") {
-      setNameError("Por favor escriba su nombre y apellido");
-      ok = false;
-    } else {
-      if (!nameRegExp.test(name.toLowerCase())) {
-        setNameError("Por favor, ingresa un nombre con formato correcto");
-        return ok;
-      } else {
-        setNameError("");
-      }
-    }
-
-    if (email === "") {
-      setEmailError("Por favor escriba su correo electronico");
-      ok = false;
-    } else {
-      setEmailError("");
-
-      if (!emailRegExp.test(email.toLowerCase())) {
-        setEmailError(
-          "Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com"
-        );
-        return ok;
-      } else {
-        setEmailError("");
-      }
-    }
-
-    if (creditnumber === "") {
-      setCreditNumberError("Por favor escriba su número de tarjeta de crédito");
-      ok = false;
-    } else {
-      setCreditNumberError("");
-    }
-
-    if (cvcnumber === "") {
-      setCVCNumberError(
-        "Por favor escriba su número de CVC que está al dorso de la tarjeta"
-      );
-      ok = false;
-    } else {
-      setCVCNumberError("");
-    }
-    return ok;
-  };
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    if (validate()) {
-      setName("");
-      setEmail("");
-      setCreditNumber("");
-      setCVCNumber("");
-
-      alert("Su compra fue registrada con éxito");
-    }
-  };
+  const formik = useFormik({
+    initialValues: {
+      name:"",
+      email:"",
+      creditnumber:"",
+      monthSelected:"1",
+      yearSelected:"2023",
+      cvcnumber:""
+    },
+    validateOnBlur: true,
+    onSubmit,
+    validationSchema: validationSchema,
+  });
 
   return (
     <Container className="py-5">
       <p className="display-6 text-success">Ingresa tus datos</p>
-      <Row className="align-items-stretch">
-        <Form onSubmit={handleSubmit}>
-          <Form.Group className="mb-3" controlId="contactFormName">
-            <Form.Label>Nombre y Apellido</Form.Label>
-            <Form.Control
-              placeholder="Juan Perez"
-              minLength="10"
-              maxLength="100"
-              type="text"
-              value={name}
-              onInput={handleNameInput}
-              isInvalid={nameError !== ""}
-            />
-            {nameError !== "" && (
-              <Form.Control.Feedback type="invalid">
-                {nameError}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="contactFormEmail">
-            <Form.Label>Correo Electronico</Form.Label>
-            <Form.Control
-              maxLength="256"
-              placeholder="juan.perez@gmail.com"
-              value={email}
-              onInput={handleEmailInput}
-              isInvalid={emailError !== ""}
-            />
-            {emailError !== "" && (
-              <Form.Control.Feedback type="invalid">
-                {emailError}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-          <Form.Group className="mb-3" controlId="contactFormName">
-            <Form.Label>Numero de Tarjeta de credito</Form.Label>
-            <Form.Control
-              placeholder="0000 0000 0000 0000"
-              maxLength="16"
-              type="number"
-              value={creditnumber}
-              onInput={handleCreditNumberInput}
-              isInvalid={creditNumberError !== ""}
-            />
-            {creditNumberError !== "" && (
-              <Form.Control.Feedback type="invalid">
-                {creditNumberError}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>
-
-          <Form.Group className="col-sm-4" controlId="monthFormName">
-            <Form.Label>Mes</Form.Label>
-
-            <select className="form-control" name="monthSelected">
-              <option>1</option>
-              <option>2</option>
-              <option>3</option>
-              <option>4</option>
-              <option>5</option>
-              <option>6</option>
-              <option>7</option>
-              <option>8</option>
-              <option>9</option>
-              <option>10</option>
-              <option>11</option>
-              <option>12</option>
-            </select>
-          </Form.Group>
-
-          <Form.Group className="col-sm-4" controlId="yearFormName">
-            <Form.Label>Año de vencimiento</Form.Label>
-
-            <select className="form-control" name="yearSelected">
-              <option>2022</option>
-              <option>2023</option>
-              <option>2023</option>
-              <option>2024</option>
-              <option>2025</option>
-              <option>2026</option>
-              <option>2027</option>
-              <option>2028</option>
-              <option>2029</option>
-              <option>2030</option>
-              <option>2031</option>
-              <option>2032</option>
-            </select>
-          </Form.Group>
-
-          <Form.Group className="col-sm-4" controlId="contactFormName">
-            <Form.Label>Numero de CVC</Form.Label>
-            <Form.Control
-              placeholder="000"
-              maxLength="3"
-              value={cvcnumber}
-              type="number"
-              onInput={handleCVCNumberInput}
-              isInvalid={cvcNumberError !== ""}
-            />
-            {cvcNumberError !== "" && (
-              <Form.Control.Feedback type="invalid">
-                {cvcNumberError}
-              </Form.Control.Feedback>
-            )}
-          </Form.Group>          
-          <div className="d-flex justify-content-end mb-5">
+      <form ref={form} onSubmit={formik.handleSubmit}>
+      <label className="form-label">Nombre</label>
+      <input
+        className="form-control"
+        type="text"
+        name="name"
+        id="name"
+        placeholder="John Doe"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.name}
+      />
+      {formik.touched.name && formik.errors.name ? (
+        <div className="f-red mt-1">{formik.errors.name}</div>
+      ) : null}
+      <label className="form-label">E-mail</label>
+      <input
+        className="form-control"
+        type="email"
+        name="email"
+        id="email"
+        placeholder="ejemplo@dominio.com"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.email}
+      />
+      {formik.touched.email && formik.errors.email ? (
+        <div className="f-red mt-1">{formik.errors.email}</div>
+      ) : null}
+      <label className="form-label">Número de Tarjeta de Credito</label>
+      <input
+        className="form-control"
+        type="number"
+        name="creditnumber"
+        id="creditnumber"
+        placeholder="0000 0000 0000 0000"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.creditnumber}
+      />
+      {formik.touched.creditnumber && formik.errors.creditnumber ? (
+        <div className="f-red mt-1">{formik.errors.creditnumber}</div>
+      ) : null}
+      <div className="col-sm-4">
+      <label htmlFor="monthSelected">Mes de Vencimiento</label>
+      <select className="form-control" name="monthSelected" onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.monthSelected}>
+      <option value="1">1</option>
+                                    <option value="2">2</option>
+                                    <option value="3">3</option>
+                                    <option value="4">4</option>
+                                    <option value="5">5</option>
+                                    <option value="6">6</option>
+                                    <option value="7">7</option>
+                                    <option value="8">8</option>
+                                    <option value="9">9</option>
+                                    <option value="10">10</option>
+                                    <option value="11">11</option>
+                                    <option value="12">12</option>
+      </select>
+      </div>
+      <div className="col-sm-4">
+      <label htmlFor="yearSelected">Año de vencimiento</label>
+      <select className="form-control" name="monthSelected" onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.monthSelected}>
+           <option value="2023">2023</option>
+                                    <option value="2024">2024</option>
+                                    <option value="2025">2025</option>
+                                    <option value="2026">2026</option>
+                                    <option value="2027">2027</option>
+                                    <option value="2028">2028</option>
+                                    <option value="2029">2029</option>
+                                    <option value="2030">2030</option>
+                                    <option value="2031">2031</option>
+                                    <option value="2032">2032</option>
+                                    <option value="2033">2033</option>
+        </select>
+        </div>
+        <label htmlFor="cvcnumber">CVC</label>
+        <input
+        className="form-control"
+        type="number"
+        name="cvcnumber"
+        id="cvcnumber"
+        placeholder="000"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.cvcnumber}
+      />
+      {formik.touched.cvcnumber && formik.errors.cvcnumber ? (
+        <div className="f-red mt-1">{formik.errors.cvcnumber}</div>
+      ) : null}
+      
+      <div className="d-flex justify-content-end mb-5">
             <Button className="btn mt-3" variant="primary" type="submit">
-              Enviar
+              Comprar
             </Button>
           </div>
-        </Form>
-      </Row>
+      </form>
     </Container>
   );
 };
