@@ -1,5 +1,7 @@
 import React, { useState } from "react";
 import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
 
@@ -71,6 +73,7 @@ const ContactPage = () => {
       alert("Su consulta fue enviada con éxito!");
     }
   };
+  const notify = () => toast("Se envio tu mensaje!");
 
   return (
     <Container className="py-5">
@@ -122,9 +125,21 @@ const ContactPage = () => {
               )}
             </Form.Group>
             <div className="d-flex justify-content-end mb-5">
-              <Button variant="primary" type="submit">
+              <Button variant="primary" type="submit" onClick={notify}>
                 Enviar
               </Button>
+              <ToastContainer
+                position="top-left"
+                autoClose={5000}
+                hideProgressBar={false}
+                newestOnTop={false}
+                closeOnClick
+                rtl={false}
+                pauseOnFocusLoss
+                draggable
+                pauseOnHover
+                theme="dark"
+              />
             </div>
           </Form>
           <p className="text-muted">
