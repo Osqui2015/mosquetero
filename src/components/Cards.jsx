@@ -1,13 +1,11 @@
-//import React, { useEffect} from 'react'
+
 import { Link } from "react-router-dom";
 import { Card } from "./Card";
 import { usePosts } from "../context/postContext.js";
 import { AuthContext } from "../contexts/auth";
 import { useContext } from "react";
 
-//import { Router } from 'workbox-routing'
-// import Loading from './Loading'
-// import { propTypes } from 'react-bootstrap/esm/Image'
+
 const Cards = () => {
   const { posts } = usePosts();
 
@@ -16,7 +14,7 @@ const Cards = () => {
   if (posts.length === 0)
     return (
       <div>
-        {/* <h1>No Hay Shows Disponibles</h1> */}
+        <h1>No Hay Shows Disponibles</h1>
       </div>
     );
 

@@ -3,7 +3,7 @@ import { Link, useNavigate } from "react-router-dom";
 import { usePosts } from "../context/postContext.js";
 import { AuthContext } from "../contexts/auth";
 import React, { useContext } from "react";
-import { AiOutlineHeart } from "react-icons/ai";
+
 
 export function Card({post}) {
   const { deletePost } = usePosts();

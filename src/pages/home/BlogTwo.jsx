@@ -13,7 +13,7 @@ const BlogTwo = () => {
         <p className="fs-3 fw-bold">El WikiBlog de tus Artistas </p>
       </div>
       <Container>
-        {/* Stack the columns on mobile by making one full-width and the other half-width */}
+        
         <Row>
           <Col xs={12} md={8}>
             <div className="card mb-3">

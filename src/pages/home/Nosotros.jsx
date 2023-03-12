@@ -28,9 +28,7 @@ const Nosotros = () => {
               hacerles llegar los mejores shows a nuestros usuarios.
             </Card.Text>
           </Card.Body>
-          {/* <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer> */}
+        
         </Card>
         <Card className="cardwe">
           <Card.Img
@@ -46,9 +44,7 @@ const Nosotros = () => {
               nuestro pais.
             </Card.Text>
           </Card.Body>
-          {/* <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer> */}
+        
         </Card>
         <Card className="cardwe">
           <Card.Img variant="top" src="/estefi.jpg" className="img-fluid" />
@@ -59,9 +55,7 @@ const Nosotros = () => {
               color de nuestra pagina. Tambien amo viajar tanto como la musica.
             </Card.Text>
           </Card.Body>
-          {/* <Card.Footer>
-         
-        </Card.Footer> */}
+      
         </Card>
         <Card className="cardwe">
           <Card.Img variant="top" src="/franco.jpeg" className="img-fluid" />
@@ -74,9 +68,7 @@ const Nosotros = () => {
               hacerles llegar los mejores shows a nuestros usuarios.
             </Card.Text>
           </Card.Body>
-          {/* <Card.Footer>
-          <small className="text-muted">Last updated 3 mins ago</small>
-        </Card.Footer> */}
+     
         </Card>
       </CardGroup>
 

@@ -7,7 +7,7 @@ export function Bookmark() {
   if (featuredPosts.length === 0)
     return (
       <div>
-        {/* <h1>No Hay Shows Disponibles</h1> */}
+        <h1>No Hay Shows Disponibles</h1>
       </div>
     );
 
