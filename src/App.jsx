@@ -17,7 +17,7 @@ import ShoppingCartPage from "./pages/shoppingCart/ShoppingCartPage";
 import Publicity from "./pages/home/Publicity";
 import BuyTicketPage from "./pages/buyTicket/BuyTicketPage";
 import { PostProvider } from "./context/postContext";
-import LoginModal from "./pages/home/LoginModal";
+import LoginModal from "./pages/home/LoginModalTickets";
 import AddShows from "./pages/home/AddShows";
 import { Toaster } from "react-hot-toast";
 

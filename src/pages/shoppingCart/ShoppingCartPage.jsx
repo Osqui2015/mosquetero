@@ -7,7 +7,7 @@ import { Link } from "react-router-dom";
 import { Carousels } from '../../components/Carousels';
 import { AuthContext } from '../../contexts/auth';
 
-import LoginModal from "../home/LoginModal";
+import LoginModal from "../home/LoginModalTickets";
 
 const ShoppingCartPage = () => {
     const [cart, setCart] = useState([]);
