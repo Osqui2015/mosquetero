@@ -49,12 +49,12 @@ const AddShows = () => {
             initialValues={posts}
 
             validationSchema={Yup.object({
-                artist: Yup.string().required('add text'),
-                image: Yup.string().required('add text'),
-                show: Yup.string().required('add text'),
-                blog: Yup.string().required('add text'),
-                imageslider:Yup.string().required('add text'),
-                state:Yup.string().required('add text')
+                artist: Yup.string().required('Añadir texto'),
+                image: Yup.string().required('Añadir imagen'),
+                show: Yup.string().required('Añadir show'),
+                blog: Yup.string().required('Añadir blog'),
+                imageslider:Yup.string().required('Añadir imagen portada'),
+                state:Yup.string().required('Añadir estado')
             })}
 
             onSubmit={async (values, actions) => {
