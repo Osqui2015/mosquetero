@@ -1,78 +1,67 @@
-import React, { useState } from "react";
-import { Col, Container, Row, Form, Button } from "react-bootstrap";
+import { useRef } from "react";
+import { Container,Button, Col, Row } from "react-bootstrap";
+import emailjs from "@emailjs/browser";
+import { useFormik } from "formik";
+
+import * as Yup from "yup";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 
-const emailRegExp = /^[A-Z0-9._%+-]+@[A-Z0-9.-]+\.[A-Z]{2,}$/i;
+const validationSchema = Yup.object({
+  name:Yup.string()
+                  .max(40,'El nombre debe tener 40 caracteres')
+                  .matches(
+                    /^[a-zA-Z]+([a-zA-Z ]+)*$/,
+                    "Solo letras, puede contener espacios solo entre nombres."
+                  )
+                  .required('El campo nombre es requerido'),
+                email:Yup.string()
+                  .email('El formato de correo electrónico no es correcto')
+                  .required('El campo email es requerido'),
+                content:Yup.string()
+                  .max(200,'El mensaje debe tener 200 caracteres como máximo')
+                  .matches(
+                    /^[a-zA-Z]+([a-zA-Z ]+)*$/,
+                    "Solo letras, puede contener espacios solo entre palabras."
+                  )
+                  .required('El campo consulta es requerido')
+});
 
 const ContactPage = () => {
-  const [name, setName] = useState("");
-  const [email, setEmail] = useState("");
-  const [content, setContent] = useState("");
+    const form = useRef();
 
-  const [nameError, setNameError] = useState("");
-  const [emailError, setEmailError] = useState("");
-  const [contentError, setContentError] = useState("");
+  const onSubmit = ({ resetForm }, e) => {
+    emailjs
+      .sendForm(
+        "service_q2hc72l",
+        "template_uj461yq",
+        form.current,
+        'bxv6pJBdM3qZ_otFC'
+      )
+      .then(
+        (result) => {
+          alert("Consulta enviada con éxito", result.text);
+        },
+        (error) => {
+          alert("No se pudo enviar tu consulta", error.text);
+        }
+      )
+      .then(formik.resetForm());
 
-  const handleEmailInput = (evt) => {
-    setEmail(evt.target.value);
+    e.preventDefault();
   };
 
-  const handleNameInput = (evt) => {
-    setName(evt.target.value);
-  };
+  const formik = useFormik({
+    initialValues: {
+      name:"",
+      email:"",
+      content:""
+    },
+    validateOnBlur: true,
+    onSubmit,
+    validationSchema: validationSchema,
+  });
 
-  const handleContentInput = (evt) => {
-    setContent(evt.target.value);
-  };
-
-  const validate = () => {
-    let ok = true;
-  
-    if (name === "") {
-      setNameError("Por favor escriba su nombre y apellido");
-      ok = false;
-    } else {
-      setNameError("");
-    }
-
-    if (email === "") {
-      setEmailError("Por favor escriba su correo electronico");
-      ok = false;
-    } else {
-      setEmailError("");
-
-      if (!emailRegExp.test(email)) {
-        setEmailError(
-          "Por favor, ingresa un email con formato correcto. Por ejemplo: johndoe@gmail.com"
-        );
-        ok = false;
-      } else {
-        setEmailError("");
-      }
-    }
-
-    if (content === "") {
-      setContentError("Por favor escriba su consulta");
-      ok = false;
-    } else {
-      setContentError("");
-    }
-
-    return ok;
-  };
-
-  const handleSubmit = (evt) => {
-    evt.preventDefault();
-
-    if (validate()) {
-      setName("");
-      setEmail("");
-      setContent("");
-
-      alert("Su consulta fue enviada con éxito!");
-    }
-  };
   const notify = () => toast("Se envio tu mensaje!");
 
   return (
@@ -80,50 +69,49 @@ const ContactPage = () => {
       <p className="display-6 text-primary">Comunicate con RSHOW</p>
       <Row className="align-items-stretch">
         <Col>
-          <Form onSubmit={handleSubmit}>
-            <Form.Group className="mb-3" controlId="contactFormName">
-              <Form.Label>Nombre y Apellido</Form.Label>
-              <Form.Control
-                placeholder="Juan Perez"
-                value={name}
-                onInput={handleNameInput}
-                isInvalid={nameError !== ""}
-              />
-              {nameError !== "" && (
-                <Form.Control.Feedback type="invalid">
-                  {nameError}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="contactFormEmail">
-              <Form.Label>Correo Electronico</Form.Label>
-              <Form.Control
-                placeholder="juan.perez@gmail.com"
-                value={email}
-                onInput={handleEmailInput}
-                isInvalid={emailError !== ""}
-              />
-              {emailError !== "" && (
-                <Form.Control.Feedback type="invalid">
-                  {emailError}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
-            <Form.Group className="mb-3" controlId="contactFormContent">
-              <Form.Label>Dejanos tu consulta</Form.Label>
-              <Form.Control
-                as="textarea"
-                rows={3}
-                value={content}
-                onInput={handleContentInput}
-                isInvalid={contentError !== ""}
-              />
-              {contentError !== "" && (
-                <Form.Control.Feedback type="invalid">
-                  {contentError}
-                </Form.Control.Feedback>
-              )}
-            </Form.Group>
+          <form ref={form} onSubmit={formik.handleSubmit}>
+            <label className="form-label">Nombre y Apellido</label>
+            <input
+            className="form-control"
+            type="text"
+            name="name"
+            id="name"
+            placeholder="John Doe"
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            value={formik.values.name}
+      />
+      {formik.touched.name && formik.errors.name ? (
+        <div className="f-red mt-1">{formik.errors.name}</div>
+      ) : null}
+              
+              <label className="form-label">E-mail</label>
+      <input
+        className="form-control"
+        type="email"
+        name="email"
+        id="email"
+        placeholder="ejemplo@dominio.com"
+        onChange={formik.handleChange}
+        onBlur={formik.handleBlur}
+        value={formik.values.email}
+      />
+      {formik.touched.email && formik.errors.email ? (
+        <div className="f-red mt-1">{formik.errors.email}</div>
+      ) : null}
+            <label className="form-label">Dejanos tu consulta</label>
+            <textarea
+            id="content"
+            name="content"
+            className="form-control mb-2"
+            placeholder="Escriba su mensaje"
+            value={formik.values.content}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+      />
+              {formik.touched.content && formik.errors.content ? (
+        <div className="f-red mt-1">{formik.errors.content}</div>
+      ) : null}
             <div className="d-flex justify-content-end mb-5">
               <Button variant="primary" type="submit" onClick={notify}>
                 Enviar
@@ -141,7 +129,7 @@ const ContactPage = () => {
                 theme="dark"
               />
             </div>
-          </Form>
+          </form>
           <p className="text-muted">
             Estamos de Lunes a Viernes de 9:00 AM a 4:00 PM
           </p>
