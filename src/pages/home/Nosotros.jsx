@@ -12,7 +12,6 @@ const Nosotros = () => {
       <br />
       <br />
       
-      <LoginModal/>
 
       <br />
       <br />
