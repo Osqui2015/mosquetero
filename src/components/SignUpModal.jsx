@@ -93,8 +93,7 @@ const SignUpModal = ({show, handleClose}) => {
       })
       successRegister = true
     } catch (error) {
-      console.log('error###', error)
-      //setUsername()
+      alert(error)
     }
 
     if (successRegister) {
