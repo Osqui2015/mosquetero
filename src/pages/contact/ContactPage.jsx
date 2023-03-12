@@ -40,7 +40,7 @@ const ContactPage = () => {
       )
       .then(
         (result) => {
-          alert("Consulta enviada con éxito", result.text);
+          alert("Se envió tu consulta", result);
         },
         (error) => {
           alert("No se pudo enviar tu consulta", error.text);
@@ -63,7 +63,7 @@ const ContactPage = () => {
   });
 
   const notify = () => toast("Se envio tu mensaje!");
-
+  
   return (
     <Container className="py-5">
       <p className="display-6 text-primary">Comunicate con RSHOW</p>
