@@ -114,7 +114,7 @@ const AddShows = () => {
                                 Guardar
                         </button>
                         <Link to="/" className='btn btn-warning mx-3'>
-                            CANCELAR
+                            Cancelar
                         </Link>
                     </div>
                     
