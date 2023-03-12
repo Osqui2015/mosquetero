@@ -14,7 +14,6 @@ import HomePage from "./pages/home/HomePage";
 import ForgotPasswordPage from "./pages/forgotPassword/ForgotPasswordPage";
 import BlogTwo from "./pages/home/BlogTwo";
 import ShoppingCartPage from "./pages/shoppingCart/ShoppingCartPage";
-import Publicity from "./pages/home/Publicity";
 import BuyTicketPage from "./pages/buyTicket/BuyTicketPage";
 import { PostProvider } from "./context/postContext";
 import LoginModal from "./pages/home/LoginModalTickets";
@@ -47,7 +46,6 @@ const App = () => {
             <Route path="/BlogTwo" element={<BlogTwo />} />
             <Route path="/ShoppingCart" element={<ShoppingCartPage />} />
             <Route path="/BuyTicket" element={<BuyTicketPage />} />
-            <Route path="/Publicity" element={<Publicity />} />
             <Route path="/AddShows" element={<AddShows />} />
 
             <Route path="/AddShows/:id" element={<AddShows />} />
