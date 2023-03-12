@@ -56,11 +56,9 @@ function Header() {
               <Link to="/">
                 <img alt="" src="/logo.png" height="30" className="img-logo" />{" "}
               </Link>
-              {/* </Nav.Link> */}
             </div>
           </div>
 
-          {/* BUSCADOR */}
           <div className="d-flex">
             <input
               type="text"
@@ -120,7 +118,7 @@ function Header() {
                 </Stack>
               ) : (
                 <Button onClick={handleOpenLogin} className="buttIngresar">
-                  Ingresar.
+                  Ingresar
                 </Button>
               )}
             </div>
