@@ -75,11 +75,11 @@ const AddShows = () => {
                             
                         <br /><br /><hr/>
                         <div className="row mt-4">
-                            <Field name="artist" className="form-control" placeholder="Artist" />
+                            <Field name="artist" className="form-control" placeholder="Artista" />
                             <ErrorMessage component="p"  name="artist" className="font-monospace text-danger" />
                         </div>
                         <div className="row mt-4">
-                            <Field name="image" className="form-control" placeholder="image URL" />
+                            <Field name="image" className="form-control" placeholder="imagen URL" />
                             <ErrorMessage  component="p" name="image" className="font-monospace text-danger" />
                         </div>
                         <div className="row mt-4">
@@ -91,7 +91,7 @@ const AddShows = () => {
                             <ErrorMessage  component="p" name="blog" className="font-monospace text-danger" />
                         </div>
                         <div className="row mt-4">
-                            <Field name="imageslider" className="form-control" placeholder="imageslider URL" />
+                            <Field name="imageslider" className="form-control" placeholder="imagenslider URL" />
                             <ErrorMessage  component="p" name="imageslider" className="font-monospace text-danger" />
                         </div>
                         <div className='mt-4' id="my-radio-group">Destacar</div>
