@@ -28,7 +28,7 @@ const AddShows = () => {
         (async () => { 
             if (params.id){
                 const results = await getPosts(params.id)
-                console.log (results)
+            
                 setPosts({
                    artist:  results.artist,
                     image: results.image,
