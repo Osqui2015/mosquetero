@@ -4,8 +4,8 @@ import emailjs from "@emailjs/browser";
 import { useFormik } from "formik";
 
 import * as Yup from "yup";
-import { ToastContainer, toast } from "react-toastify";
-import "react-toastify/dist/ReactToastify.css";
+
+
 
 const validationSchema = Yup.object({
   name:Yup.string()
@@ -62,7 +62,6 @@ const ContactPage = () => {
     validationSchema: validationSchema,
   });
 
-  const notify = () => toast("Se envio tu mensaje!");
   
   return (
     <Container className="py-5">
@@ -113,21 +112,10 @@ const ContactPage = () => {
         <div className="f-red mt-1">{formik.errors.content}</div>
       ) : null}
             <div className="d-flex justify-content-end mb-5">
-              <Button variant="primary" type="submit" onClick={notify}>
+              <Button variant="primary" type="submit" >
                 Enviar
               </Button>
-              <ToastContainer
-                position="top-left"
-                autoClose={5000}
-                hideProgressBar={false}
-                newestOnTop={false}
-                closeOnClick
-                rtl={false}
-                pauseOnFocusLoss
-                draggable
-                pauseOnHover
-                theme="dark"
-              />
+             
             </div>
           </form>
           <p className="text-muted">

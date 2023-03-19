@@ -6,7 +6,7 @@ import React, { useContext } from "react";
 
 
 
-export function Card({post}) {
+export function Card({post, artist}) {
   const { deletePost } = usePosts();
   const navigate = useNavigate();
 
@@ -17,7 +17,7 @@ export function Card({post}) {
       (t) => (
         <div className="text-white">
           <p>
-            Seguro que quieres eliminar el Show? <strong> {id} </strong>{" "}
+            Seguro que quieres eliminar el Show? <strong> {} </strong>{" "}
           </p>
           <div className="row justify-content-md-center">
             <div className="col">
