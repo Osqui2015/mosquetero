@@ -23,8 +23,7 @@ export function Bookmark() {
       <div className="row row-cols-2 row-cols-lg-5">
         {featuredPosts?.map((post) => (
           <div>
-            <Card
-            />
+            <Card post={post} key={post._id} />
           </div>
         ))}
       </div>

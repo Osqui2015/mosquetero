@@ -5,6 +5,7 @@ import { AuthContext } from "../contexts/auth";
 import React, { useContext } from "react";
 
 
+
 export function Card({post}) {
   const { deletePost } = usePosts();
   const navigate = useNavigate();
@@ -50,10 +51,10 @@ export function Card({post}) {
   };
   return (
     <div className="card mb-3">
-      <img src={post.image} className="card-img-top" alt="imagen.png" />
+      <img src={post?.image} className="card-img-top" alt="img.png" />
       <div className="card-body">
-        <h5 className="card-title text-decoration-underline">{post.artist}</h5>
-        {post.show}
+        <h5 className="card-title text-decoration-underline">{post?.artist}</h5>
+        {post?.show}
       </div>
       <div className="card-footer text-muted items-align-center">
         <Link to="/ShoppingCart">
@@ -71,7 +72,7 @@ export function Card({post}) {
         {loggedAs("admin") ? (
           <>
             <button
-              onClick={() => navigate(`/AddShows/${post._id}`)}
+              onClick={() => navigate(`/AddShows/${post?._id}`)}
               type="button"
               className="btn mx-2 mt-2 btn-outline-info"
             >
@@ -80,7 +81,7 @@ export function Card({post}) {
             </button>
 
             <button
-              onClick={() => handleDelete(post._id)}
+              onClick={() => handleDelete(post?._id)}
               type="button"
               className="btn mx-2 mt-2 btn-outline-danger"
             >
